@@ -14,6 +14,7 @@ import '../Src/Bottom_Bar/Service_BottomBar_Screens/BottomBar_Client_Screen/Clie
 import '../Src/Bottom_Bar/Service_BottomBar_Screens/BottomBar_Client_Screen/Client_Helper_Screens(c)/service_profile(c).dart';
 import '../Src/Bottom_Bar/Service_BottomBar_Screens/BottomBar_Client_Screen/bottom_bar_service(c).dart';
 import '../Src/Bottom_Bar/Service_BottomBar_Screens/BottomBar_Client_Screen/bottom_bar_service_history.dart';
+import '../Src/Bottom_Bar/Service_BottomBar_Screens/bottom_bar_profile(c).dart';
 import '../Src/Bottom_Bar/bottom_bar.dart';
 import '../Src/Helper_Screens/bank_details.dart';
 import '../Src/Helper_Screens/chat_gpt_view.dart';
@@ -173,37 +174,37 @@ class MyAppRouter {
           name: MyAppRouteConstants.searchServiceClient,
           path: '/SearchServiceClient',
           pageBuilder: (context, state) {
-            return   MaterialPage(child: SearchServiceClient());
+            return   const MaterialPage(child: SearchServiceClient());
           }),
       GoRoute(
           name: MyAppRouteConstants.mapPickup,
           path: '/MapPickup',
           pageBuilder: (context, state) {
-            return    MaterialPage(child: MapPickup());
+            return    const MaterialPage(child: MapPickup());
           }),
       GoRoute(
           name: MyAppRouteConstants.serviceProfileClient,
           path: '/ServiceProfileClient',
           pageBuilder: (context, state) {
-            return    MaterialPage(child: ServiceProfileClient());
+            return    const MaterialPage(child: ServiceProfileClient());
           }),
       GoRoute(
           name: MyAppRouteConstants.bookServiceClient,
           path: '/BookServiceClient',
           pageBuilder: (context, state) {
-            return    MaterialPage(child: BookServiceClient());
+            return    const MaterialPage(child: BookServiceClient());
           }),
       GoRoute(
           name: MyAppRouteConstants.bookBySchedule,
           path: '/BookBySchedule',
           pageBuilder: (context, state) {
-            return    MaterialPage(child: BookBySchedule());
+            return    const MaterialPage(child: BookBySchedule());
           }),
       GoRoute(
           name: MyAppRouteConstants.bankDetailsClient,
           path: '/BankDetailsClient',
           pageBuilder: (context, state) {
-            return    MaterialPage(child: BankDetailsClient());
+            return    const MaterialPage(child: BankDetailsClient());
           }),
       GoRoute(
           name: MyAppRouteConstants.bottomServiceClient,
@@ -228,6 +229,12 @@ class MyAppRouter {
           path: '/ServiceHistoryDetailClient',
           pageBuilder: (context, state) {
             return   const MaterialPage(child: ServiceHistoryDetailClient());
+          }),
+      GoRoute(
+          name: MyAppRouteConstants.bottomProfileClient,
+          path: '/BottomProfileClient',
+          pageBuilder: (context, state) {
+            return   const MaterialPage(child: BottomProfileClient());
           }),
     ],
     errorPageBuilder: (context, state) {
@@ -268,4 +275,5 @@ class MyAppRouteConstants {
   static const String serviceDetailsClient = 'ServiceDetailsClient';
   static const String serviceHistoryClient = 'ServiceHistoryClient';
   static const String serviceHistoryDetailClient = 'ServiceHistoryDetailClient';
+  static const String bottomProfileClient = 'BottomProfileClient';
 }

@@ -3,6 +3,7 @@ import 'package:allohuggy/Service_provider/Utilities/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:sizer/sizer.dart';
 
 class BottomServiceClient extends StatefulWidget {
@@ -50,40 +51,47 @@ class _BottomServiceClientState extends State<BottomServiceClient> {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Text('Your Services',
-                                  style: TextStyle(
-                                      fontSize: 20.sp,
-                                      color: ColorX.buttonColor,
-                                      fontWeight: FontWeight.w800)),
+                                  style: GoogleFonts.poppins(fontSize: 24,fontWeight: FontWeight.w600,color: ColorX.buttonColor)),
                               Row(
                                 children: [
-                                  Container(
-                                      decoration: BoxDecoration(
-                                          shape: BoxShape.circle,
-                                          border: Border.all(
-                                              color: ColorX.whiteX,
-                                              width: 2)),
-                                      child: Padding(
-                                        padding: const EdgeInsets.all(12.0),
-                                        child: SvgPicture.asset(
-                                          'image/edit chat.svg',
-                                          color: Colors.white,
-                                        ),
-                                      )),
+                                  GestureDetector(
+                                    onTap: (){
+                                      GoRouter.of(context).pushNamed(MyAppRouteConstants.supportScreen);
+                                    },
+                                    child: Container(
+                                        decoration: BoxDecoration(
+                                            shape: BoxShape.circle,
+                                            border: Border.all(
+                                                color: ColorX.whiteX,
+                                                width: 2)),
+                                        child: Padding(
+                                          padding: const EdgeInsets.all(12.0),
+                                          child: SvgPicture.asset(
+                                            'image/edit chat.svg',
+                                            color: Colors.white,
+                                          ),
+                                        )),
+                                  ),
                                   SizedBox(
                                     width: 2.w,
                                   ),
-                                  Container(
-                                      decoration: BoxDecoration(
-                                          shape: BoxShape.circle,
-                                          border: Border.all(
-                                              color: ColorX.whiteX, width: 2)),
-                                      child: Padding(
-                                        padding: const EdgeInsets.all(8.0),
-                                        child: Icon(
-                                          Icons.notification_important,
-                                          color: ColorX.whiteX,
-                                        ),
-                                      ))
+                                  GestureDetector(
+                                    onTap: (){
+                                      GoRouter.of(context).pushNamed(MyAppRouteConstants.notificationScreen);
+                                    },
+                                    child: Container(
+                                        decoration: BoxDecoration(
+                                            shape: BoxShape.circle,
+                                            border: Border.all(
+                                                color: ColorX.whiteX, width: 2)),
+                                        child: Padding(
+                                          padding: const EdgeInsets.all(8.0),
+                                          child: Icon(
+                                            Icons.notification_important,
+                                            color: ColorX.whiteX,
+                                          ),
+                                        )),
+                                  )
                                 ],
                               ),
                             ],
@@ -99,7 +107,7 @@ class _BottomServiceClientState extends State<BottomServiceClient> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                 Text("Upcoming Services",style: TextStyle(fontWeight: FontWeight.w700,fontSize: 14.sp,color: ColorX.blackX),),
+                 Text("Upcoming Services",style: GoogleFonts.poppins(fontSize: 14,fontWeight: FontWeight.w600,color: ColorX.blackX)),
                 DropdownButton(
                   value: dropdownvalue,
                   icon: const Icon(Icons.keyboard_arrow_down),
@@ -108,7 +116,7 @@ class _BottomServiceClientState extends State<BottomServiceClient> {
                   items: items.map((String items) {
                     return DropdownMenuItem(
                       value: items,
-                      child: Text(items),
+                      child: Text(items,style: GoogleFonts.quicksand(fontSize: 12,fontWeight: FontWeight.w700,color: ColorX.blackX),),
                     );
                   }).toList(),
                   onChanged: (String? newValue) {
@@ -120,7 +128,6 @@ class _BottomServiceClientState extends State<BottomServiceClient> {
               ],
             ),
           ),
-
           Expanded(
             child: ListView.builder(
                 itemCount: 2,
@@ -166,10 +173,10 @@ class _BottomServiceClientState extends State<BottomServiceClient> {
                                               backgroundColor: Colors.yellow,
                                             ),
                                           ),
-                                          const Positioned(
+                                           Positioned(
                                             left: 25,
                                             top: 8,
-                                            child: Text("in-progress",style: TextStyle(fontSize: 10,color: Colors.white),),
+                                            child: Text("in-progress",style:GoogleFonts.quicksand(fontSize: 10,fontWeight: FontWeight.w600,color: ColorX.whiteX)),
                                           ),
                                         ]
                                     ),
@@ -190,11 +197,11 @@ class _BottomServiceClientState extends State<BottomServiceClient> {
                                         child: Column(
                                           crossAxisAlignment: CrossAxisAlignment.start,
                                           children:  [
-                                             Text("Sophie R. Stevens",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 18.sp),),
-                                             Text("(Plumber/Cleaner)",style: TextStyle(fontWeight: FontWeight.w600,fontSize: 10.sp),),
+                                             Text("Sophie R. Stevens",style: GoogleFonts.poppins(fontSize: 16,fontWeight: FontWeight.w600,color: ColorX.blackX)),
+                                             Text("(Plumber/Cleaner)",style: GoogleFonts.quicksand(fontSize: 12,fontWeight: FontWeight.w600,color: ColorX.blackX)),
                                             SizedBox(
                                                 width: 70.w,
-                                                child: Text("Lorem Ipsum is simply dummy text of the printing and typesetting industry",textAlign: TextAlign.justify,style: TextStyle(fontWeight: FontWeight.w400,fontSize: 12.sp))),
+                                                child: Text("Lorem Ipsum is simply dummy text of the printing and typesetting industry",textAlign: TextAlign.justify,style: GoogleFonts.quicksand(fontSize: 12,fontWeight: FontWeight.w500,color: ColorX.blackX))),
 
                                           ],
                                         ),
@@ -228,7 +235,7 @@ class _BottomServiceClientState extends State<BottomServiceClient> {
                                               children: [
                                                 SvgPicture.asset("image/delete2.svg",height: size.height*0.025,),
                                                 SizedBox(width: size.width*0.02),
-                                                const Text("Cancel"),
+                                                 Text("Cancel",style:GoogleFonts.quicksand(fontSize: 12,fontWeight: FontWeight.w600,color: ColorX.textColor) ),
                                               ],
                                             ),
                                           ),
@@ -251,7 +258,7 @@ class _BottomServiceClientState extends State<BottomServiceClient> {
                                               children: [
                                                 SvgPicture.asset("image/editinterface.svg",height: size.height*0.025,),
                                                 SizedBox(width: size.width*0.02),
-                                                const Text("Reschedule"),
+                                                 Text("Reschedule",style:GoogleFonts.quicksand(fontSize: 12,fontWeight: FontWeight.w600,color: ColorX.textColor)),
                                               ],
                                             ),
                                           ),
@@ -313,8 +320,8 @@ class _BottomServiceClientState extends State<BottomServiceClient> {
                   padding: const EdgeInsets.all(20.0),
                   child: Image.asset('image/Group 16401.png',height: 15.h,),
                 ),
-                Text('Are you sure',style: TextStyle(color: const Color(0XFFE53535),fontSize: 18.sp,fontWeight: FontWeight.w700),),
-                Text('Delete this Service',style: TextStyle(color: const Color(0XFFE53535),fontSize: 18.sp,fontWeight: FontWeight.w700),),
+                Text('Are you sure',style:GoogleFonts.quicksand(fontSize: 24,fontWeight: FontWeight.w700,color: const Color(0XFFE53535))),
+                Text('Delete this Service',style: GoogleFonts.quicksand(fontSize: 24,fontWeight: FontWeight.w700,color: const Color(0XFFE53535))),
                 SizedBox(
                   height: 2.h,
                 ),
@@ -329,7 +336,7 @@ class _BottomServiceClientState extends State<BottomServiceClient> {
                       ),
                       child:  Padding(
                         padding: const EdgeInsets.all(10.0),
-                        child: Center(child: Text('Cancle',style: TextStyle(color: ColorX.textColor,fontWeight: FontWeight.w500,fontSize: 12.sp),)),
+                        child: Center(child: Text('Cancel',style: GoogleFonts.quicksand(fontSize: 18,fontWeight: FontWeight.w700,color: ColorX.textColor))),
                       ),
                     ),
                     SizedBox(
@@ -347,7 +354,7 @@ class _BottomServiceClientState extends State<BottomServiceClient> {
                         ),
                         child:  Padding(
                           padding: const EdgeInsets.all(10.0),
-                          child: Center(child: Text('Delete',style: TextStyle(color: ColorX.whiteX,fontWeight: FontWeight.w500,fontSize: 12.sp))),
+                          child: Center(child: Text('Delete',style: GoogleFonts.quicksand(fontSize: 8,fontWeight: FontWeight.w700,color: ColorX.whiteX))),
                         ),
                       ),
                     ),

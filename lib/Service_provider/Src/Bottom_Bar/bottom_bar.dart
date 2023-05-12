@@ -9,11 +9,12 @@ import '../../Blocs/Bottom_Bar_Bloc/bottom_bar_cubit.dart';
 import 'Service_BottomBar_Screens/BottomBar_Client_Screen/bottom_bar_homePage(c).dart';
 import 'Service_BottomBar_Screens/BottomBar_Client_Screen/bottom_bar_service(c).dart';
 import 'Service_BottomBar_Screens/BottomBar_Client_Screen/bottom_bar_service_history.dart';
+import 'Service_BottomBar_Screens/bottom_bar_profile(c).dart';
 import 'Service_BottomBar_Screens/bottom_menu(s).dart';
 import 'Service_BottomBar_Screens/bottom_profile(s).dart';
 import 'Service_BottomBar_Screens/bottom_service(s).dart';
 import 'Service_BottomBar_Screens/bottom_wallet_history(s).dart';
-
+int? newIndex;
 class BottomBar extends StatefulWidget {
   const BottomBar({Key? key}) : super(key: key);
 
@@ -43,7 +44,9 @@ class _BottomBarState extends State<BottomBar> {
           _navigationQueue.addLast(index);
           setState(() => index = value);
           if (kDebugMode) {
-            print(value);
+
+            newIndex = value;
+            print('bottom is ${newIndex}');
           }
         },
         items: [
@@ -97,7 +100,7 @@ class _BottomBarState extends State<BottomBar> {
       case 2:
         return const ServiceHistoryClient();
       case 3:
-        return Container(color: Colors.indigo,child: const Center(child: Text('this is clent sider pahe 4')),);
+        return const BottomProfileClient();
     }
     return null;
   }

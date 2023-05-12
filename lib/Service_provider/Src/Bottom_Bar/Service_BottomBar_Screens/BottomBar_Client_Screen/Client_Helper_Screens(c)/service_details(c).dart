@@ -1,10 +1,9 @@
 import 'package:allohuggy/Service_provider/Utilities/colors.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:allohuggy/Service_provider/Utilities/common_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:sizer/sizer.dart';
-
 import '../../../../../Routes/routes.dart';
 
 class ServiceDetailsClient extends StatefulWidget {
@@ -429,7 +428,7 @@ class _ServiceDetailsClientState extends State<ServiceDetailsClient> {
       builder: (BuildContext context) {
         return AlertDialog(
           shape:
-              RoundedRectangleBorder(borderRadius: BorderRadius.circular(8.w)),
+          RoundedRectangleBorder(borderRadius: BorderRadius.circular(8.w)),
           content: SizedBox(
             height: 35.h,
             width: 100.w,
@@ -472,12 +471,12 @@ class _ServiceDetailsClientState extends State<ServiceDetailsClient> {
                         padding: const EdgeInsets.all(10.0),
                         child: Center(
                             child: Text(
-                          'Cancle',
-                          style: TextStyle(
-                              color: ColorX.textColor,
-                              fontWeight: FontWeight.w500,
-                              fontSize: 12.sp),
-                        )),
+                              'Cancle',
+                              style: TextStyle(
+                                  color: ColorX.textColor,
+                                  fontWeight: FontWeight.w500,
+                                  fontSize: 12.sp),
+                            )),
                       ),
                     ),
                     SizedBox(
@@ -491,7 +490,7 @@ class _ServiceDetailsClientState extends State<ServiceDetailsClient> {
                       child: Container(
                         width: 30.w,
                         decoration: BoxDecoration(
-                            color: Color(0XFFE53535),
+                            color: const Color(0XFFE53535),
                             borderRadius: BorderRadius.circular(8.w)),
                         child: Padding(
                           padding: const EdgeInsets.all(10.0),
@@ -514,169 +513,404 @@ class _ServiceDetailsClientState extends State<ServiceDetailsClient> {
     );
   }
 
+  bool? bottomIsChecked = false;
+  bool? bottomIsChecked1 = false;
+  bool? bottomIsChecked2 = false;
+  bool? bottomIsChecked3 = false;
+  bool? bottomIsChecked4 = false;
+  bool? bottomIsChecked5 = false;
+  bool? cancelReasonBool = false;
+  int colorss = 0;
+
+
+
+
+
   bottomSheetSearchBar() async {
-    // showModalBottomSheet(
-    //     backgroundColor: ColorX.scaffoldBackGroundX,
-    //     shape: RoundedRectangleBorder(
-    //       borderRadius: BorderRadius.only(
-    //         topLeft: Radius.circular(4.w),
-    //         topRight: Radius.circular(4.w),
-    //       ),
-    //     ),
-    //     isScrollControlled: true,
-    //     constraints: BoxConstraints.tight(Size(
-    //         MediaQuery.of(context).size.width,
-    //         MediaQuery.of(context).size.height * .6)),
-    //     context: context,
-    //     builder: (BuildContext context) {
-    //       return StatefulBuilder(
-    //           builder: (BuildContext context, StateSetter state){
-    //         return Column(
-    //           crossAxisAlignment: CrossAxisAlignment.start,
-    //           children: [
-    //             SizedBox(
-    //               height: 0.5.h,
-    //             ),
-    //             Center(
-    //               child: Container(
-    //                 height: 0.8.h,
-    //                 width: 15.w,
-    //                 decoration: BoxDecoration(
-    //                     color: Colors.grey,
-    //                     borderRadius: BorderRadius.circular(4.w)
-    //                 ),
-    //               ),
-    //             ),
-    //             GestureDetector(
-    //               onTap: (){
-    //                 print("cancle");
-    //                 Navigator.of(context).pop();
-    //               },
-    //               child: Row(
-    //                 mainAxisAlignment: MainAxisAlignment.end,
-    //                 children: [
-    //                   Padding(
-    //                     padding:  EdgeInsets.only(right: 3.w),
-    //                     child: Padding(
-    //                       padding: const EdgeInsets.all(4.0),
-    //                       child: SvgPicture.asset('image/Shape1.svg'),
-    //                     ),
-    //                   ),
-    //                 ],
-    //               ),
-    //             ),
-    //             SizedBox(
-    //               height: 1.h,
-    //             ),
-    //             Text('Why do you want to cancel?',style: TextStyle(color: ColorX.whiteX),)
-    //           ],
-    //         );
-    //       });
-    //     });
-    bool _switchValue = false;
-    showModalBottomSheet(
-        backgroundColor: ColorX.whiteX,
+    showModalBottomSheet<Future>(
+        context: context,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.only(
             topLeft: Radius.circular(4.w),
             topRight: Radius.circular(4.w),
           ),
         ),
+        isScrollControlled: true,
         constraints: BoxConstraints.tight(Size(
             MediaQuery.of(context).size.width,
             MediaQuery.of(context).size.height * .6)),
-        context: context,
         builder: (BuildContext context) {
           return StatefulBuilder(
-            builder: (BuildContext context, StateSetter stateSetter) {
-              return Column(
-                children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      SizedBox(
-                        height: 0.5.h,
+              builder: (BuildContext context, StateSetter state) {
+                return Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: <Widget>[
+                    SizedBox(
+                      height: 1.h,
+                    ),
+                    Center(
+                      child: Container(
+                        height: 0.8.h,
+                        width: 15.w,
+                        decoration: BoxDecoration(
+                            color: Colors.grey,
+                            borderRadius: BorderRadius.circular(4.w)),
                       ),
-                      Center(
-                        child: Container(
-                          height: 0.8.h,
-                          width: 15.w,
-                          decoration: BoxDecoration(
-                              color: Colors.grey,
-                              borderRadius: BorderRadius.circular(4.w)),
-                        ),
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        print("cancle");
+                        Navigator.of(context).pop();
+                      },
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          Padding(
+                            padding: EdgeInsets.only(right: 3.w),
+                            child: Padding(
+                              padding: const EdgeInsets.all(4.0),
+                              child: SvgPicture.asset('image/Shape1.svg'),
+                            ),
+                          ),
+                        ],
                       ),
-                      GestureDetector(
-                        onTap: () {
-                          print("cancle");
-                          Navigator.of(context).pop();
-                        },
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          children: [
-                            Padding(
+                    ),
+                    SizedBox(
+                      height: 1.h,
+                    ),
+                    Text(
+                      'Why do you want to cancel?',
+                      style: TextStyle(
+                          color: ColorX.blackX,
+                          fontWeight: FontWeight.w400,
+                          fontSize: 18.sp),
+                    ),
+                    SizedBox(
+                      height: 1.h,
+                    ),
+                    Expanded(
+                        child: Padding(
+                          padding:  EdgeInsets.only(left: 3.w,right: 3.w),
+                          child: Column(
+                            children: [
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text('Incorrect Address',style: TextStyle(color: ColorX.blackX,fontWeight: FontWeight.w400,fontSize: 14.sp),),
+                                  Transform.scale(
+                                    scale: 2,
+                                    child: Checkbox(
+                                        value:bottomIsChecked,
+                                        checkColor:Colors.white,
+                                        activeColor:const Color(0xff008000),
+                                        side: BorderSide(color: ColorX.textColor),
+                                        shape: const RoundedRectangleBorder(
+                                          borderRadius: BorderRadius.all(
+                                            Radius.circular(20),
+                                          ),
+                                        ),
+                                        onChanged: (value) {
+                                          state(() {
+                                            bottomIsChecked = value;
+                                            // colorss = index;
+                                          });
+                                        }
+                                    ),
+                                  ),
+
+                                ],
+                              ),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                children: [
+                                  SizedBox(
+                                      width: 80.w,
+                                      child: Text('I’ve got no offer from Service Provider',textAlign: TextAlign.justify,style: TextStyle(color: ColorX.blackX,fontWeight: FontWeight.w400,fontSize: 14.sp),)),
+                                  Transform.scale(
+                                    scale: 2,
+                                    child: Checkbox(
+                                        value:bottomIsChecked1,
+                                        checkColor:Colors.white,
+                                        activeColor:const Color(0xff008000),
+                                        side: BorderSide(color: ColorX.textColor),
+                                        shape: const RoundedRectangleBorder(
+                                          borderRadius: BorderRadius.all(
+                                            Radius.circular(20),
+                                          ),
+                                        ),
+                                        onChanged: (value) {
+                                          state(() {
+                                            bottomIsChecked1 = value;
+                                            // colorss = index;
+                                          });
+                                        }
+                                    ),
+                                  ),
+
+                                ],
+                              ),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text('To change the Address',style: TextStyle(color: ColorX.blackX,fontWeight: FontWeight.w400,fontSize: 14.sp),),
+                                  Transform.scale(
+                                    scale: 2,
+                                    child: Checkbox(
+                                        value:bottomIsChecked2,
+                                        checkColor:Colors.white,
+                                        activeColor:const Color(0xff008000),
+                                        side: BorderSide(color: ColorX.textColor),
+                                        shape: const RoundedRectangleBorder(
+                                          borderRadius: BorderRadius.all(
+                                            Radius.circular(20),
+                                          ),
+                                        ),
+                                        onChanged: (value) {
+                                          state(() {
+                                            bottomIsChecked2 = value;
+
+                                          });
+                                        }
+                                    ),
+                                  ),
+
+                                ],
+                              ),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text('I don’t want to service any more',style: TextStyle(color: ColorX.blackX,fontWeight: FontWeight.w400,fontSize: 14.sp),),
+                                  Transform.scale(
+                                    scale: 2,
+                                    child: Checkbox(
+                                        value:bottomIsChecked3,
+                                        checkColor:Colors.white,
+                                        activeColor:const Color(0xff008000),
+                                        side: BorderSide(color: ColorX.textColor),
+                                        shape: const RoundedRectangleBorder(
+                                          borderRadius: BorderRadius.all(
+                                            Radius.circular(20),
+                                          ),
+                                        ),
+                                        onChanged: (value) {
+                                          state(() {
+                                            bottomIsChecked3 = value;
+                                            // colorss = index;
+                                          });
+                                        }
+                                    ),
+                                  ),
+
+                                ],
+                              ),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text('To change the Schedule',style: TextStyle(color: ColorX.blackX,fontWeight: FontWeight.w400,fontSize: 14.sp),),
+                                  Transform.scale(
+                                    scale: 2,
+                                    child: Checkbox(
+                                        value:bottomIsChecked4,
+                                        checkColor:Colors.white,
+                                        activeColor:const Color(0xff008000),
+                                        side: BorderSide(color: ColorX.textColor),
+                                        shape: const RoundedRectangleBorder(
+                                          borderRadius: BorderRadius.all(
+                                            Radius.circular(20),
+                                          ),
+                                        ),
+                                        onChanged: (value) {
+                                          state(() {
+                                            bottomIsChecked4 = value;
+                                            // colorss = index;
+                                          });
+                                        }
+                                    ),
+                                  ),
+
+                                ],
+                              ),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text('Another reason',style: TextStyle(color: ColorX.blackX,fontWeight: FontWeight.w400,fontSize: 14.sp),),
+                                  Transform.scale(
+                                    scale: 2,
+                                    child: Checkbox(
+                                        value:bottomIsChecked5,
+                                        checkColor:Colors.white,
+                                        activeColor:const Color(0xff008000),
+                                        side: BorderSide(color: ColorX.textColor),
+                                        shape: const RoundedRectangleBorder(
+                                          borderRadius: BorderRadius.all(
+                                            Radius.circular(20),
+                                          ),
+                                        ),
+                                        onChanged: (value) {
+                                          state(() {
+                                            bottomIsChecked5 = value;
+                                            Navigator.of(context).pop();
+                                            //cancelReasonBool = true;
+                                            cancelReasons();
+
+                                          });
+                                        }
+                                    ),
+                                  ),
+
+                                ],
+                              ),
+                              SizedBox(
+                                height: 2.h,
+                              ),
+                              GestureDetector(
+                                onTap: (){
+                                  Navigator.of(context).pop();
+                                },
+                                child: Padding(
+                                  padding:  EdgeInsets.only(left: 5.w,right: 5.w),
+                                  child: CommonButton(
+                                    height: 7.h,
+                                    buttonText: 'Done',
+                                  ),
+                                ),
+                              )
+                            ],
+                          ),
+                        ))
+
+                  ],
+                );
+              });
+        });
+  }
+  cancelReasons() async {
+    showModalBottomSheet<Future>(
+        context: context,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(4.w),
+            topRight: Radius.circular(4.w),
+          ),
+        ),
+        isScrollControlled: true,
+        constraints: BoxConstraints.tight(Size(
+            MediaQuery.of(context).size.width,
+            MediaQuery.of(context).size.height * .4)),
+        builder: (BuildContext context) {
+          return StatefulBuilder(
+              builder: (BuildContext context, StateSetter state) {
+                return Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: <Widget>[
+                    SizedBox(
+                      height: 1.h,
+                    ),
+                    Center(
+                      child: Container(
+                        height: 0.8.h,
+                        width: 15.w,
+                        decoration: BoxDecoration(
+                            color: Colors.grey,
+                            borderRadius: BorderRadius.circular(4.w)),
+                      ),
+                    ),
+                    Padding(
+                      padding:  EdgeInsets.only(left: 2.w,right: 2.w),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+
+                          GestureDetector(
+                            onTap: () {
+                              print("back");
+                              bottomSheetSearchBar();
+
+                            },
+                            child: Padding(
+                              padding: EdgeInsets.only(left: 3.w),
+                              child: Padding(
+                                padding: const EdgeInsets.all(4.0),
+                                child: Container(
+                                    decoration: BoxDecoration(
+                                        shape: BoxShape.circle,
+                                        color: ColorX.textColor
+                                    ),
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(6.0),
+                                      child: Icon(Icons.arrow_back_ios,color: ColorX.whiteX,size: 2.h,),
+                                    )),
+                              ),
+                            ),
+                          ),
+                          GestureDetector(
+                            onTap: () {
+                              print("cancle");
+                              Navigator.of(context).pop();
+                            },
+                            child: Padding(
                               padding: EdgeInsets.only(right: 3.w),
                               child: Padding(
                                 padding: const EdgeInsets.all(4.0),
                                 child: SvgPicture.asset('image/Shape1.svg'),
                               ),
                             ),
-                          ],
+                          ),
+                        ],
+                      ),
+                    ),
+                    SizedBox(
+                      height: 1.h,
+                    ),
+                    Text(
+                      'Give the reason for cancellation',
+                      style: TextStyle(
+                          color: ColorX.blackX,
+                          fontWeight: FontWeight.w400,
+                          fontSize: 18.sp),
+                    ),
+                    SizedBox(
+                      height: 1.h,
+                    ),
+                    Padding(
+                      padding:  EdgeInsets.only(left: 4.w,right: 4.w),
+                      child: Container(
+                        height: 15.h,
+                        width: 100.w,
+                        decoration: BoxDecoration(
+                            color: ColorX.scaffoldBackGroundX,
+                            borderRadius: BorderRadius.circular(2.w)
                         ),
-                      ),
-                      SizedBox(
-                        height: 1.h,
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(left: 4.w, right: 4.w),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              'Why do you want to cancel?',
-                              style: TextStyle(
-                                  color: ColorX.blackX,
-                                  fontSize: 18.sp,
-                                  fontWeight: FontWeight.w500),
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: TextFormField(
+                            decoration: const InputDecoration.collapsed(
+                                hintText: 'Additional comments...'
                             ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                 Text('incorrect address',
-                                    style: TextStyle(
-                                        color: ColorX.blackX,
-                                        fontSize: 14.sp,
-                                        fontWeight: FontWeight.w500)),
-                                GestureDetector(
-                                  onTap: (){
-                                    print('object');
-                                    setState(() {
-                                      _switchValue = !_switchValue;
-                                    });
-                                  },
-                                  child: Container(
-                                    decoration:  BoxDecoration(
-                                        shape: BoxShape.circle,
-                                        border: Border.all(color: ColorX.textColor),
-                                        color: _switchValue == true? Color(0xff427F2D):ColorX.scaffoldBackGroundX
-                                    ),
-                                    child: Padding(
-                                      padding: const EdgeInsets.all(4.0),
-                                      child: Icon(Icons.check,color: ColorX.whiteX,),
-                                    ),
-                                  ),
-                                )
-                              ],
-                            )
-                          ],
+                          ),
                         ),
-                      )
-                    ],
-                  )
-                ],
-              );
-            },
-          );
+                      ),
+                    ),
+                    SizedBox(
+                      height: 2.h,
+                    ),
+                    GestureDetector(
+                      onTap: (){
+                        Navigator.of(context).pop();
+                      },
+                      child: Padding(
+                        padding:  EdgeInsets.only(left: 5.w,right: 5.w),
+                        child: CommonButton(
+                          height: 7.h,
+                          buttonText: 'Done',
+                        ),
+                      ),
+                    )
+
+                  ],
+                );
+              });
         });
   }
+
 }
