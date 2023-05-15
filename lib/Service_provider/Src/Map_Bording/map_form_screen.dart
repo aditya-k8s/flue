@@ -68,7 +68,7 @@ class MapFromScreen extends StatelessWidget {
                               "Client",
                               style: GoogleFonts.quicksand(
                                   fontSize: 34,
-                                  color: ColorX.whiteX,
+                                  color: ColorX.buttonColor,
                                   fontWeight: FontWeight.w500),
                             ),
                           )

@@ -55,10 +55,10 @@ class RegisterCompleteScreen extends StatelessWidget {
                         Padding(
                           padding: const EdgeInsets.only(left: 8.0),
                           child: Text(
-                            "Artisan",
+                            "Client",
                             style: GoogleFonts.quicksand(
                                 fontSize: 34,
-                                color: ColorX.whiteX,
+                                color: ColorX.buttonColor,
                                 fontWeight: FontWeight.w500),
                           ),
                         )

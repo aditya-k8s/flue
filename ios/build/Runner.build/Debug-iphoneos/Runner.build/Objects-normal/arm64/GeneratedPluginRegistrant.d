@@ -22,29 +22,6 @@ dependencies: \
   /Users/leo-arbind/Projects/allohuggy/build/ios/Debug-iphoneos/flutter_localization/flutter_localization.framework/Modules/module.modulemap \
   /Users/leo-arbind/Projects/allohuggy/build/ios/Debug-iphoneos/flutter_localization/flutter_localization.framework/Headers/flutter_localization-Swift.h \
   /Users/leo-arbind/Projects/allohuggy/build/ios/Debug-iphoneos/flutter_localization/flutter_localization.framework/Headers/flutter_localization-umbrella.h \
-  /Users/leo-arbind/Projects/allohuggy/build/ios/Debug-iphoneos/geocoding_ios/geocoding_ios.framework/Headers/GeocodingPlugin.h \
-  /Users/leo-arbind/Projects/allohuggy/build/ios/Debug-iphoneos/geocoding_ios/geocoding_ios.framework/Modules/module.modulemap \
-  /Users/leo-arbind/Projects/allohuggy/build/ios/Debug-iphoneos/geocoding_ios/geocoding_ios.framework/Headers/GeocodingHandler.h \
-  /Users/leo-arbind/Projects/allohuggy/build/ios/Debug-iphoneos/geocoding_ios/geocoding_ios.framework/Headers/CLPlacemarkExtensions.h \
-  /Users/leo-arbind/Projects/allohuggy/build/ios/Debug-iphoneos/geocoding_ios/geocoding_ios.framework/Headers/geocoding_ios-umbrella.h \
-  /Users/leo-arbind/Projects/allohuggy/build/ios/Debug-iphoneos/geolocator_apple/geolocator_apple.framework/Headers/GeolocatorPlugin.h \
-  /Users/leo-arbind/Projects/allohuggy/build/ios/Debug-iphoneos/geolocator_apple/geolocator_apple.framework/Modules/module.modulemap \
-  /Users/leo-arbind/Projects/allohuggy/build/ios/Debug-iphoneos/geolocator_apple/geolocator_apple.framework/Headers/GeolocatorPlugin_Test.h \
-  /Users/leo-arbind/Projects/allohuggy/build/ios/Debug-iphoneos/geolocator_apple/geolocator_apple.framework/Headers/GeolocationHandler_Test.h \
-  /Users/leo-arbind/Projects/allohuggy/build/ios/Debug-iphoneos/geolocator_apple/geolocator_apple.framework/Headers/ServiceStatus.h \
-  /Users/leo-arbind/Projects/allohuggy/build/ios/Debug-iphoneos/geolocator_apple/geolocator_apple.framework/Headers/PermissionUtils.h \
-  /Users/leo-arbind/Projects/allohuggy/build/ios/Debug-iphoneos/geolocator_apple/geolocator_apple.framework/Headers/LocationMapper.h \
-  /Users/leo-arbind/Projects/allohuggy/build/ios/Debug-iphoneos/geolocator_apple/geolocator_apple.framework/Headers/LocationDistanceMapper.h \
-  /Users/leo-arbind/Projects/allohuggy/build/ios/Debug-iphoneos/geolocator_apple/geolocator_apple.framework/Headers/LocationAccuracyMapper.h \
-  /Users/leo-arbind/Projects/allohuggy/build/ios/Debug-iphoneos/geolocator_apple/geolocator_apple.framework/Headers/AuthorizationStatusMapper.h \
-  /Users/leo-arbind/Projects/allohuggy/build/ios/Debug-iphoneos/geolocator_apple/geolocator_apple.framework/Headers/ActivityTypeMapper.h \
-  /Users/leo-arbind/Projects/allohuggy/build/ios/Debug-iphoneos/geolocator_apple/geolocator_apple.framework/Headers/PositionStreamHandler.h \
-  /Users/leo-arbind/Projects/allohuggy/build/ios/Debug-iphoneos/geolocator_apple/geolocator_apple.framework/Headers/PermissionHandler.h \
-  /Users/leo-arbind/Projects/allohuggy/build/ios/Debug-iphoneos/geolocator_apple/geolocator_apple.framework/Headers/LocationServiceStreamHandler.h \
-  /Users/leo-arbind/Projects/allohuggy/build/ios/Debug-iphoneos/geolocator_apple/geolocator_apple.framework/Headers/LocationAccuracyHandler.h \
-  /Users/leo-arbind/Projects/allohuggy/build/ios/Debug-iphoneos/geolocator_apple/geolocator_apple.framework/Headers/GeolocationHandler.h \
-  /Users/leo-arbind/Projects/allohuggy/build/ios/Debug-iphoneos/geolocator_apple/geolocator_apple.framework/Headers/ErrorCodes.h \
-  /Users/leo-arbind/Projects/allohuggy/build/ios/Debug-iphoneos/geolocator_apple/geolocator_apple.framework/Headers/geolocator-umbrella.h \
   /Users/leo-arbind/Projects/allohuggy/build/ios/Debug-iphoneos/google_maps_flutter_ios/google_maps_flutter_ios.framework/Headers/FLTGoogleMapsPlugin.h \
   /Users/leo-arbind/Projects/allohuggy/build/ios/Debug-iphoneos/google_maps_flutter_ios/google_maps_flutter_ios.framework/Modules/module.modulemap \
   /Users/leo-arbind/Projects/allohuggy/ios/Pods/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Modules/module.modulemap \

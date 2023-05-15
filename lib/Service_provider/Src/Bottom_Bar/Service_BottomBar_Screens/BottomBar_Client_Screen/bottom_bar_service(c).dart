@@ -200,7 +200,7 @@ class _BottomServiceClientState extends State<BottomServiceClient> {
                                              Text("Sophie R. Stevens",style: GoogleFonts.poppins(fontSize: 16,fontWeight: FontWeight.w600,color: ColorX.blackX)),
                                              Text("(Plumber/Cleaner)",style: GoogleFonts.quicksand(fontSize: 12,fontWeight: FontWeight.w600,color: ColorX.blackX)),
                                             SizedBox(
-                                                width: 70.w,
+                                                width: 65.w,
                                                 child: Text("Lorem Ipsum is simply dummy text of the printing and typesetting industry",textAlign: TextAlign.justify,style: GoogleFonts.quicksand(fontSize: 12,fontWeight: FontWeight.w500,color: ColorX.blackX))),
 
                                           ],

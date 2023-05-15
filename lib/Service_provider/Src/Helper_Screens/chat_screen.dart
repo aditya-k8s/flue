@@ -31,13 +31,6 @@ class _ChatScreenState extends State<ChatScreen> {
 
   @override
   void initState(){
-    SchedulerBinding.instance!.addPostFrameCallback((_) {
-    controller.animateTo(
-        controller.position.minScrollExtent,
-        duration: const Duration(milliseconds: 1),
-        curve: Curves.fastOutSlowIn);
-  });
-
     super.initState();
   }
 
@@ -189,96 +182,96 @@ class ChatMessage {
   ChatMessage({@required this.messageContent, @required this.messageType});
 }
 
-class ChatUI extends StatefulWidget {
-  createState() => _ChatUIState();
-}
-
-class _ChatUIState extends State<ChatUI> {
-  final List<String> _messages = [];
-  Timer? _timer;
-  final ScrollController _scrollController = ScrollController();
-  bool _needsScroll = false;
-  static const List<String> _possibleMessages = [
-    "Hi!",
-    "Hello.",
-    "Bye forever!",
-    "I'd really like to talk to you.",
-    "Have you heard the news?",
-    "I see you're using our website. Can I annoy you with a chat bubble?",
-    "I miss you.",
-    "I never want to hear from you again.",
-    "You up?",
-    ":-)",
-    "ok",
-  ];
-  final Random _random = Random();
-
-  @override
-  reassemble() {
-    super.reassemble();
-    _timer?.cancel();
-    _startTimer();
-  }
-
-  @override
-  initState() {
-    super.initState();
-    _startTimer();
-  }
-
-  @override
-  dispose() {
-    _timer?.cancel();
-    super.dispose();
-  }
-
-  _addMessage() {
-    _messages.add(_possibleMessages[_random.nextInt(_possibleMessages.length)]);
-  }
-
-  _startTimer() {
-    _timer = Timer.periodic(const Duration(seconds: 2), (_) {
-      setState(() {
-        _addMessage();
-        _needsScroll = true;
-      });
-    });
-  }
-
-  _scrollToEnd() async {
-    if (_needsScroll) {
-      _needsScroll = false;
-      _scrollController.animateTo(_scrollController.position.maxScrollExtent,
-          duration: const Duration(milliseconds: 200), curve: Curves.easeInOut);
-    }
-  }
-
-  build(BuildContext context) {
-    WidgetsBinding.instance.addPostFrameCallback((_) => _scrollToEnd());
-    return ListView(
-      controller: _scrollController,
-      children: _messages.map((msg) => ChatBubble(msg)).toList(),
-    );
-  }
-}
-
-class ChatBubble extends StatelessWidget {
-  final String? text;
-
-  const ChatBubble(this.text, {Key? key}) : super(key: key);
-
-  @override
-  build(_) {
-    return Align(
-      alignment: Alignment.centerRight,
-      child: Container(
-        padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 10),
-        width: 200,
-        decoration: BoxDecoration(
-            color: Colors.grey[300], borderRadius: BorderRadius.circular(8.0)),
-        margin: const EdgeInsets.only(bottom: 10, right: 10),
-        child: Text(text!),
-      ),
-    );
-  }
-}
+// class ChatUI extends StatefulWidget {
+//   createState() => _ChatUIState();
+// }
+//
+// class _ChatUIState extends State<ChatUI> {
+//   final List<String> _messages = [];
+//   Timer? _timer;
+//   final ScrollController _scrollController = ScrollController();
+//   bool _needsScroll = false;
+//   static const List<String> _possibleMessages = [
+//     "Hi!",
+//     "Hello.",
+//     "Bye forever!",
+//     "I'd really like to talk to you.",
+//     "Have you heard the news?",
+//     "I see you're using our website. Can I annoy you with a chat bubble?",
+//     "I miss you.",
+//     "I never want to hear from you again.",
+//     "You up?",
+//     ":-)",
+//     "ok",
+//   ];
+//   final Random _random = Random();
+//
+//   @override
+//   reassemble() {
+//     super.reassemble();
+//     _timer?.cancel();
+//     _startTimer();
+//   }
+//
+//   @override
+//   initState() {
+//     super.initState();
+//     _startTimer();
+//   }
+//
+//   @override
+//   dispose() {
+//     _timer?.cancel();
+//     super.dispose();
+//   }
+//
+//   _addMessage() {
+//     _messages.add(_possibleMessages[_random.nextInt(_possibleMessages.length)]);
+//   }
+//
+//   _startTimer() {
+//     _timer = Timer.periodic(const Duration(seconds: 2), (_) {
+//       setState(() {
+//         _addMessage();
+//         _needsScroll = true;
+//       });
+//     });
+//   }
+//
+//   _scrollToEnd() async {
+//     if (_needsScroll) {
+//       _needsScroll = false;
+//       _scrollController.animateTo(_scrollController.position.maxScrollExtent,
+//           duration: const Duration(milliseconds: 200), curve: Curves.easeInOut);
+//     }
+//   }
+//
+//   build(BuildContext context) {
+//     WidgetsBinding.instance.addPostFrameCallback((_) => _scrollToEnd());
+//     return ListView(
+//       controller: _scrollController,
+//       children: _messages.map((msg) => ChatBubble(msg)).toList(),
+//     );
+//   }
+// }
+//
+// class ChatBubble extends StatelessWidget {
+//   final String? text;
+//
+//   const ChatBubble(this.text, {Key? key}) : super(key: key);
+//
+//   @override
+//   build(_) {
+//     return Align(
+//       alignment: Alignment.centerRight,
+//       child: Container(
+//         padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 10),
+//         width: 200,
+//         decoration: BoxDecoration(
+//             color: Colors.grey[300], borderRadius: BorderRadius.circular(8.0)),
+//         margin: const EdgeInsets.only(bottom: 10, right: 10),
+//         child: Text(text!),
+//       ),
+//     );
+//   }
+// }

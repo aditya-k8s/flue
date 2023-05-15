@@ -5,19 +5,19 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_google_places/flutter_google_places.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:geolocator/geolocator.dart';
 import 'package:go_router/go_router.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:location/location.dart';
 import 'package:sizer/sizer.dart';
-import 'package:google_maps_webservice/places.dart'
-    show
-    Component,
-    GoogleMapsPlaces,
-    PlacesAutocompleteResponse,
-    PlacesDetailsResponse,
-    Prediction;
-import 'package:google_api_headers/google_api_headers.dart';
+// import 'package:google_maps_webservice/places.dart'
+//     show
+//     Component,
+//     GoogleMapsPlaces,
+//     PlacesAutocompleteResponse,
+//     PlacesDetailsResponse,
+//     Prediction;
+// import 'package:google_api_headers/google_api_headers.dart';
 
 import '../../../Map_Bording/map_screen.dart';
 
@@ -145,11 +145,6 @@ class _HomePageClientState extends State<HomePageClient> {
     });
   }
 
-  // clearTextField(){
-  //   setState(() {
-  //     _searchController.text.isEmpty?_placesList1.clear():Container();
-  //   });
-  // }
 
 
   @override
@@ -161,10 +156,14 @@ class _HomePageClientState extends State<HomePageClient> {
           children: [
             Stack(
               children: [
-                SvgPicture.asset(
-                  'image/Vector (2).svg',
-                  fit: BoxFit.fill,
+                SizedBox(
+                  height: 23.h,
                   width: 100.w,
+                  child: SvgPicture.asset(
+                    'image/Vector (2).svg',
+                    fit: BoxFit.cover,
+                    width: 100.w,
+                  ),
                 ),
                 Positioned(
                     top: 5.h,
@@ -184,10 +183,7 @@ class _HomePageClientState extends State<HomePageClient> {
                                 Row(
                                   children: [
                                     Text('Find a Craftsman',
-                                        style: TextStyle(
-                                            fontSize: 20.sp,
-                                            color: ColorX.whiteX,
-                                            fontWeight: FontWeight.w800)),
+                                        style: GoogleFonts.poppins(fontWeight: FontWeight.w600,fontSize: 24,color: ColorX.whiteX)),
                                   ],
                                 ),
                                 Padding(
@@ -221,18 +217,12 @@ class _HomePageClientState extends State<HomePageClient> {
                             ),
                           ),
                           Text('Near you',
-                              style: TextStyle(
-                                  fontSize: 20.sp,
-                                  color: ColorX.buttonColor,
-                                  fontWeight: FontWeight.w800)),
+                              style: GoogleFonts.poppins(fontWeight: FontWeight.w600,fontSize: 24,color: ColorX.buttonColor)),
                           SizedBox(
                             height: 1.h,
                           ),
                           Text('Choose the type of services',
-                              style: TextStyle(
-                                  fontSize: 12.sp,
-                                  color: ColorX.whiteX,
-                                  fontWeight: FontWeight.w500))
+                              style: GoogleFonts.quicksand(fontWeight: FontWeight.w500,fontSize: 16,color: ColorX.whiteX))
                         ],
                       ),
                     )),
@@ -261,7 +251,7 @@ class _HomePageClientState extends State<HomePageClient> {
                                 ),
                                 child: Image.asset('image/Rectangle 1913.png'),
                               ),
-                              Center(child: Text('Painter',style: TextStyle(color: ColorX.blackX,fontWeight: FontWeight.w500,fontSize: 10.sp),))
+                              Center(child: Text('Painter',style: GoogleFonts.quicksand(fontWeight: FontWeight.w500,fontSize: 12,color: ColorX.blackX)))
                             ],
                           );
                         }))),
@@ -290,13 +280,10 @@ class _HomePageClientState extends State<HomePageClient> {
                          enabled: false,
                           prefixIcon: Icon(Icons.location_on,color: ColorX.underLineColor,),
                           hintText: 'Place of repair',
-                          hintStyle: TextStyle(color: ColorX.underLineColor,fontWeight: FontWeight.bold,fontSize: 12.sp),
+                          hintStyle: GoogleFonts.poppins(fontWeight: FontWeight.w600,fontSize: 14,color: ColorX.underLineColor),
                           border: InputBorder.none,
                           ),
-                      style: TextStyle(
-                          color: ColorX.blackX,
-                          fontSize: 14,
-                          fontFamily: "Roboto"),
+                      style: GoogleFonts.quicksand(fontWeight: FontWeight.w600,fontSize: 12,color: ColorX.blackX),
                     ),
                   ),
                 ),
@@ -336,8 +323,7 @@ class _HomePageClientState extends State<HomePageClient> {
       ),
     );
   }
-  late PersistentBottomSheetController _controllers; // <------ Instance variable
-  final _scaffoldKey = GlobalKey<ScaffoldState>();
+
   bottomSheetSearchBar()async{
     showModalBottomSheet(
         backgroundColor: ColorX.scaffoldBackGroundX,
@@ -373,7 +359,7 @@ class _HomePageClientState extends State<HomePageClient> {
                   ),
                   GestureDetector(
                     onTap: (){
-                      print("cancle");
+                      print("cancel");
                       Navigator.of(context).pop();
                     },
                     child: Row(
@@ -421,10 +407,7 @@ class _HomePageClientState extends State<HomePageClient> {
                             hintStyle: TextStyle(color: ColorX.underLineColor,fontWeight: FontWeight.bold,fontSize: 12.sp),
                             border: InputBorder.none,
                           ),
-                          style: TextStyle(
-                              color: ColorX.blackX,
-                              fontSize: 14,
-                              fontFamily: "Roboto"),
+                          style: GoogleFonts.quicksand(fontWeight: FontWeight.w500,fontSize: 12,color: ColorX.blackX),
                         ),
                       ),
                     ),
@@ -434,7 +417,7 @@ class _HomePageClientState extends State<HomePageClient> {
                   ),
                   Padding(
                     padding:  EdgeInsets.only(left: 3.h,right: 5.w),
-                    child: Text('Search the place of repair and discover the craftsmen nearby.',textAlign: TextAlign.justify,style: TextStyle(color: ColorX.blackX,fontSize: 12.sp,fontWeight: FontWeight.w400),),
+                    child: Text('Search the place of repair and discover the craftsmen nearby.',textAlign: TextAlign.justify,style: GoogleFonts.quicksand(fontWeight: FontWeight.w500,fontSize: 14,color: ColorX.blackX)),
                   ),
                   SizedBox(
                     height: 1.h,
@@ -451,7 +434,7 @@ class _HomePageClientState extends State<HomePageClient> {
                         SizedBox(
                           width: 2.w,
                         ),
-                        Text('My current location',style: TextStyle(color: ColorX.blackX,fontSize: 12.sp,fontWeight: FontWeight.w400),)
+                        Text('My current location',style: GoogleFonts.quicksand(fontWeight: FontWeight.w500,fontSize: 16,color: ColorX.blackX))
 
                       ],
                     ),
@@ -465,7 +448,7 @@ class _HomePageClientState extends State<HomePageClient> {
                   ),
                   Padding(
                     padding:  EdgeInsets.only(left: 5.w),
-                    child: Text('Popular $_heading',style: TextStyle(color: ColorX.blackX,fontSize: 12.sp,fontWeight: FontWeight.w400),),
+                    child: Text('Popular $_heading',style: GoogleFonts.poppins(fontWeight: FontWeight.w400,fontSize: 13,color: ColorX.blackX)),
                   ),
                   SizedBox(
                     height: 1.h,
@@ -474,7 +457,7 @@ class _HomePageClientState extends State<HomePageClient> {
                       onTap: (){
                         GoRouter.of(context).pushNamed(MyAppRouteConstants.searchServiceClient);
                       },
-                      child: Container(
+                      child: SizedBox(
                         height: 40.h,
                         width: 100.w,
                         child: ListView.builder(
@@ -489,7 +472,7 @@ class _HomePageClientState extends State<HomePageClient> {
                                     SizedBox(
                                       width: 2.w,
                                     ),
-                                    Text(_placesList1[index].toString(),style: TextStyle(color: ColorX.blackX,fontSize: 12.sp,fontWeight: FontWeight.w500))
+                                    Text(_placesList1[index].toString(),style: GoogleFonts.quicksand(fontWeight: FontWeight.w500,fontSize: 17,color: ColorX.blackX))
                                   ],
                                 ),
                               );

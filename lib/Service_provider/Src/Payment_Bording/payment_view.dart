@@ -68,10 +68,14 @@ class _PaymentViewState extends State<PaymentView>
         children: [
           Stack(
             children: [
-              SvgPicture.asset(
-                'image/Vector (2).svg',
-                fit: BoxFit.fitWidth,
+              SizedBox(
+                height: 23.h,
                 width: 100.w,
+                child: SvgPicture.asset(
+                  'image/Vector (2).svg',
+                  fit: BoxFit.cover,
+                  width: 100.w,
+                ),
               ),
               Positioned(
                   top: 4.h,
@@ -105,7 +109,7 @@ class _PaymentViewState extends State<PaymentView>
                             "Client",
                             style: GoogleFonts.quicksand(
                                 fontSize: 34,
-                                color: ColorX.whiteX,
+                                color: ColorX.buttonColor,
                                 fontWeight: FontWeight.w500),
                           ),
                         )
