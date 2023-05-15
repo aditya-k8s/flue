@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:sizer/sizer.dart';
 
 import '../../Utilities/colors.dart';
@@ -65,8 +66,8 @@ class _BankDetailsState extends State<BankDetails> {
                           ],
                         ),
                         Text('Bank Details',
-                            style: TextStyle(
-                                fontSize: 20.sp,
+                            style: GoogleFonts.poppins(
+                                fontSize: 24,
                                 color: ColorX.whiteX,
                                 fontWeight: FontWeight.w600)),
                       ],
@@ -77,8 +78,8 @@ class _BankDetailsState extends State<BankDetails> {
           Padding(
             padding:  EdgeInsets.only(left: 4.w),
             child: Text('Your Cards',
-                style: TextStyle(
-                    fontSize: 20.sp,
+                style: GoogleFonts.poppins(
+                    fontSize: 21,
                     color: ColorX.blackX,
                     fontWeight: FontWeight.w600)),
           ),
@@ -86,36 +87,36 @@ class _BankDetailsState extends State<BankDetails> {
             height: 2.h,
           ),
           SizedBox(
-            height: 50.h,
+            height: 52.h,
             width: 100.w,
             child: Padding(
               padding:  EdgeInsets.only(left: 4.w,right: 4.w),
               child: SingleChildScrollView(
                 child: Column(
-                children: List.generate(100, (index) {
-                  return Column(
-                    children: [
-                      Container(
-                        color: ColorX.whiteX,
-                        child: Padding(
-                          padding: const EdgeInsets.all(15.0),
-                          child: Row(
-                            children: [
-                              Image.asset('image/Ask Mastercard Logo.png'),
-                              SizedBox(
-                                width: 2.w,
-                              ),
-                              Text("0171642266666666".replaceRange(0, 12,"**** **** ****"),style: TextStyle(color: ColorX.blackX,fontSize: 12.sp,fontWeight: FontWeight.w800),)
-                            ],
+                  children: List.generate(100, (index) {
+                    return Column(
+                      children: [
+                        Container(
+                          color: ColorX.whiteX,
+                          child: Padding(
+                            padding: const EdgeInsets.all(15.0),
+                            child: Row(
+                              children: [
+                                Image.asset('image/Ask Mastercard Logo.png'),
+                                SizedBox(
+                                  width: 2.w,
+                                ),
+                                Text("0171642266666666".replaceRange(0, 12,"**** **** ****"),style: GoogleFonts.quicksand(color: ColorX.blackX,fontSize: 17,fontWeight: FontWeight.w600),)
+                              ],
+                            ),
                           ),
                         ),
-                      ),
-                      SizedBox(
-                        height: 1.h,
-                      )
-                    ],
-                  );
-                }),
+                        SizedBox(
+                          height: 1.h,
+                        )
+                      ],
+                    );
+                  }),
                 ),
               ),
             ),
@@ -127,8 +128,8 @@ class _BankDetailsState extends State<BankDetails> {
             padding:  EdgeInsets.only(left: 5.w,right: 5.w),
             child: Container(
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(8.w),
-                color: ColorX.buttonColor
+                  borderRadius: BorderRadius.circular(8.w),
+                  color: ColorX.buttonColor
               ),
               child: Padding(
                 padding: const EdgeInsets.all(20.0),
@@ -136,16 +137,14 @@ class _BankDetailsState extends State<BankDetails> {
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     Icon(Icons.cancel,color: ColorX.textColor,),
-                    Text('Add Another Bank Account',style: TextStyle(fontWeight: FontWeight.w700,fontSize: 14.sp,color: ColorX.textColor),)
+                    Text('Add Another Bank Account',style: GoogleFonts.quicksand(fontWeight: FontWeight.w700,fontSize: 14,color: ColorX.textColor),)
                   ],
                 ),
               ),
             ),
           )
-
         ],
       ),
     );
   }
-
 }

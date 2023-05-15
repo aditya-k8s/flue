@@ -3,6 +3,7 @@ import 'package:allohuggy/Service_provider/Utilities/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:sizer/sizer.dart';
 
 class BottomWalletHistory extends StatefulWidget {
@@ -74,15 +75,15 @@ class _BottomWalletHistoryState extends State<BottomWalletHistory>
                                 child: Padding(
                                   padding: const EdgeInsets.all(8.0),
                                   child: Icon(
-                                    Icons.notification_important,
+                                    Icons.notifications,
                                     color: ColorX.whiteX,
                                   ),
                                 ))
                           ],
                         ),
                         Text('Wallet & History',
-                            style: TextStyle(
-                                fontSize: 20.sp,
+                            style: GoogleFonts.poppins(
+                                fontSize: 24,
                                 color: ColorX.whiteX,
                                 fontWeight: FontWeight.w600))
                       ],
@@ -104,23 +105,23 @@ class _BottomWalletHistoryState extends State<BottomWalletHistory>
                   child: TabBar(
                       indicator: selectIndex == 0
                           ? BoxDecoration(
-                              color: ColorX.buttonColor,
-                              borderRadius: BorderRadius.only(
-                                topLeft: Radius.circular(8.w),
-                                bottomLeft: Radius.circular(8.w),
-                              ),
-                            )
+                        color: ColorX.buttonColor,
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(8.w),
+                          bottomLeft: Radius.circular(8.w),
+                        ),
+                      )
                           : BoxDecoration(
-                              color: ColorX.buttonColor,
-                              borderRadius: BorderRadius.only(
-                                topRight: Radius.circular(8.w),
-                                bottomRight: Radius.circular(8.w),
-                              ),
-                            ),
+                        color: ColorX.buttonColor,
+                        borderRadius: BorderRadius.only(
+                          topRight: Radius.circular(8.w),
+                          bottomRight: Radius.circular(8.w),
+                        ),
+                      ),
                       controller: tabController,
                       tabs: [
                         Padding(
-                          padding: const EdgeInsets.all(14.0),
+                          padding: const EdgeInsets.only(left: 5.0, top: 10, bottom: 10),
                           child: Row(
                             children: [
                               Icon(
@@ -128,16 +129,16 @@ class _BottomWalletHistoryState extends State<BottomWalletHistory>
                                 color: ColorX.textColor,
                               ),
                               SizedBox(width: 1.w),
-                              Text('Transaction',
-                                  style: TextStyle(
+                              Text('TRANSACTION',
+                                  style: GoogleFonts.quicksand(
                                       color: ColorX.textColor,
                                       fontWeight: FontWeight.w600,
-                                      fontSize: 10.sp))
+                                      fontSize: 12))
                             ],
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsets.all(14.0),
+                          padding: const EdgeInsets.all(12.0),
                           child: Row(
                             children: [
                               Icon(
@@ -147,11 +148,11 @@ class _BottomWalletHistoryState extends State<BottomWalletHistory>
                               SizedBox(
                                 width: 1.w,
                               ),
-                              Text('History',
-                                  style: TextStyle(
+                              Text('HISTORY',
+                                  style: GoogleFonts.quicksand(
                                       color: ColorX.textColor,
                                       fontWeight: FontWeight.w600,
-                                      fontSize: 10.sp))
+                                      fontSize: 12))
                             ],
                           ),
                         )
@@ -186,10 +187,10 @@ class _BottomWalletHistoryState extends State<BottomWalletHistory>
               Row(
                 children: [
                   Text('Your Transactions',
-                      style: TextStyle(
-                          fontSize: 14.sp,
+                      style: GoogleFonts.poppins(
                           color: ColorX.blackX,
-                          fontWeight: FontWeight.w700)),
+                          fontWeight: FontWeight.w600,
+                          fontSize: 14)),
                 ],
               ),
               GestureDetector(
@@ -200,12 +201,12 @@ class _BottomWalletHistoryState extends State<BottomWalletHistory>
                 child: Row(
                   children: [
                     Text('Your Cards',
-                        style: TextStyle(
-                            decoration: TextDecoration.underline,
-                            fontSize: 10.sp,
+                        style: GoogleFonts.poppins(
                             color: ColorX.blackX,
-                            fontWeight: FontWeight.w700)),
-                    const Icon(Icons.arrow_forward_ios)
+                            decoration: TextDecoration.underline,
+                            fontWeight: FontWeight.w600,
+                            fontSize: 14)),
+                    const Icon(Icons.arrow_forward_ios, size: 16, )
                   ],
                 ),
               )
@@ -214,69 +215,77 @@ class _BottomWalletHistoryState extends State<BottomWalletHistory>
           SizedBox(
             height: 1.h,
           ),
-         Expanded(
-           child: SingleChildScrollView(
-             child: Column(
-               children: List.generate(10, (index) {
-                 return Column(
-                   children: [
-                     Container(
-                       decoration: BoxDecoration(
-                           color: Colors.white,
-                           borderRadius: BorderRadius.circular(3.w)),
-                       child: Padding(
-                         padding: const EdgeInsets.all(8.0),
-                         child: SingleChildScrollView(
-                           child: Column(
-                             crossAxisAlignment: CrossAxisAlignment.start,
-                             children: [
-                               Row(
-                                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                                 children: [
-                                   CircleAvatar(
-                                     backgroundColor: ColorX.underLineColor,
-                                     radius: 30,
-                                   ),
-                                   Column(
-                                     crossAxisAlignment: CrossAxisAlignment.start,
-                                     children: [
-                                       Text('Sophie R. Stevens',
-                                           style: TextStyle(
-                                               fontSize: 14.sp,
-                                               color: ColorX.blackX,
-                                               fontWeight: FontWeight.w600)),
-                                       Text('Today, 2023 at 10:02am',
-                                           style: TextStyle(
-                                               fontSize: 12.sp,
-                                               color: ColorX.blackX,
-                                               fontWeight: FontWeight.w200))
-                                     ],
-                                   ),
-                                   Row(
-                                     children: [
-                                       Text('+\$100',
-                                           style: TextStyle(
-                                               fontSize: 12.sp,
-                                               color: Color(0xFF008000),
-                                               fontWeight: FontWeight.w400))
-                                     ],
-                                   )
-                                 ],
-                               )
-                             ],
-                           ),
-                         ),
-                       ),
-                     ),
-                     SizedBox(
-                       height: 1.h,
-                     )
-                   ],
-                 );
-               }),
-             ),
-           ),
-         ),
+          Expanded(
+            child: SingleChildScrollView(
+              child: Column(
+                children: List.generate(10, (index) {
+                  return Column(
+                    children: [
+                      Container(
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(3.w)),
+                        child: Padding(
+                          padding: const EdgeInsets.only(top: 15.0, bottom: 15),
+                          child: SingleChildScrollView(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                  children: [
+                                    Row(
+                                      children: [
+                                        Container(
+                                          decoration: BoxDecoration(
+                                              shape: BoxShape.circle,
+                                              color: ColorX.underLineColor
+                                          ),
+                                          width: 40,
+                                          height: 40,
+                                          child: Center(child: Text("S",textAlign: TextAlign.center, style: GoogleFonts.poppins(fontSize: 20, fontWeight: FontWeight.w600, color: ColorX.whiteX),)),
+
+                                        ),
+                                        SizedBox(width: 10,),
+                                        Column(
+                                          crossAxisAlignment: CrossAxisAlignment.start,
+                                          children: [
+                                            Text('Sophie R. Stevens',
+                                                style: GoogleFonts.poppins(
+                                                    fontSize: 15,
+                                                    color: ColorX.blackX,
+                                                    fontWeight: FontWeight.w600)),
+                                            Text('Today, 2023 at 10:02am',
+                                                style: GoogleFonts.quicksand(
+                                                    fontSize: 14,
+                                                    color: ColorX.grayX,
+                                                    fontWeight: FontWeight.w600))
+                                          ],
+                                        ),
+                                      ],
+                                    ),
+
+                                    Text('+\$100',
+                                        style: GoogleFonts.poppins(
+                                            fontSize: 14,
+                                            color: Color(0xFF008000),
+                                            fontWeight: FontWeight.w600))
+                                  ],
+                                )
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 1.h,
+                      )
+                    ],
+                  );
+                }),
+              ),
+            ),
+          ),
 
         ],
       ),
@@ -290,136 +299,136 @@ class _BottomWalletHistoryState extends State<BottomWalletHistory>
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text('Your History',
-              style: TextStyle(
-                  fontSize: 14.sp,
+              style: GoogleFonts.poppins(
+                  fontSize: 14,
                   color: ColorX.blackX,
                   fontWeight: FontWeight.w600)),
           SizedBox(
             height: 1.h,
           ),
           Expanded(
-            child: SingleChildScrollView(
-              child: Column(
-                children: List.generate(10, (index) {
-                  return Column(
-                    children: [
-                      Container(
+              child: SingleChildScrollView(
+                child: Column(
+                  children: List.generate(10, (index) {
+                    return Column(
+                      children: [
+                        Container(
 
-                        width: 100.w,
-                        decoration: BoxDecoration(
-                            color: ColorX.whiteX,
-                            borderRadius: BorderRadius.circular(4.w)
-                        ),
-                        child: Padding(
-                          padding:  EdgeInsets.only(left: 5.w,top: 2.h),
-                          child: Column(
-                            children: [
-                              Row(
-                                children: [
-                                  CircleAvatar(
-                                    radius: 5,
-                                    backgroundColor: ColorX.textColor,
-                                  ),
-                                  SizedBox(
-                                    width: 3.w,
-                                  ),
-                                  Text('Date : 23April,2023',
-                                      style: TextStyle(
-                                          fontSize: 10.sp,
-                                          color: ColorX.blackX,
-                                          fontWeight: FontWeight.w600))
-                                ],
-                              ),
-                              SizedBox(
-                                height: 1.h,
-                              ),
-                              Row(
-                                children: [
-                                  CircleAvatar(
-                                    radius: 30,
-                                    backgroundColor: ColorX.textColor,
-                                  ),
-
-                                  Padding(
-                                    padding:  EdgeInsets.only(left: 4.w),
-                                    child: Column(
-                                      crossAxisAlignment: CrossAxisAlignment.start,
-                                      children: [
-                                        Text('Sophie R. Stevens',
-                                            style: TextStyle(
-                                                fontSize: 14.sp,
-                                                color: ColorX.blackX,
-                                                fontWeight: FontWeight.w600)),
-                                        Text('Service : Cleaning & Plumbing',
-                                            style: TextStyle(
-                                                fontSize: 12.sp,
-                                                color: ColorX.blackX,
-                                                fontWeight: FontWeight.w400)),
-                                        Text('Status : Complete',
-                                            style: TextStyle(
-                                                fontSize: 12.sp,
-                                                color: ColorX.blackX,
-                                                fontWeight: FontWeight.w400)),
-                                      ],
-                                    ),
-                                  )
-                                ],
-                              ),
-                              SizedBox(
-                                height: 1.h,
-                              ),
-                              Divider(),
-                              Padding(
-                                padding:  EdgeInsets.only(right: 5.w),
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          width: 100.w,
+                          decoration: BoxDecoration(
+                              color: ColorX.whiteX,
+                              borderRadius: BorderRadius.circular(4.w)
+                          ),
+                          child: Padding(
+                            padding:  EdgeInsets.only(left: 5.w,top: 2.h),
+                            child: Column(
+                              children: [
+                                Row(
                                   children: [
-                                    Row(
-                                      children: [
-                                        SvgPicture.asset('image/money-1.svg',height: 4.h),
-                                        SizedBox(
-                                          width: 2.w,
-                                        ),
-                                        Text('\$75.00',
-                                            style: TextStyle(
-                                                fontSize: 12.sp,
-                                                color: ColorX.textColor,
-                                                fontWeight: FontWeight.w400)),
-                                      ],
+                                    CircleAvatar(
+                                      radius: 5,
+                                      backgroundColor: ColorX.textColor,
                                     ),
-
-                                    GestureDetector(
-                                      onTap: (){
-                                        print("history");
-                                        GoRouter.of(context).pushNamed(MyAppRouteConstants.historyDetails);
-                                      },
-                                      child: Row(
-                                        children: [
-                                          Text('View Full Details',
-                                              style: TextStyle(
-                                                  fontSize: 12.sp,
-                                                  color: ColorX.blackX,
-                                                  fontWeight: FontWeight.w400)),
-                                          Icon(Icons.arrow_forward_ios,size: 12.sp,color: ColorX.blackX,)
-                                        ],
-                                      ),
+                                    SizedBox(
+                                      width: 1.w,
                                     ),
+                                    Text('Date : 23April,2023',
+                                        style: GoogleFonts.quicksand(
+                                            fontSize: 12,
+                                            color: ColorX.blackX,
+                                            fontWeight: FontWeight.w600))
                                   ],
                                 ),
-                              )
+                                SizedBox(
+                                  height: 1.h,
+                                ),
+                                Row(
+                                  children: [
+                                    CircleAvatar(
+                                      radius: 30,
+                                      backgroundColor: ColorX.textColor,
+                                    ),
 
-                            ],
+                                    Padding(
+                                      padding:  EdgeInsets.only(left: 4.w),
+                                      child: Column(
+                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                        children: [
+                                          Text('Sophie R. Stevens',
+                                              style: GoogleFonts.poppins(
+                                                  fontSize: 16,
+                                                  color: ColorX.blackX,
+                                                  fontWeight: FontWeight.w600)),
+                                          Text('Service : Cleaning & Plumbing',
+                                              style: GoogleFonts.quicksand(
+                                                  fontSize: 12,
+                                                  color: ColorX.blackX,
+                                                  fontWeight: FontWeight.w600)),
+                                          Text('Status : Complete',
+                                              style: GoogleFonts.quicksand(
+                                                  fontSize: 12,
+                                                  color: ColorX.blackX,
+                                                  fontWeight: FontWeight.w600)),
+                                        ],
+                                      ),
+                                    )
+                                  ],
+                                ),
+                                SizedBox(
+                                  height: 1.h,
+                                ),
+                                Divider(),
+                                Padding(
+                                  padding:  EdgeInsets.only(right: 5.w),
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Row(
+                                        children: [
+                                          SvgPicture.asset('image/money-1.svg',height: 4.h),
+                                          SizedBox(
+                                            width: 2.w,
+                                          ),
+                                          Text('\$75.00',
+                                              style: GoogleFonts.poppins(
+                                                  fontSize: 14,
+                                                  color: ColorX.textColor,
+                                                  fontWeight: FontWeight.w400)),
+                                        ],
+                                      ),
+
+                                      GestureDetector(
+                                        onTap: (){
+                                          print("history");
+                                          GoRouter.of(context).pushNamed(MyAppRouteConstants.historyDetails);
+                                        },
+                                        child: Row(
+                                          children: [
+                                            Text('View Full Details',
+                                                style: GoogleFonts.quicksand(
+                                                    fontSize: 14,
+                                                    color: ColorX.blackX,
+                                                    fontWeight: FontWeight.w600)),
+                                            Icon(Icons.arrow_forward_ios,size: 15,color: ColorX.blackX,)
+                                          ],
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                )
+
+                              ],
+                            ),
                           ),
                         ),
-                      ),
-                      SizedBox(
-                        height: 1.h,
-                      )
-                    ],
-                  );
-                }),
-              ),
-            )
+                        SizedBox(
+                          height: 1.h,
+                        )
+                      ],
+                    );
+                  }),
+                ),
+              )
           )
         ],
       ),

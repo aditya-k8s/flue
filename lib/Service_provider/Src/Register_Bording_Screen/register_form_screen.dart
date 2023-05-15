@@ -639,7 +639,10 @@ class _RegisterFormState extends State<RegisterForm> {
                SizedBox(
                  height: 1.h,
                ),
-               Text("Already have an account?",style: _textStyle,),
+               GestureDetector(onTap: (){
+                 GoRouter.of(context).pushNamed(MyAppRouteConstants.loginScreen);
+               },
+                   child: Text("Already have an account?",style: _textStyle,)),
                SizedBox(
                  height: 5.h,
                ),

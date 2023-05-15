@@ -3,7 +3,11 @@ import 'package:allohuggy/Service_provider/Utilities/common_button.dart';
 import 'package:allohuggy/Service_provider/Utilities/shred_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:go_router/go_router.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:sizer/sizer.dart';
+
+import '../../Routes/routes.dart';
 
 class LoginScreen extends StatelessWidget {
   LoginScreen({Key? key}) : super(key: key);
@@ -25,7 +29,7 @@ class LoginScreen extends StatelessWidget {
                   width: 100.w,
                 ),
                 Positioned(
-                    top: 6.h,
+                    top: 4.h,
                     child: Padding(
                       padding: EdgeInsets.only(left: 3.w),
                       child: Column(
@@ -40,14 +44,18 @@ class LoginScreen extends StatelessWidget {
                                 size: 25.sp,
                                 color: ColorX.whiteX,
                               )),
+                          SizedBox(height: 0.5.h,),
                           Text(
-                            "Sign In",
-                            style: TextStyle(
-                                fontSize: 25.sp,
+                            "Login",
+                            style: GoogleFonts.poppins(
+                                fontSize: 32,
                                 color: ColorX.whiteX,
                                 fontWeight: FontWeight.w600),
                           ),
-                          Text('Lorem Ipsum is simply dummy text \nof the printing and typesetting industry.',textAlign: TextAlign.justify,style: TextStyle(color: ColorX.whiteX,fontSize: 12.sp,fontWeight: FontWeight.w500),)
+                          Text('Lorem Ipsum is simply dummy text \nof the printing and typesetting industry.',textAlign: TextAlign.justify,style: GoogleFonts.quicksand(
+                              fontSize: 16,
+                              color: ColorX.whiteX,
+                              fontWeight: FontWeight.w500),)
                         ],
                       ),
                     )),
@@ -58,7 +66,7 @@ class LoginScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Padding(
-                  padding: EdgeInsets.only(left: 2.w),
+                  padding: EdgeInsets.only(left: 4.w),
                   child: Text("Email or Phone Number", style: _textStyle),
                 ),
                 Padding(
@@ -75,7 +83,7 @@ class LoginScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Padding(
-                  padding: EdgeInsets.only(left: 2.w),
+                  padding: EdgeInsets.only(left: 4.w),
                   child: Text("Password", style: _textStyle),
                 ),
                 Padding(
@@ -93,7 +101,7 @@ class LoginScreen extends StatelessWidget {
               padding: EdgeInsets.only(left: 6.w, right: 6.w),
               child: CommonButton(
                 height: 7.h,
-                buttonText: 'Login',
+                buttonText: 'LOGIN',
               ),
             ),
             SizedBox(
@@ -176,7 +184,7 @@ class LoginScreen extends StatelessWidget {
                   width: 100.w,
                 ),
                 Positioned(
-                    top: 6.h,
+                    top: 4.h,
                     child: Padding(
                       padding: EdgeInsets.only(left: 3.w),
                       child: Column(
@@ -191,13 +199,27 @@ class LoginScreen extends StatelessWidget {
                                 size: 25.sp,
                                 color: ColorX.whiteX,
                               )),
-                          Text(
-                            "Registration\nArtisan",
-                            style: TextStyle(
-                                fontSize: 25.sp,
+
+                          SizedBox(height: 0.5.h,),
+
+                          Padding(
+                            padding: const EdgeInsets.only(left: 4.0),
+                            child: Text(
+                              "Login",
+                              style: GoogleFonts.poppins(
+                                  fontSize: 32,
+                                  color: ColorX.whiteX,
+                                  fontWeight: FontWeight.w600),
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 4.0),
+                            child: Text('Lorem Ipsum is simply dummy text \nof the printing and typesetting industry.',textAlign: TextAlign.justify,style: GoogleFonts.quicksand(
+                                fontSize: 16,
                                 color: ColorX.whiteX,
-                                fontWeight: FontWeight.w600),
+                                fontWeight: FontWeight.w500),),
                           )
+
                         ],
                       ),
                     )),
@@ -208,7 +230,7 @@ class LoginScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Padding(
-                  padding: EdgeInsets.only(left: 2.w),
+                  padding: EdgeInsets.only(left: 4.w),
                   child: Text("Email or Phone Number", style: _textStyle),
                 ),
                 Padding(
@@ -225,7 +247,7 @@ class LoginScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Padding(
-                  padding: EdgeInsets.only(left: 2.w),
+                  padding: EdgeInsets.only(left: 4.w),
                   child: Text("Password", style: _textStyle),
                 ),
                 Padding(
@@ -239,11 +261,16 @@ class LoginScreen extends StatelessWidget {
             SizedBox(
               height: 4.h,
             ),
-            Padding(
-              padding: EdgeInsets.only(left: 6.w, right: 6.w),
-              child: CommonButton(
-                height: 7.h,
-                buttonText: 'Login',
+            GestureDetector(
+              onTap: (){
+                GoRouter.of(context).pushNamed(MyAppRouteConstants.bottomBar);
+              },
+              child: Padding(
+                padding: EdgeInsets.only(left: 6.w, right: 6.w),
+                child: CommonButton(
+                  height: 7.h,
+                  buttonText: 'LOGIN',
+                ),
               ),
             ),
             SizedBox(
@@ -305,9 +332,14 @@ class LoginScreen extends StatelessWidget {
               height: 4.h,
             ),
             Center(
-              child: Text(
-                'Don’t have an account?',
-                style: _textStyle,
+              child: GestureDetector(
+                onTap: (){
+                  Navigator.of(context).pop();
+                },
+                child: Text(
+                  'Don’t have an account?',
+                  style: _textStyle,
+                ),
               ),
             ),
             SizedBox(
@@ -319,6 +351,6 @@ class LoginScreen extends StatelessWidget {
     );
   }
 
-  final TextStyle _textStyle = TextStyle(
-      color: ColorX.textColor, fontSize: 12.sp, fontWeight: FontWeight.w700);
+  final TextStyle _textStyle = GoogleFonts.poppins(
+      color: ColorX.textColor, fontSize: 14, fontWeight: FontWeight.w400);
 }

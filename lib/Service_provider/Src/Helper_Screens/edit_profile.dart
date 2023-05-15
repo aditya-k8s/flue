@@ -55,12 +55,15 @@ class _EditProfileState extends State<EditProfile> {
                                 size: 25.sp,
                                 color: ColorX.whiteX,
                               )),
-                          Text(
-                            "Edit Profile",
-                            style: GoogleFonts.poppins(
-                                fontSize: 24,
-                                color: ColorX.buttonColor,
-                                fontWeight: FontWeight.w600),
+                          Padding(
+                            padding: const EdgeInsets.all(4.0),
+                            child: Text(
+                              "Edit Profile",
+                              style: GoogleFonts.poppins(
+                                  fontSize: 24,
+                                  color: ColorX.whiteX,
+                                  fontWeight: FontWeight.w600),
+                            ),
                           )
                         ],
                       ),
@@ -305,7 +308,7 @@ class _EditProfileState extends State<EditProfile> {
                 padding:  EdgeInsets.only(left: 5.w,right: 5.w),
                 child: CommonButton(
                   height: 7.h,
-                  buttonText: 'Save Change',
+                  buttonText: 'SAVE CHANGE',
                 ),
               ),
             ),
@@ -342,12 +345,15 @@ class _EditProfileState extends State<EditProfile> {
                                 size: 25.sp,
                                 color: ColorX.whiteX,
                               )),
-                          Text(
-                            "Edit Profile",
-                            style: GoogleFonts.poppins(
-                                fontSize: 24,
-                                color: ColorX.buttonColor,
-                                fontWeight: FontWeight.w600),
+                          Padding(
+                            padding: const EdgeInsets.all(4.0),
+                            child: Text(
+                              "Edit Profile",
+                              style: GoogleFonts.poppins(
+                                  fontSize: 24,
+                                  color: ColorX.whiteX,
+                                  fontWeight: FontWeight.w600),
+                            ),
                           )
                         ],
                       ),
@@ -588,7 +594,7 @@ class _EditProfileState extends State<EditProfile> {
               padding:  EdgeInsets.only(left: 5.w,right: 5.w),
               child: CommonButton(
                 height: 7.h,
-                buttonText: 'Save Change',
+                buttonText: 'SAVE CHANGE',
               ),
             ),
             SizedBox(

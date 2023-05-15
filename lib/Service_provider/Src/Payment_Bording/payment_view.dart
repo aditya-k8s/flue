@@ -161,7 +161,7 @@ class _PaymentViewState extends State<PaymentView>
                       controller: tabController,
                       tabs: [
                         Padding(
-                          padding: const EdgeInsets.all(12.0),
+                          padding: const EdgeInsets.only(left: 6.0, top: 12, bottom: 12),
                           child: Row(
                             children:  [
                               Icon(Icons.credit_card,color: ColorX.textColor,),
@@ -171,7 +171,7 @@ class _PaymentViewState extends State<PaymentView>
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsets.all(12.0),
+                          padding: const EdgeInsets.only(left: 6.0, top: 12, bottom: 12),
                           child: Row(
                             children:  [
                               Icon(Icons.food_bank,color: ColorX.textColor,),
@@ -284,7 +284,7 @@ class _PaymentViewState extends State<PaymentView>
                       controller: tabController,
                       tabs: [
                         Padding(
-                          padding: const EdgeInsets.all(12.0),
+                          padding: const EdgeInsets.only(left: 6.0, top: 12, bottom: 12),
                           child: Row(
                             children:  [
                               Icon(Icons.credit_card,color: ColorX.textColor,),
@@ -294,7 +294,7 @@ class _PaymentViewState extends State<PaymentView>
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsets.all(12.0),
+                          padding: const EdgeInsets.only(left: 6.0, top: 12, bottom: 12),
                           child: Row(
                             children:  [
                                Icon(Icons.food_bank,color: ColorX.textColor,),

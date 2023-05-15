@@ -45,6 +45,7 @@ class _SupportScreenState extends State<SupportScreen> {
                               size: 25.sp,
                               color: ColorX.whiteX,
                             )),
+                        SizedBox(height: 5,),
                         Text(
                           "Support",
                           style: GoogleFonts.poppins(fontSize: 24,fontWeight: FontWeight.w600,color: ColorX.buttonColor),
@@ -272,6 +273,7 @@ class _SupportScreenState extends State<SupportScreen> {
                               size: 25.sp,
                               color: ColorX.whiteX,
                             )),
+                        SizedBox(height: 5,),
                         Text(
                           "Support",
                           style: TextStyle(
