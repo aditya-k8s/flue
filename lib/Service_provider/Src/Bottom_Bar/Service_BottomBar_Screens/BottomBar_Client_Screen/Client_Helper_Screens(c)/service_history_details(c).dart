@@ -2,7 +2,11 @@ import 'package:allohuggy/Service_provider/Utilities/colors.dart';
 import 'package:allohuggy/Service_provider/Utilities/common_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:go_router/go_router.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:sizer/sizer.dart';
+
+import '../../../../../Routes/routes.dart';
 
 class ServiceHistoryDetailClient extends StatefulWidget {
   const ServiceHistoryDetailClient({Key? key}) : super(key: key);
@@ -22,10 +26,14 @@ class _ServiceHistoryDetailClientState extends State<ServiceHistoryDetailClient>
         children: [
           Stack(
             children: [
-              SvgPicture.asset(
-                'image/Vector (2).svg',
-                fit: BoxFit.fill,
+              SizedBox(
+                height: 23.h,
                 width: 100.w,
+                child: SvgPicture.asset(
+                  'image/Vector (2).svg',
+                  fit: BoxFit.cover,
+                  width: 100.w,
+                ),
               ),
               Positioned(
                   top: 5.h,
@@ -49,18 +57,23 @@ class _ServiceHistoryDetailClientState extends State<ServiceHistoryDetailClient>
                                 child: Icon(Icons.arrow_back,
                                     color: ColorX.whiteX, size: 3.h),
                               ),
-                              Container(
-                                  decoration: BoxDecoration(
-                                      shape: BoxShape.circle,
-                                      border: Border.all(
-                                          color: ColorX.whiteX, width: 2)),
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(8.0),
-                                    child: Icon(
-                                      Icons.notification_important,
-                                      color: ColorX.whiteX,
-                                    ),
-                                  ))
+                              GestureDetector(
+                                onTap: (){
+                                  GoRouter.of(context).pushNamed(MyAppRouteConstants.notificationScreen);
+                                },
+                                child: Container(
+                                    decoration: BoxDecoration(
+                                        shape: BoxShape.circle,
+                                        border: Border.all(
+                                            color: ColorX.whiteX, width: 2)),
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(8.0),
+                                      child: Icon(
+                                        Icons.notification_important,
+                                        color: ColorX.whiteX,
+                                      ),
+                                    )),
+                              )
                             ],
                           ),
                         ),
@@ -68,10 +81,7 @@ class _ServiceHistoryDetailClientState extends State<ServiceHistoryDetailClient>
                           height: 2.h,
                         ),
                         Text('Service History',
-                            style: TextStyle(
-                                fontSize: 20.sp,
-                                color: ColorX.buttonColor,
-                                fontWeight: FontWeight.w800)),
+                            style: GoogleFonts.poppins(fontSize: 24,fontWeight: FontWeight.w600,color: ColorX.buttonColor)),
                       ],
                     ),
                   )),
@@ -79,7 +89,7 @@ class _ServiceHistoryDetailClientState extends State<ServiceHistoryDetailClient>
           ),
           Padding(
             padding:  EdgeInsets.only(left: 3.w),
-            child: Text('Your History',style: TextStyle(color: ColorX.blackX,fontWeight: FontWeight.w600,fontSize: 21.sp),),
+            child: Text('Your History',style: GoogleFonts.poppins(fontSize: 14,fontWeight: FontWeight.w600,color: ColorX.blackX)),
           ),
           SizedBox(
             height: 2.w,
@@ -112,10 +122,7 @@ class _ServiceHistoryDetailClientState extends State<ServiceHistoryDetailClient>
 
                           children: [
                             Text('Sophie R. Stevens',
-                                style: TextStyle(
-                                    fontSize: 16.sp,
-                                    color: ColorX.blackX,
-                                    fontWeight: FontWeight.w600)),
+                                style: GoogleFonts.poppins(fontSize: 16,fontWeight: FontWeight.w600,color: ColorX.blackX)),
                             SizedBox(
                               height: 0.5.h,
                             ),
@@ -125,10 +132,8 @@ class _ServiceHistoryDetailClientState extends State<ServiceHistoryDetailClient>
                                 SizedBox(
                                   width: 2.w,
                                 ),
-                                Text('Status : Completed', style: TextStyle(
-                                    fontSize: 11.sp,
-                                    color: ColorX.blackX,
-                                    fontWeight: FontWeight.w400))
+                                Text('Status : Completed', style:
+                                GoogleFonts.quicksand(fontSize: 12,fontWeight: FontWeight.w600,color: ColorX.blackX))
                               ],
                             ),
                             SizedBox(
@@ -140,10 +145,8 @@ class _ServiceHistoryDetailClientState extends State<ServiceHistoryDetailClient>
                                 SizedBox(
                                   width: 2.w,
                                 ),
-                                Text('Date : 23April,2023', style: TextStyle(
-                                    fontSize: 11.sp,
-                                    color: ColorX.blackX,
-                                    fontWeight: FontWeight.w400))
+                                Text('Date : 23April,2023', style:
+                                GoogleFonts.quicksand(fontSize: 12,fontWeight: FontWeight.w600,color: ColorX.blackX))
                               ],
                             ),
                             SizedBox(
@@ -155,12 +158,8 @@ class _ServiceHistoryDetailClientState extends State<ServiceHistoryDetailClient>
                                 SizedBox(
                                   width: 2.w,
                                 ),
-                                Container(
-                                  child: Text('Time : 9:00AM TO 11:00AM', textAlign: TextAlign.justify,style: TextStyle(
-                                      fontSize: 11.sp,
-                                      color: ColorX.blackX,
-                                      fontWeight: FontWeight.w400)),
-                                )
+                                Text('Time : 9:00AM TO 11:00AM', textAlign: TextAlign.justify,style:
+                                GoogleFonts.quicksand(fontSize: 12,fontWeight: FontWeight.w600,color: ColorX.blackX))
                               ],
                             ),
                             SizedBox(
@@ -172,10 +171,8 @@ class _ServiceHistoryDetailClientState extends State<ServiceHistoryDetailClient>
                                 SizedBox(
                                   width: 2.w,
                                 ),
-                                Text('Payment : \$75', style: TextStyle(
-                                    fontSize: 11.sp,
-                                    color: ColorX.blackX,
-                                    fontWeight: FontWeight.w400))
+                                Text('Payment : \$75', style:
+                                GoogleFonts.quicksand(fontSize: 12,fontWeight: FontWeight.w600,color: ColorX.blackX))
                               ],
                             ),
                           ],
@@ -188,26 +185,17 @@ class _ServiceHistoryDetailClientState extends State<ServiceHistoryDetailClient>
                     ),
                     const Divider(thickness: 2),
                     Text('Service Request : Cleaning & Plumbing',
-                        style: TextStyle(
-                            fontSize: 12.sp,
-                            color: ColorX.blackX,
-                            fontWeight: FontWeight.w600)),
+                        style: GoogleFonts.quicksand(fontSize: 14,fontWeight: FontWeight.w700,color: ColorX.blackX)),
                     SizedBox(
                       height: 1.w,
                     ),
                     Text('Description :',
-                        style: TextStyle(
-                            fontSize: 12.sp,
-                            color: ColorX.blackX,
-                            fontWeight: FontWeight.w600)),
+                        style: GoogleFonts.quicksand(fontSize: 14,fontWeight: FontWeight.w700,color: ColorX.blackX)),
                     SizedBox(
                       height: 1.w,
                     ),
                     Text('Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
-                        style: TextStyle(
-                            fontSize: 10.sp,
-                            color: ColorX.blackX,
-                            fontWeight: FontWeight.w500)),
+                        style: GoogleFonts.quicksand(fontSize: 12,fontWeight: FontWeight.w500,color: ColorX.blackX)),
                     SizedBox(
                       height: 1.w,
                     ),
@@ -233,10 +221,7 @@ class _ServiceHistoryDetailClientState extends State<ServiceHistoryDetailClient>
                       height: 1.w,
                     ),
                     Text('Address :',
-                        style: TextStyle(
-                            fontSize: 12.sp,
-                            color: ColorX.blackX,
-                            fontWeight: FontWeight.w600)),
+                        style: GoogleFonts.quicksand(fontSize: 14,fontWeight: FontWeight.w700,color: ColorX.blackX)),
                     SizedBox(
                       height: 1.w,
                     ),
@@ -268,10 +253,7 @@ class _ServiceHistoryDetailClientState extends State<ServiceHistoryDetailClient>
                                 width: 2.w,
                               ),
                               Text('7958 Swift Village',
-                                  style: TextStyle(
-                                      fontSize: 12.sp,
-                                      color: ColorX.blackX,
-                                      fontWeight: FontWeight.w600)),
+                                  style: GoogleFonts.quicksand(fontSize: 12,fontWeight: FontWeight.w600,color: ColorX.blackX)),
                             ],
                           ),
                         ),
@@ -301,10 +283,7 @@ class _ServiceHistoryDetailClientState extends State<ServiceHistoryDetailClient>
                               width: 2.w,
                             ),
                             Text('105 William St, Chicago, US',
-                                style: TextStyle(
-                                    fontSize: 12.sp,
-                                    color: ColorX.blackX,
-                                    fontWeight: FontWeight.w600))
+                                style: GoogleFonts.quicksand(fontSize: 12,fontWeight: FontWeight.w600,color: ColorX.blackX))
                           ],
                         )
                       ],
@@ -314,9 +293,14 @@ class _ServiceHistoryDetailClientState extends State<ServiceHistoryDetailClient>
                     ),
                     Padding(
                      padding:  EdgeInsets.only(left: 4.w,right: 4.w),
-                     child: CommonButton(
-                       height: 7.h,
-                       buttonText: 'Send Feedback',
+                     child: GestureDetector(
+                       onTap: (){
+                         GoRouter.of(context).pushNamed(MyAppRouteConstants.ratingScreen);
+                       },
+                       child: CommonButton(
+                         height: 7.h,
+                         buttonText: 'Send Feedback',
+                       ),
                      ),
                    )
                   ],

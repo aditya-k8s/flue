@@ -5,6 +5,7 @@ import 'package:calendar_date_picker2/calendar_date_picker2.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 import 'package:sizer/sizer.dart';
 
@@ -38,10 +39,14 @@ class _BookByScheduleState extends State<BookBySchedule> {
         children: [
           Stack(
             children: [
-              SvgPicture.asset(
-                'image/Vector (2).svg',
-                fit: BoxFit.fill,
+              SizedBox(
+                height: 23.h,
                 width: 100.w,
+                child: SvgPicture.asset(
+                  'image/Vector (2).svg',
+                  fit: BoxFit.cover,
+                  width: 100.w,
+                ),
               ),
               Positioned(
                   top: 5.h,
@@ -68,10 +73,7 @@ class _BookByScheduleState extends State<BookBySchedule> {
                           height: 2.h,
                         ),
                         Text('Service Request',
-                            style: TextStyle(
-                                fontSize: 20.sp,
-                                color: ColorX.buttonColor,
-                                fontWeight: FontWeight.w800)),
+                            style: GoogleFonts.poppins(fontSize: 24,fontWeight: FontWeight.w600,color: ColorX.buttonColor)),
                       ],
                     ),
                   )),
@@ -84,9 +86,9 @@ class _BookByScheduleState extends State<BookBySchedule> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Text(
+                   Text(
                     "Type of Service",
-                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.w800),
+                    style: GoogleFonts.quicksand(fontSize: 14,fontWeight: FontWeight.w700,color: ColorX.blackX),
                   ),
                   SizedBox(
                     height: 1.h,
@@ -107,12 +109,11 @@ class _BookByScheduleState extends State<BookBySchedule> {
                               fit: BoxFit.fill,
                             ),
                           ),
-                          const Padding(
+                           Padding(
                             padding: EdgeInsets.all(8.0),
                             child: Text(
                               'Plumbing',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.w400, fontSize: 17),
+                              style: GoogleFonts.quicksand(fontSize: 14,fontWeight: FontWeight.w500,color: ColorX.blackX),
                             ),
                           )
                         ],
@@ -146,17 +147,11 @@ class _BookByScheduleState extends State<BookBySchedule> {
                                   children: [
                                     Text(
                                       "Charles J. Smith",
-                                      style: TextStyle(
-                                          color: ColorX.blackX,
-                                          fontSize: 14.sp,
-                                          fontWeight: FontWeight.w700),
+                                      style: GoogleFonts.poppins(fontSize: 16,fontWeight: FontWeight.w600,color: ColorX.blackX),
                                     ),
                                     Text(
                                       '( Plumber )',
-                                      style: TextStyle(
-                                          color: ColorX.blackX,
-                                          fontSize: 10.sp,
-                                          fontWeight: FontWeight.w400),
+                                      style: GoogleFonts.quicksand(fontSize: 12,fontWeight: FontWeight.w600,color: ColorX.blackX),
                                     )
                                   ],
                                 ),
@@ -168,10 +163,7 @@ class _BookByScheduleState extends State<BookBySchedule> {
                                     Icon(Icons.star_border_outlined,
                                         color: ColorX.textColor),
                                     Text('4.6 (313 Review)',
-                                        style: TextStyle(
-                                            color: ColorX.blackX,
-                                            fontSize: 10.sp,
-                                            fontWeight: FontWeight.w600))
+                                        style: GoogleFonts.quicksand(fontSize: 13,fontWeight: FontWeight.w600,color: ColorX.blackX))
                                   ],
                                 ),
                                 SizedBox(
@@ -187,9 +179,9 @@ class _BookByScheduleState extends State<BookBySchedule> {
                   SizedBox(
                     height: 1.h,
                   ),
-                  const Text(
+                   Text(
                     "Select Date",
-                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.w800),
+                    style: GoogleFonts.quicksand(fontSize: 14,fontWeight: FontWeight.w700,color: ColorX.blackX),
                   ),
                   SizedBox(
                      height: 1.h,
@@ -292,9 +284,9 @@ class _BookByScheduleState extends State<BookBySchedule> {
                   SizedBox(
                     height: 1.h,
                   ),
-                  const Text(
+                   Text(
                     "Select Time",
-                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.w800),
+                    style: GoogleFonts.quicksand(fontSize: 14,fontWeight: FontWeight.w700,color: ColorX.blackX),
                   ),
                   SizedBox(
                     height: 1.h,

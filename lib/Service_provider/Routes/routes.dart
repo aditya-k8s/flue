@@ -5,13 +5,14 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import '../../main.dart';
 import '../Src/Bottom_Bar/Service_BottomBar_Screens/BottomBar_Client_Screen/Client_Helper_Screens(c)/bank_details(c).dart';
-import '../Src/Bottom_Bar/Service_BottomBar_Screens/BottomBar_Client_Screen/Client_Helper_Screens(c)/book_by_shedule(c).dart';
-import '../Src/Bottom_Bar/Service_BottomBar_Screens/BottomBar_Client_Screen/Client_Helper_Screens(c)/book_service(c).dart';
+import '../Src/Bottom_Bar/Service_BottomBar_Screens/BottomBar_Client_Screen/Client_Helper_Screens(c)/request_by_shedule(c).dart';
+import '../Src/Bottom_Bar/Service_BottomBar_Screens/BottomBar_Client_Screen/Client_Helper_Screens(c)/service_request(c).dart';
 import '../Src/Bottom_Bar/Service_BottomBar_Screens/BottomBar_Client_Screen/Client_Helper_Screens(c)/map_pickup(c).dart';
+import '../Src/Bottom_Bar/Service_BottomBar_Screens/BottomBar_Client_Screen/Client_Helper_Screens(c)/rating_view(c).dart';
 import '../Src/Bottom_Bar/Service_BottomBar_Screens/BottomBar_Client_Screen/Client_Helper_Screens(c)/search_service(c).dart';
 import '../Src/Bottom_Bar/Service_BottomBar_Screens/BottomBar_Client_Screen/Client_Helper_Screens(c)/service_details(c).dart';
 import '../Src/Bottom_Bar/Service_BottomBar_Screens/BottomBar_Client_Screen/Client_Helper_Screens(c)/service_history_details(c).dart';
-import '../Src/Bottom_Bar/Service_BottomBar_Screens/BottomBar_Client_Screen/Client_Helper_Screens(c)/service_profile(c).dart';
+import '../Src/Bottom_Bar/Service_BottomBar_Screens/BottomBar_Client_Screen/Client_Helper_Screens(c)/user_service_profile(c).dart';
 import '../Src/Bottom_Bar/Service_BottomBar_Screens/BottomBar_Client_Screen/bottom_bar_service(c).dart';
 import '../Src/Bottom_Bar/Service_BottomBar_Screens/BottomBar_Client_Screen/bottom_bar_service_history.dart';
 import '../Src/Bottom_Bar/Service_BottomBar_Screens/bottom_bar_profile(c).dart';
@@ -236,6 +237,12 @@ class MyAppRouter {
           pageBuilder: (context, state) {
             return   const MaterialPage(child: BottomProfileClient());
           }),
+      GoRoute(
+          name: MyAppRouteConstants.ratingScreen,
+          path: '/RatingScreen',
+          pageBuilder: (context, state) {
+            return   const MaterialPage(child: RatingScreen());
+          }),
     ],
     errorPageBuilder: (context, state) {
       return const MaterialPage(child: unknownView());
@@ -276,4 +283,5 @@ class MyAppRouteConstants {
   static const String serviceHistoryClient = 'ServiceHistoryClient';
   static const String serviceHistoryDetailClient = 'ServiceHistoryDetailClient';
   static const String bottomProfileClient = 'BottomProfileClient';
+  static const String ratingScreen = 'RatingScreen';
 }

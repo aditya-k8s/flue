@@ -22,10 +22,14 @@ class _BankDetailsState extends State<BankDetails> {
         children: [
           Stack(
             children: [
-              SvgPicture.asset(
-                'image/Vector (2).svg',
-                fit: BoxFit.fill,
+              SizedBox(
+                height: 23.h,
                 width: 100.w,
+                child: SvgPicture.asset(
+                  'image/Vector (2).svg',
+                  fit: BoxFit.cover,
+                  width: 100.w,
+                ),
               ),
               Positioned(
                   top: 5.h,

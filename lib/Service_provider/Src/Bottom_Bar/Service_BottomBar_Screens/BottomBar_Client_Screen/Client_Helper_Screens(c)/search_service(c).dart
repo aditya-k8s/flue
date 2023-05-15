@@ -1,11 +1,11 @@
 import 'dart:async';
-
 import 'package:allohuggy/Service_provider/Routes/routes.dart';
 import 'package:allohuggy/Service_provider/Utilities/colors.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:sizer/sizer.dart';
 
 class SearchServiceClient extends StatefulWidget {
@@ -26,7 +26,6 @@ class _SearchServiceClientState extends State<SearchServiceClient> {
     super.initState();
     _heading = "Suggestions";
     _placesList1;
-    clearTextField();
     _searchController.addListener(_onSearchChanged);
   }
 
@@ -35,7 +34,6 @@ class _SearchServiceClientState extends State<SearchServiceClient> {
     _searchController.removeListener(_onSearchChanged);
     _searchController.dispose();
     _placesList1.clear();
-    clearTextField();
     super.dispose();
   }
 
@@ -72,11 +70,7 @@ class _SearchServiceClientState extends State<SearchServiceClient> {
     });
   }
 
-  clearTextField(){
-    setState(() {
-      _searchController.text.length==0?_placesList1.clear():Container();
-    });
-  }
+
 
 
 
@@ -91,10 +85,14 @@ class _SearchServiceClientState extends State<SearchServiceClient> {
               children: [
                 Stack(
                   children: [
-                    SvgPicture.asset(
-                      'image/Vector (2).svg',
-                      fit: BoxFit.fill,
+                    SizedBox(
+                      height: 23.h,
                       width: 100.w,
+                      child: SvgPicture.asset(
+                        'image/Vector (2).svg',
+                        fit: BoxFit.cover,
+                        width: 100.w,
+                      ),
                     ),
                     Positioned(
                         top: 5.h,
@@ -124,50 +122,57 @@ class _SearchServiceClientState extends State<SearchServiceClient> {
                                     ),
                                     Row(
                                       children: [
-                                        Padding(
-                                          padding: EdgeInsets.only(left: 8.w),
-                                          child: Container(
-                                              decoration: BoxDecoration(
-                                                  shape: BoxShape.circle,
-                                                  border: Border.all(
-                                                      color: ColorX.whiteX,
-                                                      width: 2)),
-                                              child: Padding(
-                                                padding: const EdgeInsets.all(12.0),
-                                                child: SvgPicture.asset(
-                                                  'image/chatgpt.svg',
-                                                  color: Colors.white,
-                                                ),
-                                              )),
+                                        GestureDetector(
+                                          onTap: (){
+                                            GoRouter.of(context).pushNamed(MyAppRouteConstants.supportScreen);
+                                          },
+                                          child: Padding(
+                                            padding: EdgeInsets.only(left: 8.w),
+                                            child: Container(
+                                                decoration: BoxDecoration(
+                                                    shape: BoxShape.circle,
+                                                    border: Border.all(
+                                                        color: ColorX.whiteX,
+                                                        width: 2)),
+                                                child: Padding(
+                                                  padding: const EdgeInsets.all(12.0),
+                                                  child: SvgPicture.asset(
+                                                    'image/chatgpt.svg',
+                                                    color: Colors.white,
+                                                  ),
+                                                )),
+                                          ),
                                         ),
                                         SizedBox(
                                           width: 2.w,
                                         ),
-                                        Container(
-                                            decoration: BoxDecoration(
-                                                shape: BoxShape.circle,
-                                                border: Border.all(
-                                                    color: ColorX.whiteX, width: 2)),
-                                            child: Padding(
-                                              padding: const EdgeInsets.all(8.0),
-                                              child: Icon(
-                                                Icons.notification_important,
-                                                color: ColorX.whiteX,
-                                              ),
-                                            ))
+                                        GestureDetector(
+                                          onTap: (){
+                                            GoRouter.of(context).pushNamed(MyAppRouteConstants.notificationScreen);
+                                          },
+                                          child: Container(
+                                              decoration: BoxDecoration(
+                                                  shape: BoxShape.circle,
+                                                  border: Border.all(
+                                                      color: ColorX.whiteX, width: 2)),
+                                              child: Padding(
+                                                padding: const EdgeInsets.all(8.0),
+                                                child: Icon(
+                                                  Icons.notification_important,
+                                                  color: ColorX.whiteX,
+                                                ),
+                                              )),
+                                        )
                                       ],
                                     ),
                                   ],
                                 ),
                               ),
                               SizedBox(
-                                height: 2.h,
+                                height: 1.h,
                               ),
                               Text('Search Craftsmen',
-                                  style: TextStyle(
-                                      fontSize: 20.sp,
-                                      color: ColorX.whiteX,
-                                      fontWeight: FontWeight.w800)),
+                                  style: GoogleFonts.poppins(fontWeight: FontWeight.w600,fontSize: 24,color: ColorX.buttonColor)),
                             ],
                           ),
                         )),
@@ -183,10 +188,7 @@ class _SearchServiceClientState extends State<SearchServiceClient> {
                     children: [
                       Text(
                         'Place',
-                        style: TextStyle(
-                            color: ColorX.textColor,
-                            fontWeight: FontWeight.w500,
-                            fontSize: 12.sp),
+                        style: GoogleFonts.quicksand(fontWeight: FontWeight.w700,fontSize: 12,color: ColorX.blackX),
                       ),
                       SizedBox(
                         height: 1.h,
@@ -207,20 +209,16 @@ class _SearchServiceClientState extends State<SearchServiceClient> {
                               onChanged: (val){
                                 _placesList1.clear();
                                 _onSearchChanged();
-                                clearTextField();
                               },
                               decoration:
                                   //disable single line border below the text field
                                   InputDecoration(
                                       prefixIcon: Icon(
-                                        Icons.location_on,
+                                        Icons.location_on_outlined,
                                         color: ColorX.underLineColor,
                                       ),
                                       hintText: _searchController.text==""?'105 William St, Chicago, US':_searchController.text,
-                                      hintStyle: TextStyle(
-                                          color: ColorX.blackX,
-                                          fontWeight: FontWeight.w400,
-                                          fontSize: 12.sp),
+                                      hintStyle: GoogleFonts.poppins(fontWeight: FontWeight.w400,fontSize: 15,color: ColorX.blackX),
                                       border: InputBorder.none,
                                       suffixIcon: GestureDetector(
                                         onTap: (){
@@ -246,10 +244,7 @@ class _SearchServiceClientState extends State<SearchServiceClient> {
                         height: 1.h,
                       ),
                       Text('Type of Service',
-                          style: TextStyle(
-                              color: ColorX.textColor,
-                              fontWeight: FontWeight.w500,
-                              fontSize: 12.sp)),
+                          style: GoogleFonts.quicksand(fontWeight: FontWeight.w700,fontSize: 12,color: ColorX.blackX)),
                       SizedBox(
                         height: 1.h,
                       ),
@@ -282,10 +277,7 @@ class _SearchServiceClientState extends State<SearchServiceClient> {
                                       width: 2.w,
                                     ),
                                     Text('Plumbing',
-                                        style: TextStyle(
-                                            color: ColorX.textColor,
-                                            fontWeight: FontWeight.w500,
-                                            fontSize: 12.sp))
+                                        style: GoogleFonts.quicksand(fontWeight: FontWeight.w500,fontSize: 13,color: ColorX.blackX))
                                   ],
                                 ),
                                 Padding(
@@ -311,10 +303,7 @@ class _SearchServiceClientState extends State<SearchServiceClient> {
                           Row(
                             children: [
                               Text('12 Plumber nearby you',
-                                  style: TextStyle(
-                                      color: ColorX.textColor,
-                                      fontWeight: FontWeight.w500,
-                                      fontSize: 12.sp)),
+                                  style: GoogleFonts.quicksand(fontWeight: FontWeight.w700,fontSize: 16,color: ColorX.textColor)),
                             ],
                           ),
                           GestureDetector(
@@ -324,14 +313,11 @@ class _SearchServiceClientState extends State<SearchServiceClient> {
                             child: Row(
                               children: [
                                 Icon(
-                                  Icons.location_on,
+                                  Icons.location_on_outlined,
                                   color: ColorX.textColor,
                                 ),
                                 Text("Map View",
-                                    style: TextStyle(
-                                        color: ColorX.textColor,
-                                        fontWeight: FontWeight.w500,
-                                        fontSize: 12.sp))
+                                    style: GoogleFonts.quicksand(fontWeight: FontWeight.w700,fontSize: 16,color: ColorX.textColor))
                               ],
                             ),
                           ),
@@ -375,8 +361,8 @@ class _SearchServiceClientState extends State<SearchServiceClient> {
                                              children: [
                                                Row(
                                                  children: [
-                                                   Text("Charles J. Smith",style: TextStyle(color: ColorX.blackX,fontSize: 14.sp,fontWeight: FontWeight.w700),),
-                                                   Text('( Plumber )',style: TextStyle(color: ColorX.blackX,fontSize: 10.sp,fontWeight: FontWeight.w400),)
+                                                   Text("Charles J. Smith",style: GoogleFonts.poppins(fontWeight: FontWeight.w600,fontSize: 16,color: ColorX.blackX)),
+                                                   Text('( Plumber )',style: GoogleFonts.quicksand(fontWeight: FontWeight.w700,fontSize: 12,color: ColorX.blackX))
                                                  ],
                                                ),
                                               SizedBox(
@@ -385,7 +371,7 @@ class _SearchServiceClientState extends State<SearchServiceClient> {
                                               Row(
                                                 children: [
                                                 Icon(Icons.star_border_outlined,color: ColorX.textColor),
-                                                Text('4.6 (313 Review)',style: TextStyle(color: ColorX.blackX,fontSize: 10.sp,fontWeight: FontWeight.w600))
+                                                Text('4.6 (313 Review)',style: GoogleFonts.quicksand(fontWeight: FontWeight.w600,fontSize: 13,color: ColorX.blackX))
                                                 ],
                                               ),
                                                SizedBox(
@@ -394,7 +380,7 @@ class _SearchServiceClientState extends State<SearchServiceClient> {
                                                Row(
                                                 children: [
                                                 Icon(Icons.location_on_outlined,color: ColorX.textColor,),
-                                                Text('35 minutes away',style: TextStyle(color: ColorX.blackX,fontSize: 10.sp,fontWeight: FontWeight.w600))
+                                                Text('35 minutes away',style: GoogleFonts.quicksand(fontWeight: FontWeight.w600,fontSize: 13,color: ColorX.blackX))
                                                 ],
                                               ),
                                                SizedBox(
@@ -408,7 +394,7 @@ class _SearchServiceClientState extends State<SearchServiceClient> {
                                                   SizedBox(
                                                     width: 1.w,
                                                   ),
-                                                  Text('342 jobs completed',style: TextStyle(color: ColorX.blackX,fontSize: 10.sp,fontWeight: FontWeight.w600))
+                                                  Text('342 jobs completed',style: GoogleFonts.quicksand(fontWeight: FontWeight.w600,fontSize: 13,color: ColorX.blackX))
                                                   ],
                                               ),
                                                ),
@@ -423,7 +409,7 @@ class _SearchServiceClientState extends State<SearchServiceClient> {
                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                        children: [
 
-                                         Text('\$60',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 15.sp,color: ColorX.blackX),),
+                                         Text('\$60',style: GoogleFonts.poppins(fontWeight: FontWeight.w600,fontSize: 16,color: ColorX.blackX)),
 
                                          Row(
                                            children: [
@@ -438,7 +424,7 @@ class _SearchServiceClientState extends State<SearchServiceClient> {
                                                  ),
                                                  child: Padding(
                                                    padding:  const EdgeInsets.all(15.0),
-                                                   child: Text('Book Now',style: TextStyle(color: ColorX.textColor,fontSize: 12.sp,fontWeight: FontWeight.bold),),
+                                                   child: Text('Book Now',style: GoogleFonts.quicksand(fontWeight: FontWeight.w600,fontSize: 13,color: ColorX.blackX)),
                                                  ),
                                                ),
                                              ),

@@ -186,33 +186,50 @@ class _HomePageClientState extends State<HomePageClient> {
                                         style: GoogleFonts.poppins(fontWeight: FontWeight.w600,fontSize: 24,color: ColorX.whiteX)),
                                   ],
                                 ),
-                                Padding(
-                                  padding: EdgeInsets.only(left: 8.w),
-                                  child: Container(
-                                      decoration: BoxDecoration(
-                                          shape: BoxShape.circle,
-                                          border: Border.all(
-                                              color: ColorX.whiteX, width: 2)),
+                                Row(
+                                  children: [
+                                    GestureDetector(
+                                      onTap: (){
+                                        GoRouter.of(context).pushNamed(MyAppRouteConstants.supportScreen);
+                                      },
                                       child: Padding(
-                                        padding: const EdgeInsets.all(12.0),
-                                        child: SvgPicture.asset(
-                                          'image/chatgpt.svg',
-                                          color: Colors.white,
-                                        ),
-                                      )),
-                                ),
-                                Container(
-                                    decoration: BoxDecoration(
-                                        shape: BoxShape.circle,
-                                        border: Border.all(
-                                            color: ColorX.whiteX, width: 2)),
-                                    child: Padding(
-                                      padding: const EdgeInsets.all(8.0),
-                                      child: Icon(
-                                        Icons.notification_important,
-                                        color: ColorX.whiteX,
+                                        padding: EdgeInsets.only(left: 8.w),
+                                        child: Container(
+                                            decoration: BoxDecoration(
+                                                shape: BoxShape.circle,
+                                                border: Border.all(
+                                                    color: ColorX.whiteX, width: 2)),
+                                            child: Padding(
+                                              padding: const EdgeInsets.all(12.0),
+                                              child: SvgPicture.asset(
+                                                'image/chatgpt.svg',
+                                                color: Colors.white,
+                                              ),
+                                            )),
                                       ),
-                                    ))
+                                    ),
+                                    SizedBox(
+                                      width: 2.w,
+                                    ),
+                                    GestureDetector(
+                                      onTap: (){
+                                        GoRouter.of(context).pushNamed(MyAppRouteConstants.notificationScreen);
+                                      },
+                                      child: Container(
+                                          decoration: BoxDecoration(
+                                              shape: BoxShape.circle,
+                                              border: Border.all(
+                                                  color: ColorX.whiteX, width: 2)),
+                                          child: Padding(
+                                            padding: const EdgeInsets.all(8.0),
+                                            child: Icon(
+                                              Icons.notification_important,
+                                              color: ColorX.whiteX,
+                                            ),
+                                          )),
+                                    )
+                                  ],
+                                )
                               ],
                             ),
                           ),
@@ -468,7 +485,7 @@ class _HomePageClientState extends State<HomePageClient> {
                                 padding:  EdgeInsets.only(left: 4.w),
                                 child: Row(
                                   children: [
-                                    Icon(Icons.location_on_outlined,color: Color(0xffF52D56),size: 4.h,),
+                                    Icon(Icons.location_on_outlined,color: const Color(0xffF52D56),size: 4.h,),
                                     SizedBox(
                                       width: 2.w,
                                     ),

@@ -1,6 +1,7 @@
 import 'package:allohuggy/Service_provider/Utilities/common_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:sizer/sizer.dart';
 import '../../../../../Utilities/colors.dart';
 
@@ -35,10 +36,14 @@ class _BankDetailsClientState extends State<BankDetailsClient> {
         children: [
           Stack(
             children: [
-              SvgPicture.asset(
-                'image/Vector (2).svg',
-                fit: BoxFit.fill,
+              SizedBox(
+                height: 23.h,
                 width: 100.w,
+                child: SvgPicture.asset(
+                  'image/Vector (2).svg',
+                  fit: BoxFit.cover,
+                  width: 100.w,
+                ),
               ),
               Positioned(
                   top: 5.h,
@@ -65,10 +70,7 @@ class _BankDetailsClientState extends State<BankDetailsClient> {
                           height: 2.h,
                         ),
                         Text('Bank Details',
-                            style: TextStyle(
-                                fontSize: 20.sp,
-                                color: ColorX.buttonColor,
-                                fontWeight: FontWeight.w800)),
+                            style: GoogleFonts.poppins(fontSize: 24,fontWeight: FontWeight.w600,color: ColorX.buttonColor)),
                       ],
                     ),
                   )),
@@ -86,8 +88,8 @@ class _BankDetailsClientState extends State<BankDetailsClient> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text('Amount to be paid',style: TextStyle(color: ColorX.blackX,fontSize: 13.sp,fontWeight: FontWeight.w600),),
-                    Text('\$30',style: TextStyle(color: ColorX.blackX,fontSize: 13.sp,fontWeight: FontWeight.w600))
+                    Text('Amount to be paid',style: GoogleFonts.quicksand(fontSize: 17,fontWeight: FontWeight.w600,color: ColorX.blackX)),
+                    Text('\$30',style: GoogleFonts.quicksand(fontSize: 17,fontWeight: FontWeight.w600,color: ColorX.blackX))
                   ],
                 ),
               ),
@@ -103,9 +105,13 @@ class _BankDetailsClientState extends State<BankDetailsClient> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text('Your Cards',style: TextStyle(color: ColorX.blackX,fontSize: 15.sp,fontWeight: FontWeight.w600)),
+                    Text('Your Cards',style: GoogleFonts.poppins(fontSize: 21,fontWeight: FontWeight.w600,color: ColorX.blackX)),
+                    SizedBox(
+                      height: 1.h,
+                    ),
                     Expanded(
                       child:ListView.builder(
+                        padding: EdgeInsets.zero,
                            itemCount: 3+1,
                           itemBuilder: (context,index){
                              if(index != 3){
@@ -133,7 +139,7 @@ class _BankDetailsClientState extends State<BankDetailsClient> {
                                                  SizedBox(
                                                    width: 2.w,
                                                  ),
-                                                 Text("1234567890123456".replaceRange(0, 12,"**** **** ****"),style: TextStyle(color: ColorX.blackX,fontSize: 12.sp,fontWeight: FontWeight.w800),)
+                                                 Text("1234567890123456".replaceRange(0, 12,"**** **** ****"),style: GoogleFonts.quicksand(fontSize: 17,fontWeight: FontWeight.w600,color: ColorX.blackX))
                                                ],
                                              ),
                                              selectColor != index?Container(): Container(
@@ -173,7 +179,7 @@ class _BankDetailsClientState extends State<BankDetailsClient> {
                                     SizedBox(
                                       width: 2.w,
                                     ),
-                                    Text("williamsmith@bernice.info",style: TextStyle(color: ColorX.blackX,fontSize: 12.sp,fontWeight: FontWeight.w800),)
+                                    Text("williamsmith@bernice.info",style: GoogleFonts.quicksand(fontSize: 17,fontWeight: FontWeight.w600,color: ColorX.blackX))
                                   ],
                                 ),
                               ],
@@ -211,7 +217,7 @@ class _BankDetailsClientState extends State<BankDetailsClient> {
                     SizedBox(
                       width: 2.w,
                     ),
-                    Text('Add Another Bank Account',style: TextStyle(color: ColorX.textColor,fontWeight: FontWeight.w700,fontSize: 14.sp),)
+                    Text('Add Another Bank Account',style: GoogleFonts.quicksand(fontSize: 14,fontWeight: FontWeight.w700,color: ColorX.textColor))
                   ],
                 ),
               ),
@@ -240,20 +246,20 @@ class _BankDetailsClientState extends State<BankDetailsClient> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text("\$60",style: TextStyle(color: Colors.white,fontSize: 15.sp,fontWeight: FontWeight.bold),),
+                  Text("\$60",style: GoogleFonts.poppins(fontSize: 18,fontWeight: FontWeight.w600,color: ColorX.whiteX)),
                   GestureDetector(
                     onTap: (){
                       _asyncConfirmDialog(context);
                     },
                     child: Container(
+                      width: 25.w,
+                      height: 6.h,
+                      alignment: Alignment.center,
                       decoration: BoxDecoration(
                         color: Colors.yellow,
                         borderRadius: BorderRadius.circular(8.w),
                       ),
-                      child: Padding(
-                        padding: const EdgeInsets.all(15.0),
-                        child: Text("Book Now",style: TextStyle(color: Color(0xff22477B),fontWeight: FontWeight.w500,fontSize: 14.sp),),
-                      ),
+                      child: Text("Pay",style:GoogleFonts.quicksand(fontSize: 14,fontWeight: FontWeight.w700,color: ColorX.textColor)),
                     ),
                   )
                 ],

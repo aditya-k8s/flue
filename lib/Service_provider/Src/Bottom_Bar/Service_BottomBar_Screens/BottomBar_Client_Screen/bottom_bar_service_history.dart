@@ -2,6 +2,7 @@ import 'package:allohuggy/Service_provider/Utilities/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:sizer/sizer.dart';
 
 import '../../../../Routes/routes.dart';
@@ -31,10 +32,14 @@ class _ServiceHistoryClientState extends State<ServiceHistoryClient> {
         children: [
           Stack(
             children: [
-              SvgPicture.asset(
-                'image/Vector (2).svg',
-                fit: BoxFit.fill,
+              SizedBox(
+                height: 23.h,
                 width: 100.w,
+                child: SvgPicture.asset(
+                  'image/Vector (2).svg',
+                  fit: BoxFit.cover,
+                  width: 100.w,
+                ),
               ),
               Positioned(
                   top: 5.h,
@@ -58,29 +63,31 @@ class _ServiceHistoryClientState extends State<ServiceHistoryClient> {
                                 child: Icon(Icons.arrow_back,
                                     color: ColorX.whiteX, size: 3.h),
                               ),
-                              Container(
-                                  decoration: BoxDecoration(
-                                      shape: BoxShape.circle,
-                                      border: Border.all(
-                                          color: ColorX.whiteX, width: 2)),
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(8.0),
-                                    child: Icon(
-                                      Icons.notification_important,
-                                      color: ColorX.whiteX,
-                                    ),
-                                  ))
+                              GestureDetector(
+                                onTap: (){
+                                  GoRouter.of(context).pushNamed(MyAppRouteConstants.notificationScreen);
+                                },
+                                child: Container(
+                                    decoration: BoxDecoration(
+                                        shape: BoxShape.circle,
+                                        border: Border.all(
+                                            color: ColorX.whiteX, width: 2)),
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(8.0),
+                                      child: Icon(
+                                        Icons.notification_important,
+                                        color: ColorX.whiteX,
+                                      ),
+                                    )),
+                              )
                             ],
                           ),
                         ),
                         SizedBox(
-                          height: 2.h,
+                          height: 1.h,
                         ),
                         Text('Service History',
-                            style: TextStyle(
-                                fontSize: 20.sp,
-                                color: ColorX.buttonColor,
-                                fontWeight: FontWeight.w800)),
+                            style: GoogleFonts.poppins(fontSize: 24,fontWeight: FontWeight.w600,color: ColorX.buttonColor)),
                       ],
                     ),
                   )),
@@ -91,7 +98,7 @@ class _ServiceHistoryClientState extends State<ServiceHistoryClient> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text("Upcoming Services",style: TextStyle(fontWeight: FontWeight.w700,fontSize: 14.sp,color: ColorX.blackX),),
+                Text("Upcoming Services",style: GoogleFonts.poppins(fontSize: 14,fontWeight: FontWeight.w600,color: ColorX.blackX)),
                 DropdownButton(
                   value: dropdownvalue,
                   icon: const Icon(Icons.keyboard_arrow_down),
@@ -100,7 +107,7 @@ class _ServiceHistoryClientState extends State<ServiceHistoryClient> {
                   items: items.map((String items) {
                     return DropdownMenuItem(
                       value: items,
-                      child: Text(items),
+                      child: Text(items,style: GoogleFonts.quicksand(fontSize: 12,fontWeight: FontWeight.w700,color: ColorX.blackX),),
                     );
                   }).toList(),
                   onChanged: (String? newValue) {
@@ -118,121 +125,105 @@ class _ServiceHistoryClientState extends State<ServiceHistoryClient> {
                   shrinkWrap: true,
                   padding: EdgeInsets.zero,
                   itemBuilder: (context,index){
-                return Column(
-                  children: [
-                    Container(
-
-                      width: 100.w,
-                      decoration: BoxDecoration(
-                          color: ColorX.whiteX,
-                          borderRadius: BorderRadius.circular(4.w)
-                      ),
-                      child: Padding(
-                        padding:  EdgeInsets.only(left: 5.w,top: 2.h),
-                        child: Column(
-                          children: [
-                            Row(
-                              children: [
-                                CircleAvatar(
-                                  radius: 5,
-                                  backgroundColor: ColorX.textColor,
-                                ),
-                                SizedBox(
-                                  width: 3.w,
-                                ),
-                                Text('Date : 23April,2023',
-                                    style: TextStyle(
-                                        fontSize: 10.sp,
-                                        color: ColorX.blackX,
-                                        fontWeight: FontWeight.w600))
-                              ],
-                            ),
-                            SizedBox(
-                              height: 1.h,
-                            ),
-                            Row(
-                              children: [
-                                CircleAvatar(
-                                  radius: 30,
-                                  backgroundColor: ColorX.textColor,
-                                ),
-
-                                Padding(
-                                  padding:  EdgeInsets.only(left: 4.w),
-                                  child: Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
-                                    children: [
-                                      Text('Sophie R. Stevens',
-                                          style: TextStyle(
-                                              fontSize: 14.sp,
-                                              color: ColorX.blackX,
-                                              fontWeight: FontWeight.w600)),
-                                      Text('Service : Cleaning & Plumbing',
-                                          style: TextStyle(
-                                              fontSize: 12.sp,
-                                              color: ColorX.blackX,
-                                              fontWeight: FontWeight.w400)),
-                                      Text('Status : Complete',
-                                          style: TextStyle(
-                                              fontSize: 12.sp,
-                                              color: ColorX.blackX,
-                                              fontWeight: FontWeight.w400)),
-                                    ],
-                                  ),
-                                )
-                              ],
-                            ),
-                            SizedBox(
-                              height: 1.h,
-                            ),
-                            Divider(),
-                            Padding(
-                              padding:  EdgeInsets.only(right: 5.w),
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                return Padding(
+                  padding:  EdgeInsets.only(left: 3.w,right: 3.w),
+                  child: Column(
+                    children: [
+                      Container(
+                        width: 100.w,
+                        decoration: BoxDecoration(
+                            color: ColorX.whiteX,
+                            borderRadius: BorderRadius.circular(4.w)
+                        ),
+                        child: Padding(
+                          padding:  EdgeInsets.only(left: 5.w,top: 2.h),
+                          child: Column(
+                            children: [
+                              Row(
                                 children: [
-                                  Row(
-                                    children: [
-                                      SvgPicture.asset('image/money-1.svg',height: 4.h),
-                                      SizedBox(
-                                        width: 2.w,
-                                      ),
-                                      Text('\$75.00',
-                                          style: TextStyle(
-                                              fontSize: 12.sp,
-                                              color: ColorX.textColor,
-                                              fontWeight: FontWeight.w400)),
-                                    ],
+                                  CircleAvatar(
+                                    radius: 5,
+                                    backgroundColor: ColorX.textColor,
                                   ),
-
-                                  GestureDetector(
-                                    onTap: (){
-                                      print("history");
-                                      GoRouter.of(context).pushNamed(MyAppRouteConstants.serviceHistoryDetailClient);
-                                    },
-                                    child: Row(
-                                      children: [
-                                        Text('View Full Details',
-                                            style: TextStyle(
-                                                fontSize: 12.sp,
-                                                color: ColorX.blackX,
-                                                fontWeight: FontWeight.w400)),
-                                        Icon(Icons.arrow_forward_ios,size: 12.sp,color: ColorX.blackX,)
-                                      ],
-                                    ),
+                                  SizedBox(
+                                    width: 3.w,
                                   ),
+                                  Text('Date : 23April,2023',
+                                      style: GoogleFonts.quicksand(fontSize: 10,fontWeight: FontWeight.w600,color: ColorX.blackX))
                                 ],
                               ),
-                            )
+                              SizedBox(
+                                height: 1.h,
+                              ),
+                              Row(
+                                children: [
+                                  CircleAvatar(
+                                    radius: 30,
+                                    backgroundColor: ColorX.textColor,
+                                  ),
 
-                          ],
+                                  Padding(
+                                    padding:  EdgeInsets.only(left: 4.w),
+                                    child: Column(
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: [
+                                        Text('Sophie R. Stevens',
+                                            style: GoogleFonts.poppins(fontSize: 16,fontWeight: FontWeight.w600,color: ColorX.blackX)),
+                                        Text('Service : Cleaning & Plumbing',
+                                            style: GoogleFonts.quicksand(fontSize: 12,fontWeight: FontWeight.w600,color: ColorX.blackX)),
+                                        Text('Status : Complete',
+                                            style: GoogleFonts.quicksand(fontSize: 12,fontWeight: FontWeight.w600,color: ColorX.blackX)),
+                                      ],
+                                    ),
+                                  )
+                                ],
+                              ),
+                              SizedBox(
+                                height: 1.h,
+                              ),
+                              const Divider(),
+                              Padding(
+                                padding:  EdgeInsets.only(right: 5.w),
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Row(
+                                      children: [
+                                        SvgPicture.asset('image/money-1.svg',height: 4.h),
+                                        SizedBox(
+                                          width: 2.w,
+                                        ),
+                                        Text('\$75.00',
+                                            style: GoogleFonts.poppins(fontSize: 14,fontWeight: FontWeight.w400,color: ColorX.blackX)),
+                                      ],
+                                    ),
+
+                                    GestureDetector(
+                                      onTap: (){
+                                        print("history");
+                                        GoRouter.of(context).pushNamed(MyAppRouteConstants.serviceHistoryDetailClient);
+                                      },
+                                      child: Row(
+                                        children: [
+                                          Text('View Full Details',
+                                              style: GoogleFonts.quicksand(fontSize: 14,fontWeight: FontWeight.w600,color: ColorX.blackX)),
+                                          Icon(Icons.arrow_forward_ios,size: 20,color: ColorX.blackX,)
+                                        ],
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              )
+
+                            ],
+                          ),
                         ),
                       ),
-                    ),
-                    SizedBox(
-                      height: 1.h,
-                    )
-                  ],
+                      SizedBox(
+                        height: 1.h,
+                      )
+                    ],
+                  ),
                 );
               }) )
         ],

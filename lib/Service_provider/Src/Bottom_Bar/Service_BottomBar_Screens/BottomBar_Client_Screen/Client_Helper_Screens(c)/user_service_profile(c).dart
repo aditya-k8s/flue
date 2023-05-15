@@ -3,6 +3,7 @@ import 'package:allohuggy/Service_provider/Utilities/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:sizer/sizer.dart';
 
 class ServiceProfileClient extends StatefulWidget {
@@ -23,10 +24,14 @@ class _ServiceProfileClientState extends State<ServiceProfileClient> {
         children: [
           Stack(
             children: [
-              SvgPicture.asset(
-                'image/Vector (2).svg',
-                fit: BoxFit.fill,
+              SizedBox(
+                height: 23.h,
                 width: 100.w,
+                child: SvgPicture.asset(
+                  'image/Vector (2).svg',
+                  fit: BoxFit.cover,
+                  width: 100.w,
+                ),
               ),
               Positioned(
                   top: 5.h,
@@ -56,37 +61,47 @@ class _ServiceProfileClientState extends State<ServiceProfileClient> {
                               ),
                               Row(
                                 children: [
-                                  Padding(
-                                    padding: EdgeInsets.only(left: 8.w),
-                                    child: Container(
-                                        decoration: BoxDecoration(
-                                            shape: BoxShape.circle,
-                                            border: Border.all(
-                                                color: ColorX.whiteX,
-                                                width: 2)),
-                                        child: Padding(
-                                          padding: const EdgeInsets.all(12.0),
-                                          child: SvgPicture.asset(
-                                            'image/chatgpt.svg',
-                                            color: Colors.white,
-                                          ),
-                                        )),
+                                  GestureDetector(
+                                    onTap: (){
+                                      GoRouter.of(context).pushNamed(MyAppRouteConstants.supportScreen);
+                                    },
+                                    child: Padding(
+                                      padding: EdgeInsets.only(left: 8.w),
+                                      child: Container(
+                                          decoration: BoxDecoration(
+                                              shape: BoxShape.circle,
+                                              border: Border.all(
+                                                  color: ColorX.whiteX,
+                                                  width: 2)),
+                                          child: Padding(
+                                            padding: const EdgeInsets.all(12.0),
+                                            child: SvgPicture.asset(
+                                              'image/chatgpt.svg',
+                                              color: Colors.white,
+                                            ),
+                                          )),
+                                    ),
                                   ),
                                   SizedBox(
                                     width: 2.w,
                                   ),
-                                  Container(
-                                      decoration: BoxDecoration(
-                                          shape: BoxShape.circle,
-                                          border: Border.all(
-                                              color: ColorX.whiteX, width: 2)),
-                                      child: Padding(
-                                        padding: const EdgeInsets.all(8.0),
-                                        child: Icon(
-                                          Icons.notification_important,
-                                          color: ColorX.whiteX,
-                                        ),
-                                      ))
+                                  GestureDetector(
+                                    onTap: (){
+                                      GoRouter.of(context).pushNamed(MyAppRouteConstants.notificationScreen);
+                                    },
+                                    child: Container(
+                                        decoration: BoxDecoration(
+                                            shape: BoxShape.circle,
+                                            border: Border.all(
+                                                color: ColorX.whiteX, width: 2)),
+                                        child: Padding(
+                                          padding: const EdgeInsets.all(8.0),
+                                          child: Icon(
+                                            Icons.notification_important,
+                                            color: ColorX.whiteX,
+                                          ),
+                                        )),
+                                  )
                                 ],
                               ),
                             ],
@@ -96,10 +111,7 @@ class _ServiceProfileClientState extends State<ServiceProfileClient> {
                           height: 2.h,
                         ),
                         Text('Charles J.Smith',
-                            style: TextStyle(
-                                fontSize: 20.sp,
-                                color: ColorX.buttonColor,
-                                fontWeight: FontWeight.w800)),
+                            style: GoogleFonts.poppins(fontSize: 24,fontWeight: FontWeight.w600,color: ColorX.buttonColor)),
                       ],
                     ),
                   )),
@@ -135,8 +147,8 @@ class _ServiceProfileClientState extends State<ServiceProfileClient> {
                                     children: [
                                       Row(
                                         children: [
-                                          Text("Charles J. Smith",style: TextStyle(color: ColorX.blackX,fontSize: 14.sp,fontWeight: FontWeight.w700),),
-                                          Text('( Plumber )',style: TextStyle(color: ColorX.blackX,fontSize: 10.sp,fontWeight: FontWeight.w400),)
+                                          Text("Charles J. Smith",style: GoogleFonts.poppins(fontSize: 16,fontWeight: FontWeight.w600,color: ColorX.blackX)),
+                                          //Text('( Plumber )',style: GoogleFonts.poppins(fontSize: 24,fontWeight: FontWeight.w600,color: ColorX.buttonColor))
                                         ],
                                       ),
                                       SizedBox(
@@ -145,7 +157,7 @@ class _ServiceProfileClientState extends State<ServiceProfileClient> {
                                       Row(
                                         children: [
                                           Icon(Icons.star_border_outlined,color: ColorX.textColor),
-                                          Text('4.6 (313 Review)',style: TextStyle(color: ColorX.blackX,fontSize: 10.sp,fontWeight: FontWeight.w600))
+                                          Text('4.6 (313 Review)',style: GoogleFonts.quicksand(fontSize: 10,fontWeight: FontWeight.w600,color: ColorX.blackX))
                                         ],
                                       ),
                                       SizedBox(
@@ -154,7 +166,7 @@ class _ServiceProfileClientState extends State<ServiceProfileClient> {
                                       Row(
                                         children: [
                                           Icon(Icons.location_on_outlined,color: ColorX.textColor,),
-                                          Text('35 minutes away',style: TextStyle(color: ColorX.blackX,fontSize: 10.sp,fontWeight: FontWeight.w600))
+                                          Text('35 minutes away',style: GoogleFonts.quicksand(fontSize: 10,fontWeight: FontWeight.w600,color: ColorX.blackX))
                                         ],
                                       ),
                                       SizedBox(
@@ -168,7 +180,7 @@ class _ServiceProfileClientState extends State<ServiceProfileClient> {
                                             SizedBox(
                                               width: 1.w,
                                             ),
-                                            Text('342 jobs completed',style: TextStyle(color: ColorX.blackX,fontSize: 10.sp,fontWeight: FontWeight.w600))
+                                            Text('342 jobs completed',style: GoogleFonts.quicksand(fontSize: 10,fontWeight: FontWeight.w600,color: ColorX.blackX))
                                           ],
                                         ),
                                       ),
@@ -185,9 +197,9 @@ class _ServiceProfileClientState extends State<ServiceProfileClient> {
                                 Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    Text("Language:",style: TextStyle(fontWeight: FontWeight.w600,fontSize: 14.sp,color: ColorX.blackX)),
-                                    Text("Status:",style: TextStyle(fontWeight: FontWeight.w600,fontSize: 14.sp,color: ColorX.blackX)),
-                                    Text("Services:",style: TextStyle(fontWeight: FontWeight.w600,fontSize: 14.sp,color: ColorX.blackX)),
+                                    Text("Language:",style: GoogleFonts.poppins(fontSize: 14,fontWeight: FontWeight.w600,color: ColorX.blackX)),
+                                    Text("Status:",style: GoogleFonts.poppins(fontSize: 14,fontWeight: FontWeight.w600,color: ColorX.blackX)),
+                                    Text("Services:",style: GoogleFonts.poppins(fontSize: 14,fontWeight: FontWeight.w600,color: ColorX.blackX)),
                                   ],
                                 ),
                                 Padding(
@@ -195,9 +207,9 @@ class _ServiceProfileClientState extends State<ServiceProfileClient> {
                                   child: Column(
                                     crossAxisAlignment: CrossAxisAlignment.start,
                                     children: [
-                                      Text("English, French",style: TextStyle(fontWeight: FontWeight.w300,fontSize: 13.sp),),
-                                      Text("Available",style: TextStyle(fontWeight: FontWeight.w300,fontSize: 13.sp),),
-                                      Text("Plumbing, home cleaning",style: TextStyle(fontWeight: FontWeight.w300,fontSize: 13.sp),),
+                                      Text("English, French",style:GoogleFonts.quicksand(fontSize: 14,fontWeight: FontWeight.w500,color: ColorX.blackX)),
+                                      Text("Available",style: GoogleFonts.quicksand(fontSize: 14,fontWeight: FontWeight.w500,color: ColorX.blackX)),
+                                      Text("Plumbing, home cleaning",style: GoogleFonts.quicksand(fontSize: 14,fontWeight: FontWeight.w500,color: ColorX.blackX)),
                                     ],
                                   ),
                                 ),
@@ -206,17 +218,17 @@ class _ServiceProfileClientState extends State<ServiceProfileClient> {
                             SizedBox(
                               height: 2.h,
                             ),
-                            Text('About us',style: TextStyle(fontWeight: FontWeight.w600,fontSize: 14.sp,color: ColorX.blackX)),
-                            Text('Lorem Ipsum is simply dummy text of the printing and typesetting industry. LoremIpsum has been the industrys standarddummy text ever since the... Read More',style: TextStyle(fontWeight: FontWeight.w300,fontSize: 11.sp))
+                            Text('About us',style: GoogleFonts.poppins(fontSize: 18,fontWeight: FontWeight.w600,color: ColorX.blackX)),
+                            Text('Lorem Ipsum is simply dummy text of the printing and typesetting industry. LoremIpsum has been the industrys standarddummy text ever since the... Read More',style:  GoogleFonts.quicksand(fontSize: 14,fontWeight: FontWeight.w700,color: ColorX.blackX))
                           ],
                         ),
                       ),
                     ),
                     Padding(
                       padding: const EdgeInsets.all(4.0),
-                      child: Text("4.6",style: TextStyle(fontSize: 35.sp,fontWeight: FontWeight.bold),),
+                      child: Text("4.6",style:  GoogleFonts.poppins(fontSize: 48,fontWeight: FontWeight.w600,color: ColorX.blackX)),
                     ),
-                    const Text("based on 313 Reviews",style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400)),
+                     Text("based on 313 Reviews",style:  GoogleFonts.quicksand(fontSize: 14,fontWeight: FontWeight.w600,color: ColorX.blackX)),
                     SizedBox(
                       height: 1.h,
                     ),
@@ -225,7 +237,7 @@ class _ServiceProfileClientState extends State<ServiceProfileClient> {
                       width: size.width,
                       child: ListView.builder(
                           padding: EdgeInsets.zero,
-                          itemCount: 10,
+                          itemCount: 1,
                           physics: const NeverScrollableScrollPhysics(),
                           itemBuilder: (context,index){
                             return Padding(
@@ -258,12 +270,12 @@ class _ServiceProfileClientState extends State<ServiceProfileClient> {
                                                     children: [
                                                       Padding(
                                                         padding: const EdgeInsets.only(left: 8.0),
-                                                        child: Text("Anna Glukkhikh",style: TextStyle(color: ColorX.blackX,fontSize: 14.sp,fontWeight: FontWeight.w700),),
+                                                        child: Text("Anna Glukkhikh",style:  GoogleFonts.poppins(fontSize: 14,fontWeight: FontWeight.w600,color: ColorX.blackX)),
                                                       ),
                                                       SizedBox(
                                                         width: 20.w,
                                                       ),
-                                                      const Text("1 day ago"),
+                                                       Text("1 day ago",style:  GoogleFonts.quicksand(fontSize: 12,fontWeight: FontWeight.w700,color: ColorX.blackX),),
                                                     ],
                                                   ),
                                                   Padding(
@@ -277,9 +289,9 @@ class _ServiceProfileClientState extends State<ServiceProfileClient> {
                                             ],
                                           ),
                                         ),
-                                        const Padding(
+                                         Padding(
                                           padding: EdgeInsets.all(8.0),
-                                          child: Text("Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text."),
+                                          child: Text("Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.",style:  GoogleFonts.quicksand(fontSize: 12,fontWeight: FontWeight.w500,color: ColorX.blackX),),
                                         ),
                                       ],
                                     ),
@@ -293,7 +305,7 @@ class _ServiceProfileClientState extends State<ServiceProfileClient> {
                           }),
                     ),
                     SizedBox(
-                      height: 8.h,
+                      height: 1.h,
                     )
                   ],
                 ),
