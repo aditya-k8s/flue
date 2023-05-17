@@ -161,7 +161,7 @@ class _PaymentViewState extends State<PaymentView>
                       controller: tabController,
                       tabs: [
                         Padding(
-                          padding: const EdgeInsets.only(left: 6.0, top: 12, bottom: 12),
+                          padding: const EdgeInsets.only(left: 6.0, top: 10, bottom: 10),
                           child: Row(
                             children:  [
                               Icon(Icons.credit_card,color: ColorX.textColor,),
@@ -171,7 +171,7 @@ class _PaymentViewState extends State<PaymentView>
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsets.only(left: 6.0, top: 12, bottom: 12),
+                          padding: const EdgeInsets.only(left: 6.0, top: 10, bottom: 10),
                           child: Row(
                             children:  [
                               Icon(Icons.food_bank,color: ColorX.textColor,),
@@ -284,7 +284,7 @@ class _PaymentViewState extends State<PaymentView>
                       controller: tabController,
                       tabs: [
                         Padding(
-                          padding: const EdgeInsets.only(left: 6.0, top: 12, bottom: 12),
+                          padding: const EdgeInsets.only(left: 6.0, top: 10, bottom: 10),
                           child: Row(
                             children:  [
                               Icon(Icons.credit_card,color: ColorX.textColor,),
@@ -294,7 +294,7 @@ class _PaymentViewState extends State<PaymentView>
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsets.only(left: 6.0, top: 12, bottom: 12),
+                          padding: const EdgeInsets.only(left: 6.0, top: 10, bottom: 10),
                           child: Row(
                             children:  [
                                Icon(Icons.food_bank,color: ColorX.textColor,),
@@ -450,7 +450,7 @@ class _PaymentViewState extends State<PaymentView>
             height: 10,
           ),
           Padding(
-            padding:  EdgeInsets.only(left: 6.w,right: 6.w),
+            padding:  EdgeInsets.only(left: 8.w,right: 8.w),
             child: GestureDetector(
               onTap:(){
                 _onValidate;
@@ -714,7 +714,7 @@ class _PaymentViewState extends State<PaymentView>
               GoRouter.of(context).pushNamed(MyAppRouteConstants.onPaymentSuccess);
             },
             child: Padding(
-              padding:  EdgeInsets.only(left: 5.w,right: 5.w),
+              padding:  EdgeInsets.only(left: 8.w,right: 8.w),
               child: CommonButton(
                 height: 6.h,
                 buttonText: 'FOLLOWING',

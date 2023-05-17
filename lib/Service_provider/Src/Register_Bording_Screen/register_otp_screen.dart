@@ -148,7 +148,7 @@ class _RegisterOtpScreenState extends State<RegisterOtpScreen> {
                                 padding: EdgeInsets.only(left: 8.w, right: 8.w),
                                 child: CommonButton(
                                   buttonText: 'VERIFY NOW',
-                                  height: 7.h,
+                                  height: 6.h,
                                 ),
                               ),
                             ),
@@ -222,7 +222,7 @@ class _RegisterOtpScreenState extends State<RegisterOtpScreen> {
                                 padding: EdgeInsets.only(left: 8.w, right: 8.w),
                                 child: CommonButton(
                                   buttonText: 'VERIFY NOW',
-                                  height: 7.h,
+                                  height: 6.h,
                                 ),
                               ),
                             ),
@@ -378,7 +378,7 @@ class _RegisterOtpScreenState extends State<RegisterOtpScreen> {
                                 padding: EdgeInsets.only(left: 8.w, right: 8.w),
                                 child: CommonButton(
                                   buttonText: 'VERIFY NOW',
-                                  height: 7.h,
+                                  height: 6.h,
                                 ),
                               ),
                             ),
@@ -453,7 +453,7 @@ class _RegisterOtpScreenState extends State<RegisterOtpScreen> {
                                 padding: EdgeInsets.only(left: 8.w, right: 8.w),
                                 child: CommonButton(
                                   buttonText: 'VERIFY NOW',
-                                  height: 7.h,
+                                  height: 6.h,
                                 ),
                               ),
                             ),

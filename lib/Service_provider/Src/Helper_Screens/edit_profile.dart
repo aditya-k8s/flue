@@ -309,9 +309,9 @@ class _EditProfileState extends State<EditProfile> {
                 Navigator.of(context).pop();
               },
               child: Padding(
-                padding:  EdgeInsets.only(left: 5.w,right: 5.w),
+                padding:  EdgeInsets.only(left: 8.w,right: 8.w),
                 child: CommonButton(
-                  height: 7.h,
+                  height: 6.h,
                   buttonText: 'SAVE CHANGE',
                 ),
               ),
@@ -599,9 +599,9 @@ class _EditProfileState extends State<EditProfile> {
               height: 2.h,
             ),
             Padding(
-              padding:  EdgeInsets.only(left: 5.w,right: 5.w),
+              padding:  EdgeInsets.only(left: 8.w,right: 8.w),
               child: CommonButton(
-                height: 7.h,
+                height: 6.h,
                 buttonText: 'SAVE CHANGE',
               ),
             ),

@@ -83,7 +83,7 @@ class OnPaymentSuccess extends StatelessWidget {
               GoRouter.of(context).pushNamed(MyAppRouteConstants.bottomBar);
             },
             child: Padding(
-              padding:  EdgeInsets.only(left: 5.w,right: 5.w),
+              padding:  EdgeInsets.only(left: 8.w,right: 8.w),
               child: CommonButton(
                 height: 6.h,
                 buttonText: 'CONNECTION',
@@ -160,7 +160,7 @@ class OnPaymentSuccess extends StatelessWidget {
               GoRouter.of(context).pushNamed(MyAppRouteConstants.bottomBar);
             },
             child: Padding(
-              padding:  EdgeInsets.only(left: 5.w,right: 5.w),
+              padding:  EdgeInsets.only(left: 8.w,right: 8.w),
               child: CommonButton(
                 height: 6.h,
                 buttonText: 'CONNECTION',

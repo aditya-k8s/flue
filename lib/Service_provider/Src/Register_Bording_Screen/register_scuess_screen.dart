@@ -81,9 +81,9 @@ class RegisterCompleteScreen extends StatelessWidget {
               GoRouter.of(context).pushNamed(MyAppRouteConstants.mapScreen);
             },
             child: Padding(
-              padding:  EdgeInsets.only(left: 6.w,right: 6.w),
+              padding:  EdgeInsets.only(left: 8.w,right: 8.w),
               child: CommonButton(
-                height: 7.h,
+                height: 6.h,
                 buttonText: "FOLLOWING",
               ),
             ),
@@ -162,9 +162,9 @@ class RegisterCompleteScreen extends StatelessWidget {
              GoRouter.of(context).pushNamed(MyAppRouteConstants.mapScreen);
             },
             child: Padding(
-              padding:  EdgeInsets.only(left: 6.w,right: 6.w),
+              padding:  EdgeInsets.only(left: 8.w,right: 8.w),
               child: CommonButton(
-                height: 7.h,
+                height: 6.h,
                 buttonText: "FOLLOWING",
               ),
             ),
