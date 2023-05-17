@@ -161,14 +161,14 @@ class _HomePageClientState extends State<HomePageClient> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Padding(
-                            padding: EdgeInsets.only(right: 4.w),
+                            padding: EdgeInsets.only(right: 2.w),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Row(
                                   children: [
                                     Text('Find a Craftsman',
-                                        style: GoogleFonts.poppins(fontWeight: FontWeight.w600,fontSize: 24,color: ColorX.whiteX)),
+                                        style: GoogleFonts.poppins(fontWeight: FontWeight.w600,fontSize: 22,color: ColorX.whiteX)),
                                   ],
                                 ),
                                 Row(
@@ -185,7 +185,7 @@ class _HomePageClientState extends State<HomePageClient> {
                                                 border: Border.all(
                                                     color: ColorX.whiteX, width: 2)),
                                             child: Padding(
-                                              padding: const EdgeInsets.all(12.0),
+                                              padding: const EdgeInsets.all(10.0),
                                               child: SvgPicture.asset(
                                                 'image/chatgpt.svg',
                                                 color: Colors.white,
@@ -206,7 +206,7 @@ class _HomePageClientState extends State<HomePageClient> {
                                               border: Border.all(
                                                   color: ColorX.whiteX, width: 2)),
                                           child: Padding(
-                                            padding: const EdgeInsets.all(8.0),
+                                            padding: const EdgeInsets.all(6.0),
                                             child: Icon(
                                               Icons.notifications,
                                               color: ColorX.whiteX,
@@ -219,12 +219,12 @@ class _HomePageClientState extends State<HomePageClient> {
                             ),
                           ),
                           Text('Near you',
-                              style: GoogleFonts.poppins(fontWeight: FontWeight.w600,fontSize: 24,color: ColorX.buttonColor)),
+                              style: GoogleFonts.poppins(fontWeight: FontWeight.w600,fontSize: 22,color: ColorX.buttonColor)),
                           SizedBox(
                             height: 1.h,
                           ),
                           Text('Choose the type of services',
-                              style: GoogleFonts.quicksand(fontWeight: FontWeight.w500,fontSize: 16,color: ColorX.whiteX))
+                              style: GoogleFonts.quicksand(fontWeight: FontWeight.w500,fontSize: 15,color: ColorX.whiteX))
                         ],
                       ),
                     )),
@@ -267,9 +267,15 @@ class _HomePageClientState extends State<HomePageClient> {
                   decoration: BoxDecoration(
                       color: ColorX.whiteX,
                       border: Border.all(color: ColorX.underLineColor),
-                      borderRadius: BorderRadius.circular(8.w)),
+                      borderRadius: BorderRadius.circular(8.w),
+                  boxShadow: [BoxShadow(
+                    color: Colors.grey.withOpacity(0.4),
+                      spreadRadius: 3,
+                      blurRadius: 4,
+                      offset: Offset(0, 1)
+                  )]),
                   child: Padding(
-                    padding: const EdgeInsets.all(4.0),
+                    padding: const EdgeInsets.all(0.0),
                     child: TextField(
                       onTap: (){
 

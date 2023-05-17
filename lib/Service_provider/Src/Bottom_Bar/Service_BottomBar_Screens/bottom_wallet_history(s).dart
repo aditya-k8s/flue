@@ -101,7 +101,7 @@ class _BottomWalletHistoryState extends State<BottomWalletHistory>
               child: DefaultTabController(
                 length: 2,
                 child: Padding(
-                  padding: const EdgeInsets.all(2.0),
+                  padding: const EdgeInsets.all(0.0),
                   child: TabBar(
                       indicator: selectIndex == 0
                           ? BoxDecoration(
@@ -138,7 +138,7 @@ class _BottomWalletHistoryState extends State<BottomWalletHistory>
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsets.all(12.0),
+                          padding: const EdgeInsets.only(left: 12.0, top: 10, bottom: 10),
                           child: Row(
                             children: [
                               Icon(

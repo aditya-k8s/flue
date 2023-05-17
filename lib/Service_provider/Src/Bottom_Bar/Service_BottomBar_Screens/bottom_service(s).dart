@@ -86,7 +86,7 @@ class _BottomServiceState extends State<BottomService> {
                   borderRadius: BorderRadius.circular(8.w)),
               child: Padding(
                 padding: const EdgeInsets.only(
-                    left: 18.0, top: 6, bottom: 4, right: 18),
+                    left: 18.0, top: 1, bottom: 0, right: 18),
                 child: TextField(
                   textAlign: TextAlign.left,
                   autocorrect: false,

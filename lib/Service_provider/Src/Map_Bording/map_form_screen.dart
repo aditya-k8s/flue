@@ -181,14 +181,14 @@ class MapFromScreen extends StatelessWidget {
               height: 5.h,
             ),
             Padding(
-              padding:  EdgeInsets.only(left: 6.w,right: 6.w),
+              padding:  EdgeInsets.only(left: 8.w,right: 8.w),
               child: Container(
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(8.w),
                     border: Border.all(color: ColorX.textColor,width: 2)
                 ),
                 child: Padding(
-                  padding: const EdgeInsets.all(14.0),
+                  padding: const EdgeInsets.all(10.0),
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -201,16 +201,16 @@ class MapFromScreen extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: 5.h,
+              height: 2.h,
             ),
             InkWell(
               onTap: (){
                 GoRouter.of(context).pushNamed(MyAppRouteConstants.paymentView);
               },
               child: Padding(
-                padding:  EdgeInsets.only(left: 6.w,right: 6.w,bottom: 3.h),
+                padding:  EdgeInsets.only(left: 8.w,right: 8.w,bottom: 3.h),
                 child: CommonButton(
-                  height: 7.h,
+                  height: 6.h,
                   buttonText: "SAVE LOCATION",
                 ),
               ),
@@ -379,14 +379,15 @@ class MapFromScreen extends StatelessWidget {
               height: 5.h,
             ),
             Padding(
-              padding:  EdgeInsets.only(left: 6.w,right: 6.w),
+              padding:  EdgeInsets.only(left: 8.w,right: 8.w),
               child: Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(8.w),
-                  border: Border.all(color: ColorX.textColor,width: 2)
+                  border: Border.all(color: ColorX.textColor,width: 2),
+
                 ),
                 child: Padding(
-                  padding: const EdgeInsets.all(14.0),
+                  padding: const EdgeInsets.all(10.0),
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -399,16 +400,16 @@ class MapFromScreen extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: 5.h,
+              height: 2.h,
             ),
             InkWell(
               onTap: (){
                 GoRouter.of(context).pushNamed(MyAppRouteConstants.paymentView);
               },
               child: Padding(
-                padding:  EdgeInsets.only(left: 6.w,right: 6.w,bottom: 3.h),
+                padding:  EdgeInsets.only(left: 8.w,right: 8.w,bottom: 3.h),
                 child: CommonButton(
-                  height: 7.h,
+                  height: 6.h,
                   buttonText: "SAVE LOCATION",
                 ),
               ),

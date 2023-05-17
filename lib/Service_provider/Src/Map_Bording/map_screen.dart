@@ -170,10 +170,18 @@ class _MapScreenState extends State<MapScreen> {
                 width: 100.w,
                 decoration: BoxDecoration(
                     color: ColorX.buttonColor,
-                    borderRadius: BorderRadius.circular(8.w)
+                    borderRadius: BorderRadius.circular(8.w),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey.withOpacity(0.4),
+                      spreadRadius: 3,
+                      blurRadius: 4,
+                      offset: Offset(0, 1), // changes position of shadow
+                    ),
+                  ],
                 ),
                 child: Padding(
-                  padding:  EdgeInsets.all(1.9.h),
+                  padding:  EdgeInsets.all(1.5.h),
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -287,10 +295,18 @@ class _MapScreenState extends State<MapScreen> {
                 width: 100.w,
                 decoration: BoxDecoration(
                     color: ColorX.buttonColor,
-                    borderRadius: BorderRadius.circular(8.w)
+                    borderRadius: BorderRadius.circular(8.w),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey.withOpacity(0.4),
+                      spreadRadius: 3,
+                      blurRadius: 4,
+                      offset: Offset(0, 1), // changes position of shadow
+                    ),
+                  ],
                 ),
                 child: Padding(
-                  padding:  EdgeInsets.all(1.9.h),
+                  padding:  EdgeInsets.all(1.5.h),
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.center,
