@@ -60,7 +60,7 @@ class _RatingScreenState extends State<RatingScreen> {
                                   child: Padding(
                                     padding: const EdgeInsets.all(8.0),
                                     child: Icon(
-                                      Icons.notification_important,
+                                      Icons.notifications,
                                       color: ColorX.whiteX,
                                     ),
                                   ))

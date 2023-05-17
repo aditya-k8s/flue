@@ -99,18 +99,21 @@ class _MapScreenState extends State<MapScreen> {
         children: [
           Stack(
             children: [
-              SvgPicture.asset(
-                'image/Vector (3).svg',
-                fit: BoxFit.fitWidth,
-                width: 100.w,
+              Padding(
+                padding: const EdgeInsets.all(12.0),
+                child: SvgPicture.asset(
+                  'image/Vector (3).svg',
+                  fit: BoxFit.fitWidth,
+                  width: 100.w,
+                ),
               ),
               Positioned(
                   top: 6.h,
                   child: Padding(
-                    padding: EdgeInsets.only(left: 4.w, right: 0.w),
+                    padding: EdgeInsets.only(left: 7.w, right: 0.w),
                     child:SizedBox(
-                      height: 40.h,
-                      width: 90.w,
+                      height: 41.h,
+                      width: 85.w,
                       child: ClipRRect(
                         borderRadius: BorderRadius.only(
                           bottomRight: Radius.circular(8.w),
@@ -207,18 +210,21 @@ class _MapScreenState extends State<MapScreen> {
         children: [
           Stack(
             children: [
-              SvgPicture.asset(
-                'image/Vector (3).svg',
-                fit: BoxFit.fitWidth,
-                width: 100.w,
+              Padding(
+                padding: const EdgeInsets.all(12.0),
+                child: SvgPicture.asset(
+                  'image/Vector (3).svg',
+                  fit: BoxFit.fitWidth,
+                  width: 100.w,
+                ),
               ),
               Positioned(
                   top: 6.h,
                   child: Padding(
-                    padding: EdgeInsets.only(left: 4.w, right: 0.w),
+                    padding: EdgeInsets.only(left: 7.w, right: 0.w),
                     child:SizedBox(
-                      height: 40.h,
-                      width: 90.w,
+                      height: 41.h,
+                      width: 85.w,
                       child: ClipRRect(
                         borderRadius: BorderRadius.only(
                           bottomRight: Radius.circular(8.w),

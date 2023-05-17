@@ -90,7 +90,7 @@ class RegisterCompleteScreen extends StatelessWidget {
           ),
           Padding(
             padding:  EdgeInsets.only(top: 20.h),
-            child: Center(child: Text('Feedback',style: GoogleFonts.quicksand(color: ColorX.textColor,fontSize: 16,fontWeight: FontWeight.w700,decoration: TextDecoration.underline))),
+            child: Center(child: Text('Feedback',style: GoogleFonts.quicksand(color: ColorX.textNew,fontSize: 16,fontWeight: FontWeight.w700,decoration: TextDecoration.underline))),
           )
         ],
       ):
@@ -172,7 +172,7 @@ class RegisterCompleteScreen extends StatelessWidget {
           Padding(
             padding:  EdgeInsets.only(top: 20.h),
             child: Center(child: Text('Feedback',style: GoogleFonts.quicksand(
-                color: ColorX.textColor,fontSize: 16,fontWeight: FontWeight.w700,decoration: TextDecoration.underline))),
+                color: ColorX.textNew,fontSize: 16,fontWeight: FontWeight.w700,decoration: TextDecoration.underline))),
           )
         ],
       ),

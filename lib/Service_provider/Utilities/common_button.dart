@@ -15,10 +15,18 @@ class CommonButton extends StatelessWidget {
       width: 100.w,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(8.w),
-        color: ColorX.buttonColor
+        color: ColorX.buttonColor,
+        boxShadow: [
+          BoxShadow(
+            color: Colors.grey.withOpacity(0.4),
+            spreadRadius: 3,
+            blurRadius: 4,
+            offset: Offset(0, 1), // changes position of shadow
+          ),
+        ],
       ),
       child: Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: const EdgeInsets.all(4.0),
         child: Center(
             child: Text(buttonText!,style: GoogleFonts.quicksand(color: ColorX.textColor,fontWeight:FontWeight.w700,fontSize: 16),)),
       ),
