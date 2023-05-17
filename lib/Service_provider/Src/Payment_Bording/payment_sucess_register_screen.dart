@@ -92,7 +92,7 @@ class OnPaymentSuccess extends StatelessWidget {
           ),
           Padding(
             padding:  EdgeInsets.only(top: 10.h),
-            child: Center(child: Text('Feedback',style: GoogleFonts.quicksand(color: ColorX.textColor,fontSize: 18,fontWeight: FontWeight.w700,decoration: TextDecoration.underline))),
+            child: Center(child: Text('Feedback',style: GoogleFonts.quicksand(color: ColorX.textNew,fontSize: 18,fontWeight: FontWeight.w700,decoration: TextDecoration.underline))),
           )
         ],
       ):Column(
@@ -169,7 +169,7 @@ class OnPaymentSuccess extends StatelessWidget {
           ),
           Padding(
             padding:  EdgeInsets.only(top: 10.h),
-            child: Center(child: Text('Feedback',style: GoogleFonts.quicksand(color: ColorX.textColor,fontSize: 18,fontWeight: FontWeight.w700,decoration: TextDecoration.underline))),
+            child: Center(child: Text('Feedback',style: GoogleFonts.quicksand(color: ColorX.textNew,fontSize: 18,fontWeight: FontWeight.w700,decoration: TextDecoration.underline))),
           )
         ],
       ),

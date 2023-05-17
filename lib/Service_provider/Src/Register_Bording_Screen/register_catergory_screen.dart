@@ -95,7 +95,7 @@ class _RegisterCategoryScreenState extends State<RegisterCategoryScreen> {
                         border: Border.all(color: ColorX.underLineColor),
                         borderRadius: BorderRadius.circular(8.w)),
                     child: Padding(
-                      padding: const EdgeInsets.only(left: 18.0, top: 8, bottom: 5, right: 15),
+                      padding: const EdgeInsets.only(left: 18.0, top: 4, bottom:1, right: 15),
                       child: TextField(
                         textAlign: TextAlign.left,
                         autocorrect: false,
@@ -138,16 +138,16 @@ class _RegisterCategoryScreenState extends State<RegisterCategoryScreen> {
                     GoRouter.of(context).pushNamed(MyAppRouteConstants.registerForm);
                   },
                   child: Padding(
-                    padding:  EdgeInsets.only(left: 4.w,right: 4.w),
+                    padding:  EdgeInsets.only(left: 8.w,right: 8.w),
                     child: CommonButton(
-                      height: 7.h,
+                      height: 6.h,
                       buttonText: 'FOLLOWING',
                     ),
                   ),
                 ),
                 Padding(
                   padding:  EdgeInsets.only(top: 1.h,bottom: 2.h),
-                  child: Text("I have an account",style: GoogleFonts.quicksand(color: Color(0xff303947),fontSize: 16,fontWeight: FontWeight.w500,decoration: TextDecoration.underline)),
+                  child: Text("I have an account",style: GoogleFonts.quicksand(color: ColorX.textNew,fontSize: 16,fontWeight: FontWeight.w500,decoration: TextDecoration.underline)),
                 )
               ],
             ),

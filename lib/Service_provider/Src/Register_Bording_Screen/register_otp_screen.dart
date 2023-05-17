@@ -169,7 +169,7 @@ class _RegisterOtpScreenState extends State<RegisterOtpScreen> {
                                   text: "Resend  OTP",
                                   style: GoogleFonts.quicksand(
                                       fontSize: 16,
-                                      color: ColorX.textColor,
+                                      color: ColorX.textNew,
                                       fontWeight: FontWeight.w700,
                                       decoration: TextDecoration.underline))
                             ])),
@@ -186,7 +186,7 @@ class _RegisterOtpScreenState extends State<RegisterOtpScreen> {
                                 "By Email.",
                                 style: GoogleFonts.quicksand(
                                     fontSize: 16,
-                                    color: ColorX.textColor,
+                                    color: ColorX.textNew,
                                     fontWeight: FontWeight.w700,
                                     decoration: TextDecoration.underline),
                               ),
@@ -243,7 +243,7 @@ class _RegisterOtpScreenState extends State<RegisterOtpScreen> {
                                   text: "Resend  OTP",
                                   style: GoogleFonts.quicksand(
                                       fontSize: 16,
-                                      color: ColorX.textColor,
+                                      color: ColorX.textNew,
                                       fontWeight: FontWeight.w700,
                                       decoration: TextDecoration.underline))
                             ])),
@@ -260,7 +260,7 @@ class _RegisterOtpScreenState extends State<RegisterOtpScreen> {
                                 "By Mobile No.",
                                 style: GoogleFonts.quicksand(
                                     fontSize: 16,
-                                    color: ColorX.textColor,
+                                    color: ColorX.textNew,
                                     fontWeight: FontWeight.w700,
                                     decoration: TextDecoration.underline),
                               ),
@@ -400,7 +400,7 @@ class _RegisterOtpScreenState extends State<RegisterOtpScreen> {
                                   text: "Resend  OTP",
                                   style:  GoogleFonts.quicksand(
                                       fontSize: 16,
-                                      color: ColorX.textColor,
+                                      color: ColorX.textNew,
                                       fontWeight: FontWeight.w700,
                                       decoration: TextDecoration.underline))
                             ])),
@@ -417,7 +417,7 @@ class _RegisterOtpScreenState extends State<RegisterOtpScreen> {
                                 "By Email.",
                                 style: GoogleFonts.quicksand(
                                     fontSize: 16,
-                                    color: ColorX.textColor,
+                                    color: ColorX.textNew,
                                     fontWeight: FontWeight.w700,
                                     decoration: TextDecoration.underline),
                               ),
@@ -473,7 +473,7 @@ class _RegisterOtpScreenState extends State<RegisterOtpScreen> {
                               TextSpan(
                                   text: "Resend  OTP",
                                   style: TextStyle(
-                                      color: ColorX.textColor,
+                                      color: ColorX.textNew,
                                       fontSize: 12.sp,
                                       fontWeight: FontWeight.w700,
                                       decoration: TextDecoration.underline))
@@ -491,7 +491,7 @@ class _RegisterOtpScreenState extends State<RegisterOtpScreen> {
                                 "By Mobile No.",
                                 style: GoogleFonts.quicksand(
                                     fontSize: 16,
-                                    color: ColorX.textColor,
+                                    color: ColorX.textNew,
                                     fontWeight: FontWeight.w700,
                                     decoration: TextDecoration.underline),
                               ),

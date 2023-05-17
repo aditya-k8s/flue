@@ -23,7 +23,6 @@ class UserTypeScreen extends StatelessWidget {
           backgroundColor: ColorX.scaffoldBackGroundX,
           body: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Stack(
                 children: [
@@ -54,6 +53,7 @@ class UserTypeScreen extends StatelessWidget {
                 "You Are",
                 style: TextStyleX.textStyles,
               ),
+              SizedBox(height: 4.h,),
               GestureDetector(
                 onTap: () async {
                   cubit.onBool(true);
@@ -66,8 +66,8 @@ class UserTypeScreen extends StatelessWidget {
                 child: Padding(
                   padding: EdgeInsets.only(left: 4.w, right: 4.w),
                   child: Container(
-                    height: 7.h,
-                    width: 100.w,
+                    height: 6.h,
+                    width: 85.w,
                     decoration: BoxDecoration(
                         border: state.anotherBool!
                             ? Border.all(color: ColorX.buttonColor)
@@ -75,7 +75,15 @@ class UserTypeScreen extends StatelessWidget {
                         borderRadius: BorderRadius.circular(8.w),
                         color: state.anotherBool!
                             ? ColorX.buttonColor
-                            : Color(0xFFE3EFFF)),
+                            : Color(0xFFE3EFFF),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(0.4),
+                          spreadRadius: 3,
+                          blurRadius: 4,
+                          offset: Offset(0, 1), // changes position of shadow
+                        ),
+                      ],),
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Center(
@@ -90,6 +98,7 @@ class UserTypeScreen extends StatelessWidget {
                   ),
                 ),
               ),
+              SizedBox(height: 2.h,),
               GestureDetector(
                 onTap: () async {
                   cubit.onBool(false);
@@ -104,8 +113,8 @@ class UserTypeScreen extends StatelessWidget {
                 child: Padding(
                   padding: EdgeInsets.only(left: 4.w, right: 4.w),
                   child: Container(
-                    height: 7.h,
-                    width: 100.w,
+                    height: 6.h,
+                    width: 85.w,
                     decoration: BoxDecoration(
                         border: state.anotherBool!
                             ? Border.all(color: Color(0xFF22477B))
@@ -113,7 +122,15 @@ class UserTypeScreen extends StatelessWidget {
                         borderRadius: BorderRadius.circular(8.w),
                         color: state.anotherBool!
                             ? Color(0xFFE3EFFF)
-                            : ColorX.buttonColor),
+                            : ColorX.buttonColor,
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(0.4),
+                          spreadRadius: 3,
+                          blurRadius: 4,
+                          offset: Offset(0, 1), // changes position of shadow
+                        ),
+                      ],),
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Center(
@@ -128,10 +145,11 @@ class UserTypeScreen extends StatelessWidget {
                   ),
                 ),
               ),
+              SizedBox(height: 8.h,),
               Padding(
                 padding:  EdgeInsets.only(bottom: 10.h),
                 child: SvgPicture.asset(
-                  "image/Group 16400.svg",
+                  "image/Group 16400.svg", height: 18.h,
                 ),
               )
             ],

@@ -9,5 +9,6 @@ class ColorX  {
   static Color underLineColor = const Color(0xFF3E9BF8);
   static Color darkBlue = const Color(0xFF262628);
   static Color grayX = const Color(0xFF777777);
+  static Color textNew = const Color(0xFF077AF0);
 }
 

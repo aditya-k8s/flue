@@ -21,7 +21,6 @@ class LanguageTypeScreen extends StatelessWidget {
           backgroundColor: ColorX.scaffoldBackGroundX,
           body: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Stack(
                 children: [
@@ -52,6 +51,7 @@ class LanguageTypeScreen extends StatelessWidget {
                 "Choose Your Language",
                 style: TextStyleX.textStyles,
               ),
+              SizedBox(height: 4.h,),
               GestureDetector(
                 onTap: () async{
                   cubit.onBool(true);
@@ -65,14 +65,22 @@ class LanguageTypeScreen extends StatelessWidget {
                 child: Padding(
                   padding:  EdgeInsets.only(left: 4.w,right: 4.w),
                   child: Container(
-                    height: 7.h,
-                    width: 100.w,
+                    height: 6.h,
+                    width: 85.w,
                     decoration: BoxDecoration(
                         border:state.selectColor!?Border.all(color: ColorX.buttonColor): Border.all(color: Color(0xFF22477B)),
                         borderRadius: BorderRadius.circular(8.w),
                         color: state.selectColor!
                             ? ColorX.buttonColor
-                            : Color(0xFFE3EFFF)),
+                            : Color(0xFFE3EFFF),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(0.4),
+                          spreadRadius: 3,
+                          blurRadius: 4,
+                          offset: Offset(0, 1), // changes position of shadow
+                        ),
+                      ],),
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Center(
@@ -87,6 +95,7 @@ class LanguageTypeScreen extends StatelessWidget {
                   ),
                 ),
               ),
+              SizedBox(height: 2.h,),
               GestureDetector(
                 onTap: () async {
                   cubit.onBool(false);
@@ -100,14 +109,22 @@ class LanguageTypeScreen extends StatelessWidget {
                 child: Padding(
                   padding:  EdgeInsets.only(left: 4.w,right: 4.w),
                   child: Container(
-                    height: 7.h,
-                    width: 100.w,
+                    height: 6.h,
+                    width: 85.w,
                     decoration: BoxDecoration(
                         border: state.selectColor!? Border.all(color: Color(0xFF22477B)):Border.all(color: ColorX.buttonColor),
                         borderRadius: BorderRadius.circular(8.w),
                         color: state.selectColor!
                             ? Color(0xFFE3EFFF)
-                            : ColorX.buttonColor),
+                            : ColorX.buttonColor,
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(0.4),
+                          spreadRadius: 3,
+                          blurRadius: 4,
+                          offset: Offset(0, 1), // changes position of shadow
+                        ),
+                      ],),
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Center(
@@ -122,10 +139,11 @@ class LanguageTypeScreen extends StatelessWidget {
                   ),
                 ),
               ),
+              SizedBox(height: 8.h,),
               Padding(
                 padding:  EdgeInsets.only(bottom: 10.h),
                 child: SvgPicture.asset(
-                  "image/Group 16400.svg",
+                  "image/Group 16400.svg", height: 18.h,
                 ),
               )
             ],

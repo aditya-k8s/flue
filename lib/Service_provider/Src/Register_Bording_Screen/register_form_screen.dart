@@ -44,7 +44,7 @@ class _RegisterFormState extends State<RegisterForm> {
                   width: 100.w,
                 ),
                 Positioned(
-                    top: 6.h,
+                    top: 4.h,
                     child: Padding(
                       padding: EdgeInsets.only(left: 3.w),
                       child: Column(
@@ -59,7 +59,7 @@ class _RegisterFormState extends State<RegisterForm> {
                                 size: 25.sp,
                                 color: ColorX.whiteX,
                               )),
-
+                          SizedBox(height: 2.h,),
                           Padding(
                             padding: const EdgeInsets.only(left: 8.0),
                             child: Text(
@@ -356,7 +356,7 @@ class _RegisterFormState extends State<RegisterForm> {
                   width: 100.w,
                 ),
                 Positioned(
-                    top: 6.h,
+                    top: 4.h,
                     child: Padding(
                       padding: EdgeInsets.only(left: 3.w),
                       child: Column(
@@ -371,6 +371,7 @@ class _RegisterFormState extends State<RegisterForm> {
                                 size: 25.sp,
                                 color: ColorX.whiteX,
                               )),
+                          SizedBox(height: 2.h,),
                           Padding(
                             padding: const EdgeInsets.only(left: 8.0),
                             child: Text(
@@ -397,10 +398,10 @@ class _RegisterFormState extends State<RegisterForm> {
               ],
             ),
            Column(
+
              children: [
                Column(
                  crossAxisAlignment: CrossAxisAlignment.start,
-                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                  children: [
                    Padding(
                      padding: EdgeInsets.only(left: 3.w),

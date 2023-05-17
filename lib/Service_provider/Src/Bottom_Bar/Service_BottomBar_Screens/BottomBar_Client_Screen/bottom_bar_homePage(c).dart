@@ -220,7 +220,7 @@ class _HomePageClientState extends State<HomePageClient> {
                                           child: Padding(
                                             padding: const EdgeInsets.all(8.0),
                                             child: Icon(
-                                              Icons.notification_important,
+                                              Icons.notifications,
                                               color: ColorX.whiteX,
                                             ),
                                           )),
