@@ -24,12 +24,39 @@ class _ChatScreenState extends State<ChatScreen> {
     ChatMessage(messageContent: " Flutter?", messageType: "receiver"),
     ChatMessage(messageContent: " 3.0?", messageType: "sender"),
   ];
-  final ScrollController controller = ScrollController();
+  final ScrollController listScrollController = ScrollController();
 
   @override
   void initState(){
-    controller.animateTo(controller.position.maxScrollExtent, duration: const Duration(milliseconds: 500), curve: Curves.easeOut);
+    focusNode.addListener(onFocusChange);
+     listScrollController.addListener(_scrollListener);
+    //controller.animateTo(controller.position.maxScrollExtent, duration: const Duration(milliseconds: 500), curve: Curves.easeOut);
     super.initState();
+  }
+
+  int _limit = 20;
+  final int _limitIncrement = 20;
+  final FocusNode focusNode = FocusNode();
+  bool isShowSticker =false;
+
+  _scrollListener() {
+    if (!listScrollController.hasClients) return;
+    if (listScrollController.offset >=
+        listScrollController.position.maxScrollExtent &&
+        !listScrollController.position.outOfRange &&
+        _limit <= messages.length) {
+      setState(() {
+        _limit += _limitIncrement;
+      });
+    }
+  }
+  void onFocusChange() {
+    if (focusNode.hasFocus) {
+      // Hide sticker when keyboard appear
+      setState(() {
+        isShowSticker = false;
+      });
+    }
   }
 
   @override
@@ -84,9 +111,10 @@ class _ChatScreenState extends State<ChatScreen> {
                   height:messages.length*8.h,
                   width: 100.w,
                   child: ListView.builder(
-                    controller:controller,
+                    controller:listScrollController,
                     itemCount: messages.length,
                     shrinkWrap: true,
+                    // reverse: true,
                     padding:  EdgeInsets.zero,
                     physics: const NeverScrollableScrollPhysics(),
                     itemBuilder: (context, index) {
@@ -160,6 +188,7 @@ class _ChatScreenState extends State<ChatScreen> {
                       onTap: (){
 
                       },
+                      focusNode: focusNode,
                       decoration: const InputDecoration(
                           border: InputBorder.none,
                           hintText: 'Type a message...'),
@@ -171,8 +200,7 @@ class _ChatScreenState extends State<ChatScreen> {
                 )
               ],
             ),
-          )
-
+          ),
         ],
       ),
     );
@@ -183,4 +211,74 @@ class ChatMessage {
   String? messageContent;
   String? messageType;
   ChatMessage({@required this.messageContent, @required this.messageType});
+}
+Widget buildInput() {
+  return Container(
+    width: double.infinity,
+    height: 50,
+    decoration:  const BoxDecoration(
+        border: Border(
+            top: BorderSide(color: Colors.grey, width: 0.5)),
+        color: Colors.white),
+    child: Row(
+      children: <Widget>[
+        // Button send image
+        Material(
+          color: Colors.white,
+          child: Container(
+            margin: const EdgeInsets.symmetric(horizontal: 1),
+            child: IconButton(
+              icon: const Icon(Icons.image),
+              onPressed: (){},
+              color: Colors.red,
+            ),
+          ),
+        ),
+        Material(
+          color: Colors.white,
+          child: Container(
+            margin: const EdgeInsets.symmetric(horizontal: 1),
+            child: IconButton(
+              icon: const Icon(Icons.face),
+              onPressed: (){},
+              color: Colors.green,
+            ),
+          ),
+        ),
+
+        // Edit text
+        Flexible(
+          child: TextField(
+            onSubmitted: (value) {
+             // onSendMessage(textEditingController.text, TypeMessage.text);
+            },
+            style: const TextStyle(
+                color: Colors.red, fontSize: 15),
+            //controller: textEditingController,
+            decoration: const InputDecoration.collapsed(
+              hintText: 'Type your message...',
+              hintStyle: TextStyle(color: Colors.green),
+            ),
+           // focusNode: focusNode,
+            autofocus: true,
+          ),
+        ),
+
+        // Button send message
+        Material(
+          color: Colors.white,
+          child: Container(
+            margin: const EdgeInsets.symmetric(horizontal: 8),
+            child: IconButton(
+              icon: const Icon(Icons.send),
+              onPressed: () {}
+                 // onSendMessage(textEditingController.text, TypeMessage.text)
+              ,
+              color: Colors.green,
+            ),
+          ),
+        ),
+      ],
+    ),
+  );
 }

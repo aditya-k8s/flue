@@ -39,9 +39,7 @@ class _HomePageClientState extends State<HomePageClient> {
   final Mode _mode = Mode.overlay;
   final kGoogleApiKey = "AIzaSyASR635al-cH5JTBu3hHzi8Kf0uEsPHSTA";
   final homeScaffoldKey = GlobalKey<ScaffoldState>();
-
-  static double ll = 0.0;
-  static double tt = 0.0;
+  final FocusNode focusNode = FocusNode();
   @override
   void initState(){
     getCurrentLocation();
@@ -110,7 +108,6 @@ class _HomePageClientState extends State<HomePageClient> {
     _searchController.removeListener(_onSearchChanged);
     _searchController.dispose();
     _placesList1.clear();
-
     super.dispose();
   }
 
@@ -136,9 +133,9 @@ class _HomePageClientState extends State<HomePageClient> {
     final predictions = response.data['predictions'];
     for (var i=0; i < predictions.length; i++) {
       String name = predictions[i]['description'];
+      print(name);
       _placesList1.add(name.toString());
     }
-
     setState(() {
       _heading = "Results";
       _placesList1;
@@ -342,7 +339,7 @@ class _HomePageClientState extends State<HomePageClient> {
   }
 
   bottomSheetSearchBar()async{
-    showModalBottomSheet(
+    showModalBottomSheet<Future>(
         backgroundColor: ColorX.scaffoldBackGroundX,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.only(
@@ -356,7 +353,8 @@ class _HomePageClientState extends State<HomePageClient> {
             MediaQuery.of(context).size.height * .8)),
         context: context,
         builder: (BuildContext context) {
-          return StatefulBuilder(builder: (BuildContext context, StateSetter mystate){
+          return StatefulBuilder(
+              builder: (BuildContext context, StateSetter state){
             return SingleChildScrollView(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -414,11 +412,11 @@ class _HomePageClientState extends State<HomePageClient> {
                               _searchController.text.isEmpty?_placesList1.clear():Container();
                             });
                           },
-                          textAlign: TextAlign.left,
-                          autocorrect: false,
-                          decoration:
-                          //disable single line border below the text field
-                          InputDecoration(
+                          //textAlign: TextAlign.left,
+                          autocorrect: true,
+                          autofocus: true,
+                          focusNode: focusNode,
+                          decoration: InputDecoration(
                             prefixIcon: Icon(Icons.search,color: ColorX.underLineColor,),
                             hintText:_searchController.text ==""? 'Place of repair':_searchController.text,
                             hintStyle: TextStyle(color: ColorX.underLineColor,fontWeight: FontWeight.bold,fontSize: 12.sp),
@@ -481,6 +479,7 @@ class _HomePageClientState extends State<HomePageClient> {
                             padding: EdgeInsets.zero,
                             itemCount: _placesList1.length,
                             itemBuilder: (context,index){
+                              print('dat is ${_placesList1[index]}');
                               return Padding(
                                 padding:  EdgeInsets.only(left: 4.w),
                                 child: Row(
@@ -489,7 +488,9 @@ class _HomePageClientState extends State<HomePageClient> {
                                     SizedBox(
                                       width: 2.w,
                                     ),
-                                    Text(_placesList1[index].toString(),style: GoogleFonts.quicksand(fontWeight: FontWeight.w500,fontSize: 17,color: ColorX.blackX))
+                                    SizedBox(
+                                        width: 85.w,
+                                        child: Text(_placesList1[index].toString(),textAlign: TextAlign.justify,style: GoogleFonts.quicksand(fontWeight: FontWeight.w500,fontSize: 17,color: ColorX.textColor)))
                                   ],
                                 ),
                               );

@@ -104,7 +104,13 @@ class _MapScreenState extends State<MapScreen> {
                 fit: BoxFit.fitWidth,
                 width: 100.w,
               ),
-              Positioned(
+
+                lat == null?
+               Positioned(
+                     top: 6.h,
+                     left: 10.w,
+                     child: Image.asset('image/Basemap image.png'))
+                   : Positioned(
                   top: 6.h,
                   child: Padding(
                     padding: EdgeInsets.only(left: 4.w, right: 0.w),
@@ -201,7 +207,7 @@ class _MapScreenState extends State<MapScreen> {
           ))
         ],
       )
-          : Column(
+          :  Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -212,7 +218,13 @@ class _MapScreenState extends State<MapScreen> {
                 fit: BoxFit.fitWidth,
                 width: 100.w,
               ),
+
+              lat == null?
               Positioned(
+                  top: 6.h,
+                  left: 10.w,
+                  child: Image.asset('image/Basemap image.png'))
+                  : Positioned(
                   top: 6.h,
                   child: Padding(
                     padding: EdgeInsets.only(left: 4.w, right: 0.w),
@@ -242,7 +254,7 @@ class _MapScreenState extends State<MapScreen> {
                             },
                           ),
                         ),
-                        ),
+                      ),
                     ),
                   ))
             ],
@@ -250,16 +262,16 @@ class _MapScreenState extends State<MapScreen> {
           Center(child: Text('Hi, nice to meet you!',style: GoogleFonts.poppins(color: ColorX.blackX,fontWeight: FontWeight.w700,fontSize: 21),)),
           Center(child: Text('Provide your location to us.',textAlign: TextAlign.justify,style: GoogleFonts.quicksand(color: ColorX.darkBlue,fontWeight: FontWeight.w700,fontSize: 16))),
           Center(child: Text('find the craftsmen closer to you.',textAlign: TextAlign.justify,style: GoogleFonts.quicksand(color: ColorX.darkBlue,fontWeight: FontWeight.w700,fontSize: 16))),
-          
+
           GestureDetector(
             onTap: (){
 
               GoRouter.of(context).
               pushNamed(MyAppRouteConstants.mapFromScreen,
-                  params: {
-                    'houseNo':'Arbind',
-                    'street':"kamat",
-                  },
+                params: {
+                  'houseNo':'Arbind',
+                  'street':"kamat",
+                },
 
               );
             },
@@ -269,7 +281,7 @@ class _MapScreenState extends State<MapScreen> {
                 width: 100.w,
                 decoration: BoxDecoration(
                     color: ColorX.buttonColor,
-                  borderRadius: BorderRadius.circular(8.w)
+                    borderRadius: BorderRadius.circular(8.w)
                 ),
                 child: Padding(
                   padding:  EdgeInsets.all(1.9.h),
@@ -287,6 +299,7 @@ class _MapScreenState extends State<MapScreen> {
           ),
           GestureDetector(
               onTap: (){
+
                 GoRouter.of(context).
                 pushNamed(MyAppRouteConstants.mapFromScreen,
                   params: {
@@ -296,13 +309,12 @@ class _MapScreenState extends State<MapScreen> {
 
                 );
               },
-              child: Center(child: Text('Select it manually',style: GoogleFonts.poppins(color: ColorX.blackX,fontWeight: FontWeight.w700,fontSize: 16,decoration: TextDecoration.underline)))),
-
-           Divider(
+              child: Center(child: Text('Select it manually',style: GoogleFonts.poppins(color: ColorX.textColor,fontWeight: FontWeight.w600,fontSize: 16,decoration: TextDecoration.underline)))),
+          Divider(
             thickness: 2,
             color: const Color(0xff9FBFF480).withOpacity(0.4),
           ),
-           Center(child: Text('By creating an account, I accept App’s ', style: GoogleFonts.poppins(color: ColorX.textColor,fontWeight: FontWeight.w300,fontSize: 12),)),
+          Center(child: Text('By creating an account, I accept App’s ', style: GoogleFonts.poppins(color: ColorX.textColor,fontWeight: FontWeight.w300,fontSize: 12))),
           Center(child: Padding(
             padding:  EdgeInsets.only(bottom: 2.h),
             child: Text('Terms of Service.',style: GoogleFonts.poppins(color: ColorX.textColor,fontWeight: FontWeight.w300,fontSize: 12,decoration: TextDecoration.underline)),
