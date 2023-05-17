@@ -10,15 +10,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:location/location.dart';
 import 'package:sizer/sizer.dart';
-// import 'package:google_maps_webservice/places.dart'
-//     show
-//     Component,
-//     GoogleMapsPlaces,
-//     PlacesAutocompleteResponse,
-//     PlacesDetailsResponse,
-//     Prediction;
-// import 'package:google_api_headers/google_api_headers.dart';
-
 import '../../../Map_Bording/map_screen.dart';
 
 
@@ -31,13 +22,12 @@ class HomePageClient extends StatefulWidget {
 
 class _HomePageClientState extends State<HomePageClient> {
   ///map
-
   final Completer<GoogleMapController> _controller = Completer();
    Location location = Location();
    LocationData? currentLocation;
   BitmapDescriptor markerIcon = BitmapDescriptor.defaultMarker;
   final Mode _mode = Mode.overlay;
-  final kGoogleApiKey = "AIzaSyASR635al-cH5JTBu3hHzi8Kf0uEsPHSTA";
+  final kGoogleApiKey = "AIzaSyD9kUxBM4VKlq3IeNFLbM026sF3dhwHj7A";
   final homeScaffoldKey = GlobalKey<ScaffoldState>();
   final FocusNode focusNode = FocusNode();
   @override
@@ -61,8 +51,6 @@ class _HomePageClientState extends State<HomePageClient> {
       },
     );
   }
-
-
   void getCurrentLocation() async {
     location.getLocation().then(
           (location) {
@@ -118,6 +106,7 @@ class _HomePageClientState extends State<HomePageClient> {
     });
   }
 
+  Dio dio = Dio();
   void getLocationResults(String input) async {
     if (input.isEmpty) {
       setState(() {
@@ -127,13 +116,12 @@ class _HomePageClientState extends State<HomePageClient> {
     }
     String baseURL = 'https://maps.googleapis.com/maps/api/place/autocomplete/json';
     String type = '(regions)';
-    String placesApiKey = 'AIzaSyASR635al-cH5JTBu3hHzi8Kf0uEsPHSTA';
+    String placesApiKey = 'AIzaSyD9kUxBM4VKlq3IeNFLbM026sF3dhwHj7A';
     String request = '$baseURL?input=$input&key=$placesApiKey&type=$type';
-    Response response = await Dio().get(request);
+    Response response = await dio.get(request);
     final predictions = response.data['predictions'];
     for (var i=0; i < predictions.length; i++) {
       String name = predictions[i]['description'];
-      print(name);
       _placesList1.add(name.toString());
     }
     setState(() {
@@ -306,7 +294,7 @@ class _HomePageClientState extends State<HomePageClient> {
             Padding(
              padding: const EdgeInsets.all(10.0),
              child: SizedBox(
-               height: 20.h,
+               height: 22.h,
                width: 100.w,
                child: ClipRRect(
                  borderRadius: BorderRadius.circular(2.w),
@@ -479,7 +467,6 @@ class _HomePageClientState extends State<HomePageClient> {
                             padding: EdgeInsets.zero,
                             itemCount: _placesList1.length,
                             itemBuilder: (context,index){
-                              print('dat is ${_placesList1[index]}');
                               return Padding(
                                 padding:  EdgeInsets.only(left: 4.w),
                                 child: Row(

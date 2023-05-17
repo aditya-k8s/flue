@@ -88,9 +88,7 @@ class _BottomMenuState extends State<BottomMenu> {
                 child: TextField(
                   textAlign: TextAlign.left,
                   autocorrect: false,
-                  decoration:
-                      //disable single line border below the text field
-                      InputDecoration(
+                  decoration: InputDecoration(
                           hintText: 'Search',
                           hintStyle: GoogleFonts.poppins(
                               fontSize: 13,

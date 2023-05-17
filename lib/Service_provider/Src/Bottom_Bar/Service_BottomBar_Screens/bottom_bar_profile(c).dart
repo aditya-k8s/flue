@@ -5,7 +5,6 @@ import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sizer/sizer.dart';
 import '../../../Routes/routes.dart';
-import '../bottom_bar.dart';
 
 class BottomProfileClient extends StatefulWidget {
   const BottomProfileClient({Key? key}) : super(key: key);
@@ -21,7 +20,6 @@ class _BottomProfileClientState extends State<BottomProfileClient> {
         backgroundColor: ColorX.scaffoldBackGroundX,
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Stack(
               children: [
@@ -115,7 +113,7 @@ class _BottomProfileClientState extends State<BottomProfileClient> {
             Center(child: Text('User Name Here',style: GoogleFonts.poppins(fontSize: 18,fontWeight: FontWeight.w600,color: ColorX.blackX))),
             Center(child: Text('username@domainname.com',style: GoogleFonts.quicksand(fontSize: 14,fontWeight: FontWeight.w500,color: ColorX.blackX))),
             SizedBox(
-              height: 1.h,
+              height: 3.h,
             ),
             Padding(
               padding:  EdgeInsets.only(left: 4.w,right: 4.w,),
@@ -153,7 +151,7 @@ class _BottomProfileClientState extends State<BottomProfileClient> {
                           ),
                           GestureDetector(
                             onTap: (){
-                              GoRouter.of(context).pushNamed(MyAppRouteConstants.bankDetailsClient);
+                               GoRouter.of(context).pushNamed(MyAppRouteConstants.bankDetailsClient);
                             },
                             child: Container(
                                 decoration: BoxDecoration(
@@ -182,12 +180,8 @@ class _BottomProfileClientState extends State<BottomProfileClient> {
                           ),
                           GestureDetector(
                             onTap: (){
-                              GoRouter.of(context).pushNamed(MyAppRouteConstants.serviceHistoryClient);
-                              // setState(() {
-                              //   newIndex!-2;
-                              // });
-
-
+                              GoRouter.of(context).pushNamed(MyAppRouteConstants.bottomBar);
+                              //Navigator.of(context).pop(MyAppRouteConstants.bottomProfileClient);
                             },
                             child: Container(
                                 decoration: BoxDecoration(

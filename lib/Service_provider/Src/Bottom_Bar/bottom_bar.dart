@@ -29,7 +29,7 @@ class BottomBar extends StatefulWidget {
 class _BottomBarState extends State<BottomBar> {
   final ListQueue<int> _navigationQueue = ListQueue();
 
-  final _pageController = PageController(initialPage: 0);
+  final _pageController = PageController(initialPage: 2);
 
   @override
   void dispose() {
@@ -122,46 +122,6 @@ class _BottomBarState extends State<BottomBar> {
             );
           },
         )
-        // BottomNavigationBar(
-        //   showSelectedLabels: false,
-        //   showUnselectedLabels: false,
-        //   backgroundColor: ColorX.textColor,
-        //   selectedItemColor: ColorX.buttonColor,
-        //   unselectedItemColor: const Color(0xFFC4C1C1),
-        //   type: BottomNavigationBarType.fixed,
-        //   currentIndex: index,
-        //   onTap: (value) {
-        //     _navigationQueue.addLast(index);
-        //     setState(() => index = value);
-        //     if (kDebugMode) {
-        //
-        //       newIndex = value;
-        //       print('bottom is ${newIndex}');
-        //     }
-        //   },
-        //   items: [
-        //     BottomNavigationBarItem(
-        //         icon: Icon(
-        //           Icons.home_outlined,
-        //           size: 8.w,
-        //         ),
-        //         label: "Home"),
-        //     BottomNavigationBarItem(
-        //         icon: Icon(
-        //           Icons.home_repair_service,
-        //           size: 8.w,
-        //         ),
-        //         label: "Home"),
-        //     BottomNavigationBarItem(
-        //         icon: Icon(
-        //           Icons.work_history,
-        //           size: 8.w,
-        //         ),
-        //         label: "Home"),
-        //     BottomNavigationBarItem(
-        //         icon: Icon(Icons.person, size: 8.w), label: "Home"),
-        //   ],
-        // ),
         );
   }
 

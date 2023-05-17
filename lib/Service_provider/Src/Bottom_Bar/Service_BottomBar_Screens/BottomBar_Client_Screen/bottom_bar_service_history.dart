@@ -120,112 +120,125 @@ class _ServiceHistoryClientState extends State<ServiceHistoryClient> {
             ),
           ),
           Expanded(
-              child:ListView.builder(
-                  itemCount: 5,
-                  shrinkWrap: true,
-                  padding: EdgeInsets.zero,
-                  itemBuilder: (context,index){
-                return Padding(
-                  padding:  EdgeInsets.only(left: 3.w,right: 3.w),
-                  child: Column(
-                    children: [
-                      Container(
-                        width: 100.w,
-                        decoration: BoxDecoration(
-                            color: ColorX.whiteX,
-                            borderRadius: BorderRadius.circular(4.w)
-                        ),
-                        child: Padding(
-                          padding:  EdgeInsets.only(left: 5.w,top: 2.h),
-                          child: Column(
-                            children: [
-                              Row(
+              child:SingleChildScrollView(
+                child: Column(
+                  children: [
+                    SizedBox(
+                      height: 20.h*10,
+                      width: 100.w,
+                      child: ListView.builder(
+                          itemCount: 10,
+                          shrinkWrap: true,
+                          physics: NeverScrollableScrollPhysics(),
+                          padding: EdgeInsets.zero,
+                          itemBuilder: (context,index){
+                            return Padding(
+                              padding:  EdgeInsets.only(left: 3.w,right: 3.w),
+                              child: Column(
                                 children: [
-                                  CircleAvatar(
-                                    radius: 5,
-                                    backgroundColor: ColorX.textColor,
-                                  ),
-                                  SizedBox(
-                                    width: 3.w,
-                                  ),
-                                  Text('Date : 23April,2023',
-                                      style: GoogleFonts.quicksand(fontSize: 10,fontWeight: FontWeight.w600,color: ColorX.blackX))
-                                ],
-                              ),
-                              SizedBox(
-                                height: 1.h,
-                              ),
-                              Row(
-                                children: [
-                                  CircleAvatar(
-                                    radius: 30,
-                                    backgroundColor: ColorX.textColor,
-                                  ),
-
-                                  Padding(
-                                    padding:  EdgeInsets.only(left: 4.w),
-                                    child: Column(
-                                      crossAxisAlignment: CrossAxisAlignment.start,
-                                      children: [
-                                        Text('Sophie R. Stevens',
-                                            style: GoogleFonts.poppins(fontSize: 16,fontWeight: FontWeight.w600,color: ColorX.blackX)),
-                                        Text('Service : Cleaning & Plumbing',
-                                            style: GoogleFonts.quicksand(fontSize: 12,fontWeight: FontWeight.w600,color: ColorX.blackX)),
-                                        Text('Status : Complete',
-                                            style: GoogleFonts.quicksand(fontSize: 12,fontWeight: FontWeight.w600,color: ColorX.blackX)),
-                                      ],
+                                  Container(
+                                    decoration: BoxDecoration(
+                                        color: ColorX.whiteX,
+                                        borderRadius: BorderRadius.circular(4.w)
                                     ),
-                                  )
-                                ],
-                              ),
-                              SizedBox(
-                                height: 1.h,
-                              ),
-                              const Divider(),
-                              Padding(
-                                padding:  EdgeInsets.only(right: 5.w),
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Row(
-                                      children: [
-                                        SvgPicture.asset('image/money-1.svg',height: 4.h),
-                                        SizedBox(
-                                          width: 2.w,
-                                        ),
-                                        Text('\$75.00',
-                                            style: GoogleFonts.poppins(fontSize: 14,fontWeight: FontWeight.w400,color: ColorX.blackX)),
-                                      ],
-                                    ),
-
-                                    GestureDetector(
-                                      onTap: (){
-                                        print("history");
-                                        GoRouter.of(context).pushNamed(MyAppRouteConstants.serviceHistoryDetailClient);
-                                      },
-                                      child: Row(
+                                    child: Padding(
+                                      padding:  EdgeInsets.only(left: 5.w,top: 2.h),
+                                      child: Column(
                                         children: [
-                                          Text('View Full Details',
-                                              style: GoogleFonts.quicksand(fontSize: 14,fontWeight: FontWeight.w600,color: ColorX.blackX)),
-                                          Icon(Icons.arrow_forward_ios,size: 20,color: ColorX.blackX,)
+                                          Row(
+                                            children: [
+                                              CircleAvatar(
+                                                radius: 5,
+                                                backgroundColor: ColorX.textColor,
+                                              ),
+                                              SizedBox(
+                                                width: 3.w,
+                                              ),
+                                              Text('Date : 23April,2023',
+                                                  style: GoogleFonts.quicksand(fontSize: 10,fontWeight: FontWeight.w600,color: ColorX.blackX))
+                                            ],
+                                          ),
+                                          SizedBox(
+                                            height: 1.h,
+                                          ),
+                                          Row(
+                                            children: [
+                                              CircleAvatar(
+                                                radius: 30,
+                                                backgroundColor: ColorX.textColor,
+                                              ),
+
+                                              Padding(
+                                                padding:  EdgeInsets.only(left: 4.w),
+                                                child: Column(
+                                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                                  children: [
+                                                    Text('Sophie R. Stevens',
+                                                        style: GoogleFonts.poppins(fontSize: 16,fontWeight: FontWeight.w600,color: ColorX.blackX)),
+                                                    Text('Service : Cleaning & Plumbing',
+                                                        style: GoogleFonts.quicksand(fontSize: 12,fontWeight: FontWeight.w600,color: ColorX.blackX)),
+                                                    Text('Status : Complete',
+                                                        style: GoogleFonts.quicksand(fontSize: 12,fontWeight: FontWeight.w600,color: ColorX.blackX)),
+                                                  ],
+                                                ),
+                                              )
+                                            ],
+                                          ),
+                                          SizedBox(
+                                            height: 1.h,
+                                          ),
+                                          const Divider(),
+                                          Padding(
+                                            padding:  EdgeInsets.only(right: 5.w),
+                                            child: Row(
+                                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                              children: [
+                                                Row(
+                                                  children: [
+                                                    SvgPicture.asset('image/money-1.svg',height: 4.h),
+                                                    SizedBox(
+                                                      width: 2.w,
+                                                    ),
+                                                    Text('\$75.00',
+                                                        style: GoogleFonts.poppins(fontSize: 14,fontWeight: FontWeight.w400,color: ColorX.blackX)),
+                                                  ],
+                                                ),
+
+                                                GestureDetector(
+                                                  onTap: (){
+                                                    print("history");
+                                                    GoRouter.of(context).pushNamed(MyAppRouteConstants.serviceHistoryDetailClient);
+                                                  },
+                                                  child: Row(
+                                                    children: [
+                                                      Text('View Full Details',
+                                                          style: GoogleFonts.quicksand(fontSize: 14,fontWeight: FontWeight.w600,color: ColorX.blackX)),
+                                                      Icon(Icons.arrow_forward_ios,size: 20,color: ColorX.blackX,)
+                                                    ],
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          )
+
                                         ],
                                       ),
                                     ),
-                                  ],
-                                ),
-                              )
-
-                            ],
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                        height: 1.h,
-                      )
-                    ],
-                  ),
-                );
-              }) )
+                                  ),
+                                  SizedBox(
+                                    height: 1.h,
+                                  )
+                                ],
+                              ),
+                            );
+                          }) ,
+                    ),
+                    // SizedBox(
+                    //   height: 5.h,
+                    // )
+                  ],
+                ),
+              ))
         ],
       ),
     );
