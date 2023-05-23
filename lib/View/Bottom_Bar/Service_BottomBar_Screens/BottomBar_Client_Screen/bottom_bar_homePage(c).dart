@@ -299,7 +299,7 @@ class _HomePageClientState extends State<HomePageClient> {
                     alignment: Alignment.bottomRight,
                     heightFactor: 0.3,
                     widthFactor: 2.5,
-                    child: UserPrefences.lng == null? const Center(child: Text("map")):GoogleMap(
+                    child: UserPrefences.lng == 0.0? const Center(child: Text("map")):GoogleMap(
                       initialCameraPosition:CameraPosition(target: LatLng(UserPrefences.lat,UserPrefences.lng),  zoom: 15,),
                       mapType: mapType,
                       markers: {
@@ -309,9 +309,9 @@ class _HomePageClientState extends State<HomePageClient> {
                           icon: markerIcon,
                         )
                       },
-                      onMapCreated: (mapController)async{
-                        _controller.complete(mapController);
-                      },
+                      // onMapCreated: (mapController)async{
+                      //   _controller.complete(mapController);
+                      // },
                     ),
                   ),
                 ),

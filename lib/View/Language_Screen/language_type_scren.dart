@@ -142,8 +142,8 @@ class LanguageTypeScreen extends StatelessWidget {
               SizedBox(height: 8.h,),
               Padding(
                 padding:  EdgeInsets.only(bottom: 10.h),
-                child: SvgPicture.asset(
-                  "image/Group 16400.svg", height: 18.h,
+                child: Image.asset(
+                  "image/Group-2.png", height: 18.h,
                 ),
               )
             ],

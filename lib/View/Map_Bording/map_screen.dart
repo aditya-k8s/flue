@@ -116,56 +116,55 @@ class _MapScreenState extends State<MapScreen> {
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Stack(
-            children: [
-              Padding(
-                padding: const EdgeInsets.all(12.0),
-                child: SvgPicture.asset(
-                  'image/Vector (3).svg',
-                  fit: BoxFit.fitWidth,
-                  width: 100.w,
-                ),
+        const SizedBox(),
+          Padding(
+            padding: const EdgeInsets.all(12.0),
+            child: Container(
+              alignment: Alignment.center,
+              decoration: BoxDecoration(
+                color: ColorX.textColor,
+                borderRadius: BorderRadius.only(
+                  bottomRight: Radius.circular(8.w)
+                )
               ),
-
+              child:
               _currentPosition==null?
-               Positioned(
-                     top: 6.h,
-                     left: 10.w,
-                     child: Image.asset('image/Basemap image.png'))
-                   : Positioned(
-                  top: 6.h,
-                  child: Padding(
-                    padding: EdgeInsets.only(left: 7.w, right: 0.w),
-                    child:SizedBox(
-                      height: 41.h,
-                      width: 85.w,
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.only(
-                          bottomRight: Radius.circular(8.w),
-                        ),
-                        child: Align(
-                          alignment: Alignment.bottomRight,
-                          heightFactor: 0.3,
-                          widthFactor: 2.5,
-                          child: GoogleMap(
-                            initialCameraPosition:CameraPosition(target: LatLng(_currentPosition!.latitude,_currentPosition!.longitude),  zoom: 15,),
-                            mapType: mapType,
-                            markers: {
-                              Marker(
-                                markerId: const MarkerId("marker1"),
-                                position:  LatLng(_currentPosition!.latitude,_currentPosition!.longitude),
-                                icon: markerIcon,
-                              )
-                            },
-                            onMapCreated: (mapController)async{
-                              _controller.complete(mapController);
-                            },
-                          ),
-                        ),
+              Padding(
+                       padding: const EdgeInsets.all(8.0),
+                       child: Image.asset('image/Basemap image.png',fit: BoxFit.cover,height: 40.h,width: 90.w,),
+                     )
+                  : Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: SizedBox(
+                height: 41.h,
+                width: 90.w,
+                child: ClipRRect(
+                    borderRadius: BorderRadius.only(
+                      bottomRight: Radius.circular(8.w),
+                    ),
+                    child: Align(
+                      alignment: Alignment.bottomRight,
+                      heightFactor: 0.3,
+                      widthFactor: 2.5,
+                      child: GoogleMap(
+                        initialCameraPosition:CameraPosition(target: LatLng(_currentPosition!.latitude,_currentPosition!.longitude),  zoom: 15,),
+                        mapType: mapType,
+                        markers: {
+                          Marker(
+                            markerId: const MarkerId("marker1"),
+                            position:  LatLng(_currentPosition!.latitude,_currentPosition!.longitude),
+                            icon: markerIcon,
+                          )
+                        },
+                        /*onMapCreated: (mapController)async{
+                          _controller.complete(mapController);
+                        },*/
                       ),
                     ),
-                  ))
-            ],
+                ),
+              ),
+                  )
+            ),
           ),
           Center(child: Text('Hi, nice to meet you!',style: GoogleFonts.poppins(color: ColorX.blackX,fontWeight: FontWeight.w700,fontSize: 21),)),
           Center(child: Text('Provide your location to us.',textAlign: TextAlign.justify,style: GoogleFonts.quicksand(color: ColorX.darkBlue,fontWeight: FontWeight.w700,fontSize: 16))),
@@ -228,7 +227,7 @@ class _MapScreenState extends State<MapScreen> {
               child: Center(child: Text('Select it manually',style: GoogleFonts.poppins(color: ColorX.textColor,fontWeight: FontWeight.w600,fontSize: 16,decoration: TextDecoration.underline)))),
           Divider(
             thickness: 2,
-            color: const Color(0xff9FBFF480).withOpacity(0.4),
+            color: const Color(0xFF9FBFF480).withOpacity(0.4),
           ),
            Center(child: Text('By creating an account, I accept App’s ', style: GoogleFonts.poppins(color: ColorX.textColor,fontWeight: FontWeight.w300,fontSize: 12))),
           Center(child: Padding(
@@ -241,56 +240,51 @@ class _MapScreenState extends State<MapScreen> {
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Stack(
-            children: [
-              Padding(
-                padding: const EdgeInsets.all(12.0),
-                child: SvgPicture.asset(
-                  'image/Vector (3).svg',
-                  fit: BoxFit.fitWidth,
-                  width: 100.w,
-                ),
-              ),
+          const SizedBox(),
+          Padding(
+            padding: const EdgeInsets.all(12.0),
+            child: Container(
 
-              UserPrefences.lat == 0.0?
-              Positioned(
-                  top: 6.h,
-                  left: 10.w,
-                  child: Image.asset('image/Basemap image.png'))
-                  : Positioned(
-                  top: 6.h,
-                  child: Padding(
-                    padding: EdgeInsets.only(left: 7.w, right: 0.w),
-                    child:SizedBox(
-                      height: 41.h,
-                      width: 85.w,
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.only(
-                          bottomRight: Radius.circular(8.w),
-                        ),
-                        child: Align(
-                          alignment: Alignment.bottomRight,
-                          heightFactor: 0.3,
-                          widthFactor: 2.5,
-                          child: GoogleMap(
-                            initialCameraPosition:CameraPosition(target: LatLng(UserPrefences.lat,UserPrefences.lng),  zoom: 15,),
-                            mapType: mapType,
-                            markers: {
-                              Marker(
-                                markerId: const MarkerId("marker1"),
-                                position:  LatLng(UserPrefences.lat,UserPrefences.lng),
-                                icon: markerIcon,
-                              )
-                            },
-                            onMapCreated: (mapController)async{
-                              _controller.complete(mapController);
-                            },
-                          ),
+                decoration: BoxDecoration(
+                    color: ColorX.textColor,
+                    borderRadius: BorderRadius.only(
+                        bottomRight: Radius.circular(8.w)
+                    )
+                ),
+                child: _currentPosition==null?
+                Image.asset('image/Basemap image.png')
+                    : Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: SizedBox(
+                    height: 41.h,
+                    width: 90.w,
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.only(
+                        bottomRight: Radius.circular(8.w),
+                      ),
+                      child: Align(
+                        alignment: Alignment.bottomRight,
+                        heightFactor: 0.3,
+                        widthFactor: 2.5,
+                        child: GoogleMap(
+                          initialCameraPosition:CameraPosition(target: LatLng(_currentPosition!.latitude,_currentPosition!.longitude),  zoom: 15,),
+                          mapType: mapType,
+                          markers: {
+                            Marker(
+                              markerId: const MarkerId("marker1"),
+                              position:  LatLng(_currentPosition!.latitude,_currentPosition!.longitude),
+                              icon: markerIcon,
+                            )
+                          },
+                          /*onMapCreated: (mapController)async{
+                          _controller.complete(mapController);
+                        },*/
                         ),
                       ),
                     ),
-                  ))
-            ],
+                  ),
+                )
+            ),
           ),
           Center(child: Text('Hi, nice to meet you!',style: GoogleFonts.poppins(color: ColorX.blackX,fontWeight: FontWeight.w700,fontSize: 21),)),
           Center(child: Text('Provide your location to us.',textAlign: TextAlign.justify,style: GoogleFonts.quicksand(color: ColorX.darkBlue,fontWeight: FontWeight.w700,fontSize: 16))),
@@ -313,8 +307,8 @@ class _MapScreenState extends State<MapScreen> {
               child: Container(
                 width: 100.w,
                 decoration: BoxDecoration(
-                    color: ColorX.buttonColor,
-                    borderRadius: BorderRadius.circular(8.w),
+                  color: ColorX.buttonColor,
+                  borderRadius: BorderRadius.circular(8.w),
                   boxShadow: [
                     BoxShadow(
                       color: Colors.grey.withOpacity(0.4),
@@ -353,7 +347,7 @@ class _MapScreenState extends State<MapScreen> {
               child: Center(child: Text('Select it manually',style: GoogleFonts.poppins(color: ColorX.textColor,fontWeight: FontWeight.w600,fontSize: 16,decoration: TextDecoration.underline)))),
           Divider(
             thickness: 2,
-            color: const Color(0xff9FBFF480).withOpacity(0.4),
+            color: const Color(0xFF9FBFF480).withOpacity(0.4),
           ),
           Center(child: Text('By creating an account, I accept App’s ', style: GoogleFonts.poppins(color: ColorX.textColor,fontWeight: FontWeight.w300,fontSize: 12))),
           Center(child: Padding(

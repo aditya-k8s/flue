@@ -51,7 +51,7 @@ class _SplashScreenState extends State<SplashScreen> {
              padding:  EdgeInsets.only(left: 15.w),
              child: Text("Find a\nCraftsman\nNear Your",style: GoogleFonts.poppins(fontWeight: FontWeight.w600,fontSize: 34,color: ColorX.blackX)),
            ),
-         Center(child: SvgPicture.asset('image/Group 16400.svg' ,height: 18.h,)),
+         Center(child: Image.asset('image/Group-2.png' ,height: 18.h,)),
           GestureDetector(
             onTap: (){
 

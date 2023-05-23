@@ -1,12 +1,7 @@
 import 'dart:collection';
-
-import 'package:animated_notch_bottom_bar/animated_notch_bottom_bar/animated_notch_bottom_bar.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:rolling_bottom_bar/rolling_bottom_bar.dart';
 import 'package:rolling_bottom_bar/rolling_bottom_bar_item.dart';
-import 'package:sizer/sizer.dart';
 import '../../Resources/colors.dart';
 import 'Service_BottomBar_Screens/BottomBar_Client_Screen/bottom_bar_homePage(c).dart';
 import 'Service_BottomBar_Screens/BottomBar_Client_Screen/bottom_bar_service(c).dart';
