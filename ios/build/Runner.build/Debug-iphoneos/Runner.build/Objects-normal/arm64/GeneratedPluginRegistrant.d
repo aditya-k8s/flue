@@ -22,6 +22,32 @@ dependencies: \
   /Users/leo-arbind/Projects/allohuggy/build/ios/Debug-iphoneos/flutter_localization/flutter_localization.framework/Modules/module.modulemap \
   /Users/leo-arbind/Projects/allohuggy/build/ios/Debug-iphoneos/flutter_localization/flutter_localization.framework/Headers/flutter_localization-Swift.h \
   /Users/leo-arbind/Projects/allohuggy/build/ios/Debug-iphoneos/flutter_localization/flutter_localization.framework/Headers/flutter_localization-umbrella.h \
+  /Users/leo-arbind/Projects/allohuggy/build/ios/Debug-iphoneos/fluttertoast/fluttertoast.framework/Headers/FluttertoastPlugin.h \
+  /Users/leo-arbind/Projects/allohuggy/build/ios/Debug-iphoneos/fluttertoast/fluttertoast.framework/Modules/module.modulemap \
+  /Users/leo-arbind/Projects/allohuggy/build/ios/Debug-iphoneos/fluttertoast/fluttertoast.framework/Headers/fluttertoast-umbrella.h \
+  /Users/leo-arbind/Projects/allohuggy/build/ios/Debug-iphoneos/geocoding_ios/geocoding_ios.framework/Headers/GeocodingPlugin.h \
+  /Users/leo-arbind/Projects/allohuggy/build/ios/Debug-iphoneos/geocoding_ios/geocoding_ios.framework/Modules/module.modulemap \
+  /Users/leo-arbind/Projects/allohuggy/build/ios/Debug-iphoneos/geocoding_ios/geocoding_ios.framework/Headers/GeocodingHandler.h \
+  /Users/leo-arbind/Projects/allohuggy/build/ios/Debug-iphoneos/geocoding_ios/geocoding_ios.framework/Headers/CLPlacemarkExtensions.h \
+  /Users/leo-arbind/Projects/allohuggy/build/ios/Debug-iphoneos/geocoding_ios/geocoding_ios.framework/Headers/geocoding_ios-umbrella.h \
+  /Users/leo-arbind/Projects/allohuggy/build/ios/Debug-iphoneos/geolocator_apple/geolocator_apple.framework/Headers/GeolocatorPlugin.h \
+  /Users/leo-arbind/Projects/allohuggy/build/ios/Debug-iphoneos/geolocator_apple/geolocator_apple.framework/Modules/module.modulemap \
+  /Users/leo-arbind/Projects/allohuggy/build/ios/Debug-iphoneos/geolocator_apple/geolocator_apple.framework/Headers/GeolocatorPlugin_Test.h \
+  /Users/leo-arbind/Projects/allohuggy/build/ios/Debug-iphoneos/geolocator_apple/geolocator_apple.framework/Headers/GeolocationHandler_Test.h \
+  /Users/leo-arbind/Projects/allohuggy/build/ios/Debug-iphoneos/geolocator_apple/geolocator_apple.framework/Headers/ServiceStatus.h \
+  /Users/leo-arbind/Projects/allohuggy/build/ios/Debug-iphoneos/geolocator_apple/geolocator_apple.framework/Headers/PermissionUtils.h \
+  /Users/leo-arbind/Projects/allohuggy/build/ios/Debug-iphoneos/geolocator_apple/geolocator_apple.framework/Headers/LocationMapper.h \
+  /Users/leo-arbind/Projects/allohuggy/build/ios/Debug-iphoneos/geolocator_apple/geolocator_apple.framework/Headers/LocationDistanceMapper.h \
+  /Users/leo-arbind/Projects/allohuggy/build/ios/Debug-iphoneos/geolocator_apple/geolocator_apple.framework/Headers/LocationAccuracyMapper.h \
+  /Users/leo-arbind/Projects/allohuggy/build/ios/Debug-iphoneos/geolocator_apple/geolocator_apple.framework/Headers/AuthorizationStatusMapper.h \
+  /Users/leo-arbind/Projects/allohuggy/build/ios/Debug-iphoneos/geolocator_apple/geolocator_apple.framework/Headers/ActivityTypeMapper.h \
+  /Users/leo-arbind/Projects/allohuggy/build/ios/Debug-iphoneos/geolocator_apple/geolocator_apple.framework/Headers/PositionStreamHandler.h \
+  /Users/leo-arbind/Projects/allohuggy/build/ios/Debug-iphoneos/geolocator_apple/geolocator_apple.framework/Headers/PermissionHandler.h \
+  /Users/leo-arbind/Projects/allohuggy/build/ios/Debug-iphoneos/geolocator_apple/geolocator_apple.framework/Headers/LocationServiceStreamHandler.h \
+  /Users/leo-arbind/Projects/allohuggy/build/ios/Debug-iphoneos/geolocator_apple/geolocator_apple.framework/Headers/LocationAccuracyHandler.h \
+  /Users/leo-arbind/Projects/allohuggy/build/ios/Debug-iphoneos/geolocator_apple/geolocator_apple.framework/Headers/GeolocationHandler.h \
+  /Users/leo-arbind/Projects/allohuggy/build/ios/Debug-iphoneos/geolocator_apple/geolocator_apple.framework/Headers/ErrorCodes.h \
+  /Users/leo-arbind/Projects/allohuggy/build/ios/Debug-iphoneos/geolocator_apple/geolocator_apple.framework/Headers/geolocator-umbrella.h \
   /Users/leo-arbind/Projects/allohuggy/build/ios/Debug-iphoneos/google_maps_flutter_ios/google_maps_flutter_ios.framework/Headers/FLTGoogleMapsPlugin.h \
   /Users/leo-arbind/Projects/allohuggy/build/ios/Debug-iphoneos/google_maps_flutter_ios/google_maps_flutter_ios.framework/Modules/module.modulemap \
   /Users/leo-arbind/Projects/allohuggy/ios/Pods/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Modules/module.modulemap \
@@ -86,15 +112,31 @@ dependencies: \
   /Users/leo-arbind/Projects/allohuggy/build/ios/Debug-iphoneos/google_maps_flutter_ios/google_maps_flutter_ios.framework/Headers/FLTGoogleMapTileOverlayController.h \
   /Users/leo-arbind/Projects/allohuggy/build/ios/Debug-iphoneos/google_maps_flutter_ios/google_maps_flutter_ios.framework/Headers/FLTGoogleMapJSONConversions.h \
   /Users/leo-arbind/Projects/allohuggy/build/ios/Debug-iphoneos/google_maps_flutter_ios/google_maps_flutter_ios.framework/Headers/google_maps_flutter_ios-umbrella.h \
-  /Users/leo-arbind/Projects/allohuggy/build/ios/Debug-iphoneos/location/location.framework/Headers/LocationPlugin.h \
-  /Users/leo-arbind/Projects/allohuggy/build/ios/Debug-iphoneos/location/location.framework/Modules/module.modulemap \
-  /Users/leo-arbind/Projects/allohuggy/build/ios/Debug-iphoneos/location/location.framework/Headers/location-umbrella.h \
-  /Users/leo-arbind/Projects/allohuggy/build/ios/Debug-iphoneos/package_info_plus/package_info_plus.framework/Headers/FLTPackageInfoPlusPlugin.h \
-  /Users/leo-arbind/Projects/allohuggy/build/ios/Debug-iphoneos/package_info_plus/package_info_plus.framework/Modules/module.modulemap \
-  /Users/leo-arbind/Projects/allohuggy/build/ios/Debug-iphoneos/package_info_plus/package_info_plus.framework/Headers/package_info_plus-umbrella.h \
   /Users/leo-arbind/Projects/allohuggy/build/ios/Debug-iphoneos/path_provider_foundation/path_provider_foundation.framework/Modules/module.modulemap \
   /Users/leo-arbind/Projects/allohuggy/build/ios/Debug-iphoneos/path_provider_foundation/path_provider_foundation.framework/Headers/path_provider_foundation-Swift.h \
   /Users/leo-arbind/Projects/allohuggy/build/ios/Debug-iphoneos/path_provider_foundation/path_provider_foundation.framework/Headers/path_provider_foundation-umbrella.h \
+  /Users/leo-arbind/Projects/allohuggy/build/ios/Debug-iphoneos/permission_handler_apple/permission_handler_apple.framework/Headers/PermissionHandlerPlugin.h \
+  /Users/leo-arbind/Projects/allohuggy/build/ios/Debug-iphoneos/permission_handler_apple/permission_handler_apple.framework/Modules/module.modulemap \
+  /Users/leo-arbind/Projects/allohuggy/build/ios/Debug-iphoneos/permission_handler_apple/permission_handler_apple.framework/Headers/Codec.h \
+  /Users/leo-arbind/Projects/allohuggy/build/ios/Debug-iphoneos/permission_handler_apple/permission_handler_apple.framework/Headers/CriticalAlertsPermissionStrategy.h \
+  /Users/leo-arbind/Projects/allohuggy/build/ios/Debug-iphoneos/permission_handler_apple/permission_handler_apple.framework/Headers/NotificationPermissionStrategy.h \
+  /Users/leo-arbind/Projects/allohuggy/build/ios/Debug-iphoneos/permission_handler_apple/permission_handler_apple.framework/Headers/StoragePermissionStrategy.h \
+  /Users/leo-arbind/Projects/allohuggy/build/ios/Debug-iphoneos/permission_handler_apple/permission_handler_apple.framework/Headers/SpeechPermissionStrategy.h \
+  /Users/leo-arbind/Projects/allohuggy/build/ios/Debug-iphoneos/permission_handler_apple/permission_handler_apple.framework/Headers/SensorPermissionStrategy.h \
+  /Users/leo-arbind/Projects/allohuggy/build/ios/Debug-iphoneos/permission_handler_apple/permission_handler_apple.framework/Headers/PhotoPermissionStrategy.h \
+  /Users/leo-arbind/Projects/allohuggy/build/ios/Debug-iphoneos/permission_handler_apple/permission_handler_apple.framework/Headers/PhonePermissionStrategy.h \
+  /Users/leo-arbind/Projects/allohuggy/build/ios/Debug-iphoneos/permission_handler_apple/permission_handler_apple.framework/Headers/MediaLibraryPermissionStrategy.h \
+  /Users/leo-arbind/Projects/allohuggy/build/ios/Debug-iphoneos/permission_handler_apple/permission_handler_apple.framework/Headers/LocationPermissionStrategy.h \
+  /Users/leo-arbind/Projects/allohuggy/build/ios/Debug-iphoneos/permission_handler_apple/permission_handler_apple.framework/Headers/EventPermissionStrategy.h \
+  /Users/leo-arbind/Projects/allohuggy/build/ios/Debug-iphoneos/permission_handler_apple/permission_handler_apple.framework/Headers/ContactPermissionStrategy.h \
+  /Users/leo-arbind/Projects/allohuggy/build/ios/Debug-iphoneos/permission_handler_apple/permission_handler_apple.framework/Headers/BluetoothPermissionStrategy.h \
+  /Users/leo-arbind/Projects/allohuggy/build/ios/Debug-iphoneos/permission_handler_apple/permission_handler_apple.framework/Headers/AppTrackingTransparencyPermissionStrategy.h \
+  /Users/leo-arbind/Projects/allohuggy/build/ios/Debug-iphoneos/permission_handler_apple/permission_handler_apple.framework/Headers/UnknownPermissionStrategy.h \
+  /Users/leo-arbind/Projects/allohuggy/build/ios/Debug-iphoneos/permission_handler_apple/permission_handler_apple.framework/Headers/PermissionStrategy.h \
+  /Users/leo-arbind/Projects/allohuggy/build/ios/Debug-iphoneos/permission_handler_apple/permission_handler_apple.framework/Headers/AudioVideoPermissionStrategy.h \
+  /Users/leo-arbind/Projects/allohuggy/build/ios/Debug-iphoneos/permission_handler_apple/permission_handler_apple.framework/Headers/PermissionManager.h \
+  /Users/leo-arbind/Projects/allohuggy/build/ios/Debug-iphoneos/permission_handler_apple/permission_handler_apple.framework/Headers/PermissionHandlerEnums.h \
+  /Users/leo-arbind/Projects/allohuggy/build/ios/Debug-iphoneos/permission_handler_apple/permission_handler_apple.framework/Headers/permission_handler_apple-umbrella.h \
   /Users/leo-arbind/Projects/allohuggy/build/ios/Debug-iphoneos/shared_preferences_foundation/shared_preferences_foundation.framework/Modules/module.modulemap \
   /Users/leo-arbind/Projects/allohuggy/build/ios/Debug-iphoneos/shared_preferences_foundation/shared_preferences_foundation.framework/Headers/shared_preferences_foundation-Swift.h \
   /Users/leo-arbind/Projects/allohuggy/build/ios/Debug-iphoneos/shared_preferences_foundation/shared_preferences_foundation.framework/Headers/shared_preferences_foundation-umbrella.h

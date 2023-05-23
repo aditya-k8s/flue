@@ -1,0 +1,6 @@
+version: "Apple Swift version 5.7.2 (swiftlang-5.7.2.135.5 clang-1400.0.29.51)"
+options: "75e14701c2104c3742a054082cc155a2f76b5f871159ad52fb7aad05d6d2e1a8"
+build_start_time: [1684753320, 488140106]
+build_end_time: [1684753346, 355122089]
+inputs:
+  "/Users/leo-arbind/Projects/allohuggy/ios/Runner/AppDelegate.swift": [1684317276, 884402275]

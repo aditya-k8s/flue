@@ -1,0 +1,2 @@
+dependencies: \
+  /Users/leo-arbind/Projects/allohuggy/ios/build/Pods.build/Debug-iphonesimulator/geolocator_apple.build/DerivedSources/geolocator_apple_vers.c

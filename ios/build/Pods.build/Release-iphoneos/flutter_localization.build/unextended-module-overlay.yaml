@@ -1,0 +1,14 @@
+{
+  'version': 0,
+  'use-external-names': 'false',
+  'case-sensitive': 'false',
+  'roots': [{
+    'type': 'directory',
+    'name': "/Users/leo-arbind/Projects/allohuggy/ios/build/Release-iphoneos/flutter_localization/flutter_localization.framework/Modules"
+    'contents': [{
+      'type': 'file',
+      'name': "module.modulemap",
+      'external-contents': "/Users/leo-arbind/Projects/allohuggy/ios/build/Pods.build/Release-iphoneos/flutter_localization.build/unextended-module.modulemap",
+    }]
+  }]
+}

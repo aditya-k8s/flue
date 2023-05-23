@@ -1,0 +1,3 @@
+dependencies: \
+  /Users/leo-arbind/Projects/allohuggy/ios/Pods/Target\ Support\ Files/Pods-Runner/Pods-Runner-dummy.m \
+  /Users/leo-arbind/Projects/allohuggy/ios/build/Pods.build/Debug-iphonesimulator/Pods-Runner.build/module.modulemap
