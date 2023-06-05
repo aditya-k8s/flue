@@ -13,7 +13,6 @@ import '../../Resources/colors.dart';
 import '../../Resources/Component/common_button.dart';
 import '../../Utilities/Routes/routes.dart';
 import '../../Utilities/utils.dart';
-import '../../View_Model_Data/common_register_auth_model.dart';
 import '../../View_Model_Data/user_prefences.dart';
 import 'package:http/http.dart' as http;
 
@@ -87,7 +86,6 @@ class _RegisterFormState extends State<RegisterForm> {
 
   @override
   Widget build(BuildContext context) {
-    final authViewModel = Provider.of<CommonAuthViewModel>(context);
     return Scaffold(
       backgroundColor: ColorX.scaffoldBackGroundX,
       body: UserPrefences.feedType == "USER"
@@ -418,7 +416,6 @@ class _RegisterFormState extends State<RegisterForm> {
                           padding: EdgeInsets.only(left: 6.w, right: 6.w),
                           child: CommonButton(
                             buttonText: 'FOLLOWING',
-                            loading: authViewModel.loading,
                             height: 6.h,
                             // loading: authViewModel.loading,
                           ),
@@ -811,7 +808,6 @@ class _RegisterFormState extends State<RegisterForm> {
                         padding: EdgeInsets.only(left: 6.w, right: 6.w),
                         child: CommonButton(
                           buttonText: 'FOLLOWING',
-                          loading: authViewModel.loading,
                           height: 6.h,
                           // loading: authViewModel.loading,
                         ),

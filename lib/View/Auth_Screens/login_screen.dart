@@ -1,13 +1,13 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
 import '../../Resources/Component/common_button.dart';
 import '../../Resources/colors.dart';
 import '../../Utilities/Routes/routes.dart';
-import '../../View_Model_Data/common_register_auth_model.dart';
+import '../../Utilities/ServiceProvider.dart';
 import '../../View_Model_Data/user_prefences.dart';
 
 
@@ -43,7 +43,6 @@ class _LoginScreenState extends State<LoginScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final authViewModel = Provider.of<CommonAuthViewModel>(context);
     return Scaffold(
       backgroundColor: ColorX.scaffoldBackGroundX,
       body: UserPrefences.feedType=='USER'?
@@ -160,19 +159,13 @@ class _LoginScreenState extends State<LoginScreen> {
                     GestureDetector(
                       onTap: (){
 
-                        Map formData = {
-                          'email':_emailController.text,
-                          'password':_passWordController.text
-
-                        };
-                        authViewModel.loginClient(formData, context);
+                        loginCall();
                       },
                       child: Padding(
                         padding: EdgeInsets.only(left: 6.w, right: 6.w),
                         child: CommonButton(
                           height: 7.h,
                           buttonText: 'LOGIN',
-                          loading: authViewModel.loading,
                         ),
                       ),
                     ),
@@ -365,19 +358,13 @@ class _LoginScreenState extends State<LoginScreen> {
                     GestureDetector(
                       onTap: (){
 
-                        Map formData = {
-                          'email':_emailController.text,
-                          'password':_passWordController.text
-
-                        };
-                        authViewModel.loginServiceProvider(formData, context);
+                        loginCall();
                       },
                       child: Padding(
                         padding: EdgeInsets.only(left: 6.w, right: 6.w),
                         child: CommonButton(
                           height: 7.h,
                           buttonText: 'LOGIN',
-                          loading: authViewModel.loading,
                         ),
                       ),
                     ),
@@ -463,4 +450,29 @@ class _LoginScreenState extends State<LoginScreen> {
 
   final TextStyle _textStyle = GoogleFonts.poppins(
       color: ColorX.textColor, fontSize: 14, fontWeight: FontWeight.w400);
+
+   loginCall() async{
+     print("sadasdas");
+     Map formData = {
+       'email':_emailController.text,
+       'password':_passWordController.text
+
+     };
+    var response = await ServiceProvider.apiPostCall(
+        ServiceProvider.signInUrl, formData, context);
+    if (kDebugMode) {
+      print('signup response os $response');
+    }
+    if (kDebugMode) {
+      print('user is is ${response['data']['userId']}');
+      // print(json.decode(response.body)['data']['otp']);
+      // print(json.decode(response.body)['data']['userId']);
+    }
+    /*GoRouter.of(context)
+        .pushNamed(MyAppRouteConstants.phoneVerification, params: {
+      'phoneNumber': phoneController.text,
+    });
+    UserPrefs.userId = response['data']['userId'];
+    SharedPreferences pres = await SharedPreferences.getInstance();*/
+  }
 }

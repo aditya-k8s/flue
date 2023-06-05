@@ -7,7 +7,6 @@ import 'package:sizer/sizer.dart';
 import '../../Resources/colors.dart';
 import '../../Resources/Component/common_button.dart';
 import '../../Utilities/Routes/routes.dart';
-import '../../View_Model_Data/Services/splash_service.dart';
 
 
 
@@ -20,13 +19,10 @@ class SplashScreen extends StatefulWidget {
 
 class _SplashScreenState extends State<SplashScreen> {
 
-  SplashServices splashServices = SplashServices();
 
 
   @override
   void initState(){
-    splashServices.checkAuthentication(context);
-    splashServices.getToken(context);
     super.initState();
   }
 

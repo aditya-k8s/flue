@@ -6,7 +6,6 @@ import 'package:sizer/sizer.dart';
 import '../../Resources/colors.dart';
 import '../../Resources/Component/common_button.dart';
 import '../../Utilities/Routes/routes.dart';
-import '../../View_Model_Data/category_view_data(s).dart';
 
 class RegisterCategoryScreen extends StatefulWidget {
   RegisterCategoryScreen({Key? key}) : super(key: key);
@@ -29,7 +28,6 @@ class _RegisterCategoryScreenState extends State<RegisterCategoryScreen> {
   ];
 
   List<String> selectedReportList = [];
-  HomeViewViewModel homeViewViewModel = HomeViewViewModel();
 
   @override
   Widget build(BuildContext context) {

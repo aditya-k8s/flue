@@ -8,7 +8,6 @@ import 'package:sizer/sizer.dart';
 import '../../Resources/colors.dart';
 import '../../Resources/Component/common_button.dart';
 import '../../Utilities/Routes/routes.dart';
-import '../../View_Model_Data/common_register_auth_model.dart';
 import '../../View_Model_Data/user_prefences.dart';
 
 
@@ -43,7 +42,6 @@ class _RegisterOtpScreenState extends State<RegisterOtpScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final authViewModel = Provider.of<CommonAuthViewModel>(context);
 
     return Scaffold(
       backgroundColor: ColorX.scaffoldBackGroundX,
@@ -160,13 +158,12 @@ class _RegisterOtpScreenState extends State<RegisterOtpScreen> {
 
                                 };
                                 print(widget.email);
-                                authViewModel.otpClient(formData, otpChangeBy?"sms":"email", context,);
+                                // authViewModel.otpClient(formData, otpChangeBy?"sms":"email", context,);
                               },
                               child: Padding(
                                 padding: EdgeInsets.only(left: 8.w, right: 8.w),
                                 child: CommonButton(
                                   buttonText: 'VERIFY NOW',
-                                  loading: authViewModel.loading,
                                   height: 6.h,
                                 ),
                               ),
@@ -245,13 +242,12 @@ class _RegisterOtpScreenState extends State<RegisterOtpScreen> {
 
                                 };
                                 print(widget.email);
-                                authViewModel.otpClient(formData, otpChangeBy?"sms":"email", context,);
+                                // authViewModel.otpClient(formData, otpChangeBy?"sms":"email", context,);
                               },
                               child: Padding(
                                 padding: EdgeInsets.only(left: 8.w, right: 8.w),
                                 child: CommonButton(
                                   buttonText: 'VERIFY NOW',
-                                  loading: authViewModel.loading,
                                   height: 6.h,
                                 ),
                               ),
@@ -412,13 +408,12 @@ class _RegisterOtpScreenState extends State<RegisterOtpScreen> {
 
                                 };
                                 print(widget.email);
-                                authViewModel.otpClient(formData, otpChangeBy?"sms":"email", context,);
+                                // authViewModel.otpClient(formData, otpChangeBy?"sms":"email", context,);
                               },
                               child: Padding(
                                 padding: EdgeInsets.only(left: 8.w, right: 8.w),
                                 child: CommonButton(
                                   buttonText: 'VERIFY NOW',
-                                  loading: authViewModel.loading,
                                   height: 6.h,
                                 ),
                               ),
@@ -498,13 +493,12 @@ class _RegisterOtpScreenState extends State<RegisterOtpScreen> {
 
                                 };
                                 print(widget.email);
-                                authViewModel.otpClient(formData, otpChangeBy?"sms":"email", context,);
+                                // authViewModel.otpClient(formData, otpChangeBy?"sms":"email", context,);
                               },
                               child: Padding(
                                 padding: EdgeInsets.only(left: 8.w, right: 8.w),
                                 child: CommonButton(
                                   buttonText: 'VERIFY NOW',
-                                  loading: authViewModel.loading,
                                   height: 6.h,
                                 ),
                               ),
