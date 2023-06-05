@@ -10,7 +10,7 @@ import '../../Utilities/Routes/routes.dart';
 
 
 class LanguageTypeScreen extends StatelessWidget {
-  LanguageTypeScreen({Key? key}) : super(key: key);
+  const  LanguageTypeScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -21,13 +21,17 @@ class LanguageTypeScreen extends StatelessWidget {
           backgroundColor: ColorX.scaffoldBackGroundX,
           body: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Stack(
                 children: [
-                  SvgPicture.asset(
-                    'image/Vector (1).svg',
-                    fit: BoxFit.fitWidth,
-                    width: 100.w,
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: SvgPicture.asset(
+                      'image/Vector (2).svg',
+                      fit: BoxFit.fitWidth,
+                      width: 100.w,
+                    ),
                   ),
                   Positioned(
                     top: 0.h,
@@ -95,7 +99,9 @@ class LanguageTypeScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(height: 2.h,),
+              SizedBox(
+                height: 2.h,
+              ),
               GestureDetector(
                 onTap: () async {
                   cubit.onBool(false);
@@ -104,7 +110,7 @@ class LanguageTypeScreen extends StatelessWidget {
                   // ShredHelper.languageType = "fr";
                   // SharedPreferences prefs = await SharedPreferences.getInstance();
                   // prefs.setString('languageType', "fr");
-                GoRouter.of(context).pushNamed(MyAppRouteConstants.userTypeScreen);
+                 GoRouter.of(context).pushNamed(MyAppRouteConstants.userTypeScreen);
                 },
                 child: Padding(
                   padding:  EdgeInsets.only(left: 4.w,right: 4.w),

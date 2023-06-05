@@ -17,11 +17,32 @@ class Utils {
     return showFlushbar(
         context: context,
         flushbar: Flushbar(
+          flushbarPosition: FlushbarPosition.TOP,
+          duration: const Duration(seconds: 5),
           forwardAnimationCurve: Curves.decelerate,
           margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
           padding: const EdgeInsets.all(8.0),
           message: message,
           backgroundColor: Colors.red,
+          reverseAnimationCurve: Curves.easeInOut,
+          positionOffset: 20,
+          icon: const Icon(
+            Icons.error,
+            size: 20,
+          ),
+        )..show(context));
+  }
+  static flushBarErrorMessageOnSuccess(String? message, BuildContext context) {
+    return showFlushbar(
+        context: context,
+        flushbar: Flushbar(
+          flushbarPosition: FlushbarPosition.TOP,
+          duration: const Duration(seconds: 15),
+          forwardAnimationCurve: Curves.decelerate,
+          margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+          padding: const EdgeInsets.all(8.0),
+          message: message,
+          backgroundColor: Colors.green,
           reverseAnimationCurve: Curves.easeInOut,
           positionOffset: 20,
           icon: const Icon(
@@ -36,8 +57,7 @@ class Utils {
         .showSnackBar(SnackBar(content: Text(message!)));
   }
 
-  static fieldFocusNode(
-      BuildContext context, FocusNode current, FocusNode nextFocus) {
+  static fieldFocusNode(BuildContext context, FocusNode current, FocusNode nextFocus) {
     current.unfocus();
     FocusScope.of(context).requestFocus(nextFocus);
   }

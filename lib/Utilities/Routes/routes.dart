@@ -71,13 +71,13 @@ class MyAppRouter {
           name: MyAppRouteConstants.registerForm,
           path: '/RegisterForm',
           pageBuilder: (context, state) {
-            return const MaterialPage(child: RegisterForm());
+            return  MaterialPage(child: RegisterForm());
           }),
       GoRoute(
           name: MyAppRouteConstants.registerOtpScreen,
           path: '/RegisterOtpScreen',
           pageBuilder: (context, state) {
-            return const MaterialPage(child: RegisterOtpScreen());
+            return  MaterialPage(child: RegisterOtpScreen(email: state.queryParams['email']),);
           }),
       GoRoute(
           name: MyAppRouteConstants.registerCompleteScreen,
@@ -303,3 +303,4 @@ class MyAppRouteConstants {
   static const String ratingScreen = 'RatingScreen';
   static const String homePageClient = 'HomePageClient';
 }
+

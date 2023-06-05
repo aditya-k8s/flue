@@ -33,123 +33,135 @@ class _RegisterCategoryScreenState extends State<RegisterCategoryScreen> {
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
           backgroundColor: ColorX.scaffoldBackGroundX,
-          body: SingleChildScrollView(
-            child: Column(
-              children: [
-                Stack(
-                  children: [
-                    SvgPicture.asset(
+          body: Column(
+            children: [
+              Stack(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: SvgPicture.asset(
                       'image/Vector (2).svg',
                       fit: BoxFit.fitWidth,
                       width: 100.w,
                     ),
-                    Positioned(
-                        top: 4.h,
-                        child: Padding(
-                          padding: EdgeInsets.only(left: 3.w),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              GestureDetector(
-                                  onTap: () {
-                                    Navigator.of(context).pop(true);
-                                  },
-                                  child: Icon(
-                                    Icons.arrow_back,
-                                    size: 25.sp,
+                  ),
+                  Positioned(
+                      top: 4.h,
+                      child: Padding(
+                        padding: EdgeInsets.only(left: 3.w),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            GestureDetector(
+                                onTap: () {
+                                  Navigator.of(context).pop(true);
+                                },
+                                child: Icon(
+                                  Icons.arrow_back,
+                                  size: 25.sp,
+                                  color: ColorX.whiteX,
+                                )),
+                            Padding(
+                              padding: const EdgeInsets.only(left: 8.0),
+                              child: Text(
+                                "Registration",
+                                style: GoogleFonts.poppins(
+                                    fontSize: 32,
                                     color: ColorX.whiteX,
-                                  )),
-                              Padding(
-                                padding: const EdgeInsets.only(left: 8.0),
-                                child: Text(
-                                  "Registration",
-                                  style: GoogleFonts.poppins(
-                                      fontSize: 32,
-                                      color: ColorX.whiteX,
-                                      fontWeight: FontWeight.w600),
-                                ),
+                                    fontWeight: FontWeight.w600),
                               ),
-                              Padding(
-                                padding: const EdgeInsets.only(left: 8.0),
-                                child: Text(
-                                  "Artisan",
-                                  style: GoogleFonts.quicksand(
-                                      fontSize: 34,
-                                      color: ColorX.whiteX,
-                                      fontWeight: FontWeight.w500),
-                                ),
-                              )
-                            ],
-                          ),
-                        )),
-                  ],
-                ),
-                Padding(
-                  padding: EdgeInsets.only(left: 6.w, right: 4.w),
-                  child: Container(
-                    decoration: BoxDecoration(
-                        color: ColorX.whiteX,
-                        border: Border.all(color: ColorX.underLineColor),
-                        borderRadius: BorderRadius.circular(8.w)),
-                    child: Padding(
-                      padding: const EdgeInsets.only(left: 18.0, top: 4, bottom:1, right: 15),
-                      child: TextField(
-                        textAlign: TextAlign.left,
-                        autocorrect: false,
-                        decoration:
-                        //disable single line border below the text field
-                        InputDecoration(
-                            hintText: 'Search Services',
-                            hintStyle: GoogleFonts.roboto(color: ColorX.blackX, fontWeight: FontWeight.w400, fontSize: 15),
-                            border: InputBorder.none,
-                            suffixIcon: Icon(Icons.search,
-                                color: ColorX.underLineColor)),
-                        style: GoogleFonts.roboto(
-                            color: ColorX.blackX,
-                            fontSize: 15, fontWeight: FontWeight.w400),
-                      ),
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  height: 1.h,
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: SizedBox(
-                    height: 50.h,
-                    width: 100.w,
-                    child: MultiSelectChip(
-                      reportList,
-                      onSelectionChanged: (selectedList) {
-                        setState(() {
-                          selectedReportList = selectedList;
-                        });
-                      },
-                      maxSelection: 10,
-                    ),),
-                ),
-                GestureDetector(
-                  onTap: (){
-                    GoRouter.of(context).pushNamed(MyAppRouteConstants.registerForm);
-                  },
-                  child: Padding(
-                    padding:  EdgeInsets.only(left: 8.w,right: 8.w),
-                    child: CommonButton(
-                      height: 6.h,
-                      buttonText: 'FOLLOWING',
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding:  EdgeInsets.only(top: 1.h,bottom: 2.h),
-                  child: Text("I have an account",style: GoogleFonts.quicksand(color: ColorX.textNew,fontSize: 16,fontWeight: FontWeight.w500,decoration: TextDecoration.underline)),
-                )
-              ],
-            ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(left: 8.0),
+                              child: Text(
+                                "Artisan",
+                                style: GoogleFonts.quicksand(
+                                    fontSize: 34,
+                                    color: ColorX.whiteX,
+                                    fontWeight: FontWeight.w500),
+                              ),
+                            )
+                          ],
+                        ),
+                      )),
+                ],
+              ),
+             Expanded(
+                 child: SingleChildScrollView(
+                   child: Column(
+               children: [
+                   Padding(
+                     padding: EdgeInsets.only(left: 6.w, right: 4.w),
+                     child: Container(
+                       decoration: BoxDecoration(
+                           color: ColorX.whiteX,
+                           border: Border.all(color: ColorX.underLineColor),
+                           borderRadius: BorderRadius.circular(8.w)),
+                       child: Padding(
+                         padding: const EdgeInsets.only(left: 18.0, top: 4, bottom:1, right: 15),
+                         child: TextField(
+                           textAlign: TextAlign.left,
+                           autocorrect: false,
+                           decoration:
+                           //disable single line border below the text field
+                           InputDecoration(
+                               hintText: 'Search Services',
+                               hintStyle: GoogleFonts.roboto(color: ColorX.blackX, fontWeight: FontWeight.w400, fontSize: 15),
+                               border: InputBorder.none,
+                               suffixIcon: Icon(Icons.search,
+                                   color: ColorX.underLineColor)),
+                           style: GoogleFonts.roboto(
+                               color: ColorX.blackX,
+                               fontSize: 15, fontWeight: FontWeight.w400),
+                         ),
+                       ),
+                     ),
+                   ),
+                   SizedBox(
+                     height: 1.h,
+                   ),
+                   Padding(
+                     padding: const EdgeInsets.all(8.0),
+                     child: SizedBox(
+                       width: 100.w,
+                       child: MultiSelectChip(
+                         reportList,
+                         onSelectionChanged: (selectedList) {
+                           setState(() {
+                             selectedReportList = selectedList;
+                           });
+                         },
+                         maxSelection: 10,
+                       ),),
+                   ),
+                   GestureDetector(
+                     onTap: (){
+                       GoRouter.of(context).pushNamed(MyAppRouteConstants.registerForm);
+                     },
+                     child: Padding(
+                       padding:  EdgeInsets.only(left: 8.w,right: 8.w),
+                       child: CommonButton(
+                         height: 6.h,
+                         buttonText: 'FOLLOWING',
+                       ),
+                     ),
+                   ),
+                   GestureDetector(
+                     onTap: () {
+                       GoRouter.of(context)
+                           .pushNamed(MyAppRouteConstants.loginScreen);
+                     },
+                     child: Padding(
+                       padding:  EdgeInsets.only(top: 1.h,bottom: 2.h),
+                       child: Text("I have an account",style: GoogleFonts.quicksand(color: ColorX.textNew,fontSize: 16,fontWeight: FontWeight.w500,decoration: TextDecoration.underline)),
+                     ),
+                   )
+               ],
+             ),
+                 ))
+            ],
           ),
         );
 

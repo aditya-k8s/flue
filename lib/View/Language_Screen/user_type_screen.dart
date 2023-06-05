@@ -25,10 +25,13 @@ class UserTypeScreen extends StatelessWidget {
             children: [
               Stack(
                 children: [
-                  SvgPicture.asset(
-                    'image/Vector (1).svg',
-                    fit: BoxFit.fitWidth,
-                    width: 100.w,
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: SvgPicture.asset(
+                      'image/Vector (2).svg',
+                      fit: BoxFit.fitWidth,
+                      width: 100.w,
+                    ),
                   ),
                   Positioned(
                     top: 0.h,
@@ -105,7 +108,7 @@ class UserTypeScreen extends StatelessWidget {
                   SharedPreferences prefs =
                       await SharedPreferences.getInstance();
                   prefs.setString('feedType', 'SERVICE');
-                  GoRouter.of(context).pushNamed(MyAppRouteConstants.registerCategoryScreen);
+                 GoRouter.of(context).pushNamed(MyAppRouteConstants.registerCategoryScreen);
                   print("Artisan");
                   print('feed type is ${UserPrefences.feedType}');
                 },

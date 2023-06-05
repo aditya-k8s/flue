@@ -5,8 +5,10 @@ import '../colors.dart';
 
 class CommonButton extends StatelessWidget {
  final double? height;
-  final String? buttonText;
- const CommonButton({Key? key,this.height,this.buttonText}) : super(key: key);
+ final String? buttonText;
+ final bool? loading;
+ final VoidCallback? onPress;
+ const CommonButton({Key? key,this.height,this.buttonText,this.loading,this.onPress}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -21,14 +23,14 @@ class CommonButton extends StatelessWidget {
             color: Colors.grey.withOpacity(0.4),
             spreadRadius: 3,
             blurRadius: 4,
-            offset: Offset(0, 1), // changes position of shadow
+            offset: const Offset(0, 1), // changes position of shadow
           ),
         ],
       ),
       child: Padding(
         padding: const EdgeInsets.all(4.0),
         child: Center(
-            child: Text(buttonText!,style: GoogleFonts.quicksand(color: ColorX.textColor,fontWeight:FontWeight.w700,fontSize: 16),)),
+            child:loading==true?  Center(child: CircularProgressIndicator(color: ColorX.textColor,)): Text(buttonText!,style: GoogleFonts.quicksand(color: ColorX.textColor,fontWeight:FontWeight.w700,fontSize: 16),)),
       ),
     );
   }

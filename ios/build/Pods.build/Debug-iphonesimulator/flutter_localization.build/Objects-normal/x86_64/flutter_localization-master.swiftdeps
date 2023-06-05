@@ -1,6 +1,6 @@
 version: "Apple Swift version 5.7.2 (swiftlang-5.7.2.135.5 clang-1400.0.29.51)"
-options: "bb3d2ef42c0f0ba66f9af44e348a70fccbf90d2d28e79309e61c33be22092b7a"
-build_start_time: [1684469394, 642462968]
-build_end_time: [1684469396, 957764148]
+options: "6375aa0f6c40e49bb3c83d1ba91b84414fa7bfb6c33d961fada5d72c220edfd6"
+build_start_time: [1684929899, 763616085]
+build_end_time: [1684929954, 839757919]
 inputs:
   "/Users/leo-arbind/.pub-cache/hosted/pub.dev/flutter_localization-0.1.10/ios/Classes/SwiftFlutterLocalizationPlugin.swift": [1684468949, 993566036]

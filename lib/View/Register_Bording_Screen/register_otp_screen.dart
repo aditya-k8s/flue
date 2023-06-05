@@ -2,16 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
 
 import '../../Resources/colors.dart';
 import '../../Resources/Component/common_button.dart';
 import '../../Utilities/Routes/routes.dart';
+import '../../View_Model_Data/common_register_auth_model.dart';
 import '../../View_Model_Data/user_prefences.dart';
 
 
 class RegisterOtpScreen extends StatefulWidget {
-  const RegisterOtpScreen({Key? key}) : super(key: key);
+
+  String? email;
+   RegisterOtpScreen({Key? key, this.email}) : super(key: key);
 
   @override
   State<RegisterOtpScreen> createState() => _RegisterOtpScreenState();
@@ -33,11 +37,14 @@ class _RegisterOtpScreenState extends State<RegisterOtpScreen> {
   final TextEditingController _email3 = TextEditingController();
   final TextEditingController _email4 = TextEditingController();
 
-  String? _otp;
+  String? _PhoneOTP;
+  String? _EmailOTP;
   bool otpChangeBy = false;
 
   @override
   Widget build(BuildContext context) {
+    final authViewModel = Provider.of<CommonAuthViewModel>(context);
+
     return Scaffold(
       backgroundColor: ColorX.scaffoldBackGroundX,
       body: UserPrefences.feedType == "USER"
@@ -142,13 +149,24 @@ class _RegisterOtpScreenState extends State<RegisterOtpScreen> {
 
                             GestureDetector(
                               onTap: () {
-                                Navigator.pushNamed(
-                                    context, '/RegisterCompleteScreen');
+                                _PhoneOTP = _phone1.text+_phone2.text+_phone3.text+_phone4.text;
+                                _EmailOTP = _email1.text+_email2.text+_email3.text+_email4.text;
+
+                                Map formData = {
+                                  /*'email':widget.email,
+                                  'code':otpChangeBy?_PhoneOTP:_EmailOTP*/
+                                  'email':"keshav.kalia@yahoo.com",
+                                  'code':"1234"
+
+                                };
+                                print(widget.email);
+                                authViewModel.otpClient(formData, otpChangeBy?"sms":"email", context,);
                               },
                               child: Padding(
                                 padding: EdgeInsets.only(left: 8.w, right: 8.w),
                                 child: CommonButton(
                                   buttonText: 'VERIFY NOW',
+                                  loading: authViewModel.loading,
                                   height: 6.h,
                                 ),
                               ),
@@ -216,13 +234,24 @@ class _RegisterOtpScreenState extends State<RegisterOtpScreen> {
 
                             GestureDetector(
                               onTap: () {
-                                GoRouter.of(context).pushNamed(
-                                    MyAppRouteConstants.registerCompleteScreen);
+                                _PhoneOTP = _phone1.text+_phone2.text+_phone3.text+_phone4.text;
+                                _EmailOTP = _email1.text+_email2.text+_email3.text+_email4.text;
+
+                                Map formData = {
+                                  /*'email':widget.email,
+                                  'code':otpChangeBy?_PhoneOTP:_EmailOTP*/
+                                  'email':"keshav.kalia@yahoo.com",
+                                  'code':"1234"
+
+                                };
+                                print(widget.email);
+                                authViewModel.otpClient(formData, otpChangeBy?"sms":"email", context,);
                               },
                               child: Padding(
                                 padding: EdgeInsets.only(left: 8.w, right: 8.w),
                                 child: CommonButton(
                                   buttonText: 'VERIFY NOW',
+                                  loading: authViewModel.loading,
                                   height: 6.h,
                                 ),
                               ),
@@ -372,13 +401,24 @@ class _RegisterOtpScreenState extends State<RegisterOtpScreen> {
 
                             GestureDetector(
                               onTap: () {
-                                Navigator.pushNamed(
-                                    context, '/RegisterCompleteScreen');
+                                _PhoneOTP = _phone1.text+_phone2.text+_phone3.text+_phone4.text;
+                                _EmailOTP = _email1.text+_email2.text+_email3.text+_email4.text;
+
+                                Map formData = {
+                                 /* 'email':widget.email,
+                                  'code':otpChangeBy?_PhoneOTP:_EmailOTP*/
+                                  'email':"keshav.kalia@yahoo.com",
+                                  'code':"1234"
+
+                                };
+                                print(widget.email);
+                                authViewModel.otpClient(formData, otpChangeBy?"sms":"email", context,);
                               },
                               child: Padding(
                                 padding: EdgeInsets.only(left: 8.w, right: 8.w),
                                 child: CommonButton(
                                   buttonText: 'VERIFY NOW',
+                                  loading: authViewModel.loading,
                                   height: 6.h,
                                 ),
                               ),
@@ -447,13 +487,24 @@ class _RegisterOtpScreenState extends State<RegisterOtpScreen> {
 
                             GestureDetector(
                               onTap: () {
-                                GoRouter.of(context).pushNamed(
-                                    MyAppRouteConstants.registerCompleteScreen);
+                                _PhoneOTP = _phone1.text+_phone2.text+_phone3.text+_phone4.text;
+                                _EmailOTP = _email1.text+_email2.text+_email3.text+_email4.text;
+
+                                Map formData = {
+                                  'email':"keshav.kalia@yahoo.com",
+                                  'code':"1234"
+                                  /*'email':widget.email,
+                                  'code':otpChangeBy?_PhoneOTP:_EmailOTP*/
+
+                                };
+                                print(widget.email);
+                                authViewModel.otpClient(formData, otpChangeBy?"sms":"email", context,);
                               },
                               child: Padding(
                                 padding: EdgeInsets.only(left: 8.w, right: 8.w),
                                 child: CommonButton(
                                   buttonText: 'VERIFY NOW',
+                                  loading: authViewModel.loading,
                                   height: 6.h,
                                 ),
                               ),

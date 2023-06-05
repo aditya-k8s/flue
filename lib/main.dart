@@ -12,7 +12,7 @@ import 'Data/Blocs/Localization_Bloc/local_state.dart';
 import 'MultiProvider_State/local_provider.dart';
 import 'Resources/colors.dart';
 import 'Utilities/Routes/routes.dart';
-import 'View_Model_Data/auth_view_data.dart';
+import 'View_Model_Data/common_register_auth_model.dart';
 import 'View_Model_Data/user_prefences.dart';
 
 
@@ -37,6 +37,7 @@ Future<void> main() async {
     DeviceOrientation.portraitUp,
     DeviceOrientation.portraitDown,
   ]);
+
 }
 
 
@@ -55,7 +56,7 @@ class MyApp extends StatelessWidget {
             builder: (_,localeState){
               return  MultiProvider(
                 providers: [
-                  ChangeNotifierProvider(create: (_) => AuthViewModel()),
+                  ChangeNotifierProvider(create: (_) => CommonAuthViewModel()),
                   ChangeNotifierProvider(create: (_) => UserPrefences())
                 ],
                 child: MaterialApp.router(
@@ -68,6 +69,8 @@ class MyApp extends StatelessWidget {
                   localizationsDelegates: AppLocalizationsSetup.localizationsDelegates,
                   localeResolutionCallback: AppLocalizationsSetup.localeResolutionCallback,
                   locale: localeState.locale,
+                  // initialRoute: RouteName.splash,
+                  // onGenerateRoute: Routes.generateRoute,
                 ),
               );
             }
