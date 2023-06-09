@@ -7,8 +7,8 @@ import 'package:http/http.dart';
 import 'package:http/http.dart' as http;
 
 class ServiceProvider {
-  static String baseURL = "https://allohuggy.kindlebit.com/api";
-  static String signInUrl = "/auth/user/login";
+  static String baseURL = "http://3.110.29.31:8090/api/admin";
+  static String signInUrl = "/register";
 
   static Future apiGetCall(String end_pont, BuildContext context) async {
     await EasyLoading.show(
@@ -105,8 +105,6 @@ class ServiceProvider {
         body: formData,
       );
 
-      responseNew = json.decode(response.body);
-
       if (kDebugMode) {
         print(response.body);
       }
@@ -115,8 +113,9 @@ class ServiceProvider {
       if (kDebugMode) {
         print(jsonData['message']);
       }
-      if (response.statusCode == 200) {
-        json.decode(response.body);
+      if (response.statusCode == 201 || response.statusCode == 200) {
+        // json.decode(response.body);
+        responseNew = json.decode(response.body);
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
             content: Text(jsonData['message']),

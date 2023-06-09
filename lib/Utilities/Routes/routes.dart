@@ -17,6 +17,7 @@ import '../../View/Bottom_Bar/Service_BottomBar_Screens/bottom_bar_profile(c).da
 import '../../View/Bottom_Bar/bottom_bar(C).dart';
 import '../../View/Bottom_Bar/bottom_bar(S).dart';
 import '../../View/Helper_Screens/bank_details.dart';
+import '../../View/Helper_Screens/chatGPT_screen.dart';
 import '../../View/Helper_Screens/chat_gpt_view.dart';
 import '../../View/Helper_Screens/chat_screen.dart';
 import '../../View/Helper_Screens/edit_profile.dart';
@@ -259,6 +260,12 @@ class MyAppRouter {
           pageBuilder: (context, state) {
             return   const MaterialPage(child: HomePageClient());
           }),
+      GoRoute(
+          name: MyAppRouteConstants.chatGPTScreenNew,
+          path: '/ChatGPTScreenNew',
+          pageBuilder: (context, state) {
+            return   const MaterialPage(child: ChatGPTScreenNew());
+          }),
     ],
     errorPageBuilder: (context, state) {
       return const MaterialPage(child: unknownView());
@@ -302,5 +309,6 @@ class MyAppRouteConstants {
   static const String bottomProfileClient = 'BottomProfileClient';
   static const String ratingScreen = 'RatingScreen';
   static const String homePageClient = 'HomePageClient';
+  static const String chatGPTScreenNew = 'ChatGPTScreenNew';
 }
 

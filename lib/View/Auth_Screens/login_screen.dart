@@ -452,7 +452,6 @@ class _LoginScreenState extends State<LoginScreen> {
       color: ColorX.textColor, fontSize: 14, fontWeight: FontWeight.w400);
 
    loginCall() async{
-     print("sadasdas");
      Map formData = {
        'email':_emailController.text,
        'password':_passWordController.text
@@ -460,8 +459,9 @@ class _LoginScreenState extends State<LoginScreen> {
      };
     var response = await ServiceProvider.apiPostCall(
         ServiceProvider.signInUrl, formData, context);
+     print('signin response os $response');
     if (kDebugMode) {
-      print('signup response os $response');
+      print('signin response os $response');
     }
     if (kDebugMode) {
       print('user is is ${response['data']['userId']}');

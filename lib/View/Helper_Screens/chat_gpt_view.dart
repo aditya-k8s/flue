@@ -1,11 +1,18 @@
+import 'dart:convert';
+
+import 'package:chat_gpt_sdk/chat_gpt_sdk.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:sizer/sizer.dart';
+import 'package:velocity_x/velocity_x.dart';
 
 import '../../Resources/colors.dart';
+import 'ChatMessage.dart';
+import 'package:http/http.dart' as http;
 
 class ChatGptScreen extends StatefulWidget {
   const ChatGptScreen({Key? key}) : super(key: key);
+
 
   @override
   State<ChatGptScreen> createState() => _ChatGptScreenState();
@@ -14,6 +21,70 @@ class ChatGptScreen extends StatefulWidget {
 class _ChatGptScreenState extends State<ChatGptScreen> {
   final bool _showBottomSheet = true;
   final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
+
+  final TextEditingController _controller = TextEditingController();
+  final List < ChatMessage > _message = [];
+
+  String apiKey = "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";
+  Future < void > _sendMessage() async {
+    // Create Create ChatMessage Class object and pass the user input
+    ChatMessage message = ChatMessage(text: _controller.text, sender: "user");
+    // Refresh the page
+    setState(() {
+      _message.insert(0, message);
+    });
+    // clear the user input from text-field
+    _controller.clear();
+    // Call the generateText method and store result into response
+    final response = await generateText(message.text);
+    // Create Create ChatMessage Class object and pass the bot output
+    ChatMessage botMessage = ChatMessage(text: response.toString(), sender: "bot");
+    // Refresh the page
+    setState(() {
+      _message.insert(0, botMessage);
+    });
+  }
+
+  Widget _buidTextComposer() {
+    return Row(children: [
+      Expanded(child: TextField(controller: _controller, decoration: InputDecoration.collapsed(hintText: "Type a message"), ), ),
+      IconButton(onPressed: () {
+        _sendMessage();
+      }, icon: Icon(Icons.send))
+    ], ).px12();
+  }
+
+  Future < String > generateText(String prompt) async {
+    // Here we have to create body based on the document
+    try {
+      Map < String, dynamic > requestBody = {
+        "model": "text-davinci-003",
+        "prompt": prompt,
+        "temperature": 0,
+        "file": EditFile('',''),
+        "max_tokens": 100,
+      };
+      // Post Api Url
+      var url = Uri.parse('https://api.openai.com/v1/completions');
+      //  use post method of http and pass url,headers and body according to documents
+      var response = await http.post(url, headers: {
+        "Content-Type": "application/json",
+        "Authorization": "Bearer $apiKey"
+      }, body: json.encode(requestBody)); // post call
+      // Checked we get the response or not
+      // if status code is 200 then Api Call is Successfully Executed
+      if (response.statusCode == 200) {
+        var responseJson = json.decode(response.body);
+        return responseJson["choices"][0]["text"];
+      } else {
+        return "Failed to generate text: ${response.body}";
+      }
+    } catch (e) {
+      return "Failed to generate text: $e";
+    }
+  }
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -108,34 +179,18 @@ class _ChatGptScreenState extends State<ChatGptScreen> {
               height: 2.h,
             ),
             Expanded(
-                child: SingleChildScrollView(
-              child: SizedBox(
-                height: 60.h,
-                width: 100.w,
-                child: SingleChildScrollView(
-                  child: Column(
-                    children: List.generate(10, (index) {
-                      return Padding(
-                        padding: const EdgeInsets.all(10.0),
-                        child: Container(
-                            color: ColorX.whiteX,
-                            child: Padding(
-                              padding: const EdgeInsets.all(20.0),
-                              child: Text(
-                                'Lorem Ipsum is simply dummy text of the printing  printing  printing  printing  printing  printing  printing  printing and typesetting industry.',
-                                textAlign: TextAlign.justify,
-                                style: TextStyle(
-                                    color: ColorX.blackX,
-                                    fontWeight: FontWeight.w400,
-                                    fontSize: 11.sp),
-                              ),
-                            )),
-                      );
-                    }),
+                child: Padding(
+                  padding: const EdgeInsets.only(bottom: 80),
+                  child: SizedBox(
+                    height: 60.h,
+                    width: 100.w,
+                    child: Column(
+                      children: [Flexible(child: ListView.builder(padding: Vx.m8, reverse: true, itemBuilder: (context, index) {
+                        return _message[index];
+                      }, itemCount: _message.length, ))],
+                    ),
                   ),
-                ),
-              ),
-            )),
+                )),
           ],
         ),
         bottomSheet: BottomSheet(
@@ -150,31 +205,14 @@ class _ChatGptScreenState extends State<ChatGptScreen> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
+
                       Container(
-                        decoration: BoxDecoration(
-                            color: Color(0xff3E9BF8),
-                            borderRadius: BorderRadius.circular(3.w)),
-                        child: Padding(
-                          padding: const EdgeInsets.all(20.0),
-                          child: SvgPicture.asset('image/Subtract.svg'),
-                        ),
-                      ),
-                      Container(
-                          width: 60.w,
+                          width: 80.w,
                           decoration: BoxDecoration(
                               color: ColorX.whiteX,
                               borderRadius: BorderRadius.circular(2.w)),
-                          child: TextFormField(
-                            cursorColor: ColorX.blackX,
-                            decoration: const InputDecoration(
-                                border: InputBorder.none,
-                                hintText: 'Type a message...'),
-                          )),
-                      Icon(
-                        Icons.send,
-                        color: ColorX.whiteX,
-                        size: 4.h,
-                      )
+                          child: _buidTextComposer()),
+
                     ],
                   ),
                 )),

@@ -162,8 +162,6 @@ class _RegisterCategoryScreenState extends State<RegisterCategoryScreen> {
             ],
           ),
         );
-
-
   }
 }
 
@@ -179,6 +177,7 @@ class MultiSelectChip extends StatefulWidget {
 
 class _MultiSelectChipState extends State<MultiSelectChip> {
   List<String> selectedChoices = [];
+  bool? isSelected = false;
   _buildChoiceList() {
     List<Widget> choices = [];
     for (var item in widget.reportList) {
@@ -200,10 +199,15 @@ class _MultiSelectChipState extends State<MultiSelectChip> {
                 ),
               ),
               label: Padding(
-                padding: EdgeInsets.all(15.0),
-                child: Text(item,style: TextStyle(color:ColorX.blackX)),
+                padding: const EdgeInsets.all(15.0),
+                child: Text(item),
               ),
               selected: selectedChoices.contains(item),
+
+
+              labelStyle: TextStyle(
+                color: selectedChoices.contains(item) ? Colors.white : Colors.black,
+              ),
               onSelected: (selected) {
                 if(selectedChoices.length == (widget.maxSelection  ?? -1) && !selectedChoices.contains(item)) {
                   widget.onMaxSelected?.call(selectedChoices);
@@ -219,7 +223,6 @@ class _MultiSelectChipState extends State<MultiSelectChip> {
             ),
           ));
     }
-
     return choices;
   }
 

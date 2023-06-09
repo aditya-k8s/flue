@@ -44,9 +44,8 @@ class OnPaymentSuccess extends StatelessWidget {
                               Icons.arrow_back,
                               size: 25.sp,
                               color: ColorX.whiteX,
-                            )),
-
-
+                            )
+                        ),
                         Padding(
                           padding: const EdgeInsets.only(left: 8.0),
                           child: Text(

@@ -45,8 +45,7 @@ class _RegisterOtpScreenState extends State<RegisterOtpScreen> {
 
     return Scaffold(
       backgroundColor: ColorX.scaffoldBackGroundX,
-      body: UserPrefences.feedType == "USER"
-          ? SingleChildScrollView(
+      body:SingleChildScrollView(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -76,7 +75,7 @@ class _RegisterOtpScreenState extends State<RegisterOtpScreen> {
                                 Padding(
                                   padding: const EdgeInsets.only(left: 8.0),
                                   child: Text(
-                                    "Inscription",
+                                    UserPrefences.feedType == "USER"?"Inscription":"Registration",
                                     style: GoogleFonts.poppins(
                                         fontSize: 32,
                                         color: ColorX.whiteX,
@@ -86,7 +85,7 @@ class _RegisterOtpScreenState extends State<RegisterOtpScreen> {
                                 Padding(
                                   padding: const EdgeInsets.only(left: 8.0),
                                   child: Text(
-                                    "Client",
+                                    UserPrefences.feedType == "USER"?"Client":"Artisan",
                                     style: GoogleFonts.quicksand(
                                         fontSize: 34,
                                         color: ColorX.buttonColor,
@@ -157,7 +156,8 @@ class _RegisterOtpScreenState extends State<RegisterOtpScreen> {
                                   'code':"1234"
 
                                 };
-                                print(widget.email);
+                                GoRouter.of(context).pushNamed(MyAppRouteConstants.registerCompleteScreen);
+                                print("widget.email");
                                 // authViewModel.otpClient(formData, otpChangeBy?"sms":"email", context,);
                               },
                               child: Padding(
@@ -241,6 +241,8 @@ class _RegisterOtpScreenState extends State<RegisterOtpScreen> {
                                   'code':"1234"
 
                                 };
+                                GoRouter.of(context).pushNamed(MyAppRouteConstants.registerCompleteScreen);
+
                                 print(widget.email);
                                 // authViewModel.otpClient(formData, otpChangeBy?"sms":"email", context,);
                               },
@@ -296,260 +298,11 @@ class _RegisterOtpScreenState extends State<RegisterOtpScreen> {
                 ],
               ),
             )
-          : SingleChildScrollView(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Stack(
-                    children: [
-                      SvgPicture.asset(
-                        'image/Vector (1).svg',
-                        fit: BoxFit.fitWidth,
-                        width: 100.w,
-                      ),
-                      Positioned(
-                          top: 6.h,
-                          child: Padding(
-                            padding: EdgeInsets.only(left: 3.w),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                GestureDetector(
-                                    onTap: () {
-                                      Navigator.of(context).pop(true);
-                                    },
-                                    child: Icon(
-                                      Icons.arrow_back,
-                                      size: 25.sp,
-                                      color: ColorX.whiteX,
-                                    )),
-                                Padding(
-                                  padding: const EdgeInsets.only(left: 8.0),
-                                  child: Text(
-                                    "Registration",
-                                    style: GoogleFonts.poppins(
-                                        fontSize: 32,
-                                        color: ColorX.whiteX,
-                                        fontWeight: FontWeight.w600),
-                                  ),
-                                ),
-                                Padding(
-                                  padding: const EdgeInsets.only(left: 8.0),
-                                  child: Text(
-                                    "Artisan",
-                                    style: GoogleFonts.quicksand(
-                                        fontSize: 34,
-                                        color: ColorX.whiteX,
-                                        fontWeight: FontWeight.w500),
-                                  ),
-                                )
-                              ],
-                            ),
-                          )),
-                    ],
-                  ),
-                  otpChangeBy == true
-                      ? Center(child: SvgPicture.asset('image/message.svg'))
-                      : Center(
-                          child: SvgPicture.asset('image/custom_email.svg')),
-                  SizedBox(
-                    height: 2.h,
-                  ),
-                  otpChangeBy == true
-                      ? Center(
-                          child: Text(
-                          "Enter the code given to\nyou sent by message.",
-                          textAlign: TextAlign.center,
-                          style: GoogleFonts.quicksand(
-                              color: ColorX.textColor,
-                              fontSize: 18,
-                              fontWeight: FontWeight.w500),
-                        ))
-                      : Center(
-                          child: Text(
-                          "Enter the code given to\nyou sent by email.",
-                          textAlign: TextAlign.center,
-                          style: GoogleFonts.quicksand(
-                              color: ColorX.textColor,
-                              fontSize: 18,
-                              fontWeight: FontWeight.w500),
-                        )),
-                  otpChangeBy == true
-                      ? Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            const SizedBox(
-                              height: 30,
-                            ),
-                            // Implement 4 input fields
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              children: [
-                                OtpInput(_email1, true), // auto focus
-                                OtpInput(_email2, false),
-                                OtpInput(_email3, false),
-                                OtpInput(_email4, false)
-                              ],
-                            ),
-                            const SizedBox(
-                              height: 30,
-                            ),
-
-                            GestureDetector(
-                              onTap: () {
-                                _PhoneOTP = _phone1.text+_phone2.text+_phone3.text+_phone4.text;
-                                _EmailOTP = _email1.text+_email2.text+_email3.text+_email4.text;
-
-                                Map formData = {
-                                 /* 'email':widget.email,
-                                  'code':otpChangeBy?_PhoneOTP:_EmailOTP*/
-                                  'email':"keshav.kalia@yahoo.com",
-                                  'code':"1234"
-
-                                };
-                                print(widget.email);
-                                // authViewModel.otpClient(formData, otpChangeBy?"sms":"email", context,);
-                              },
-                              child: Padding(
-                                padding: EdgeInsets.only(left: 8.w, right: 8.w),
-                                child: CommonButton(
-                                  buttonText: 'VERIFY NOW',
-                                  height: 6.h,
-                                ),
-                              ),
-                            ),
-
-                            SizedBox(
-                              height: 10.h,
-                            ),
-                            RichText(
-                                text: TextSpan(children: [
-                              TextSpan(
-                                text: "Don't received the OTP? ",
-                                style: GoogleFonts.quicksand(
-                                    fontSize: 16,
-                                    color: ColorX.blackX,
-                                    fontWeight: FontWeight.w700),
-                              ),
-
-                              TextSpan(
-                                  text: "Resend  OTP",
-                                  style:  GoogleFonts.quicksand(
-                                      fontSize: 16,
-                                      color: ColorX.textNew,
-                                      fontWeight: FontWeight.w700,
-                                      decoration: TextDecoration.underline))
-                            ])),
-                            SizedBox(
-                              height: 2.h,
-                            ),
-                            GestureDetector(
-                              onTap: () {
-                                setState(() {
-                                  otpChangeBy = false;
-                                });
-                              },
-                              child: Text(
-                                "By Email.",
-                                style: GoogleFonts.quicksand(
-                                    fontSize: 16,
-                                    color: ColorX.textNew,
-                                    fontWeight: FontWeight.w700,
-                                    decoration: TextDecoration.underline),
-                              ),
-                            )
-                          ],
-                        )
-                      : Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            const SizedBox(
-                              height: 30,
-                            ),
-                            // Implement 4 input fields
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              children: [
-                                OtpInput(_phone1, true), // auto focus
-                                OtpInput(_phone2, false),
-                                OtpInput(_phone3, false),
-                                OtpInput(_phone4, false)
-                              ],
-                            ),
-                            const SizedBox(
-                              height: 30,
-                            ),
-
-                            GestureDetector(
-                              onTap: () {
-                                _PhoneOTP = _phone1.text+_phone2.text+_phone3.text+_phone4.text;
-                                _EmailOTP = _email1.text+_email2.text+_email3.text+_email4.text;
-
-                                Map formData = {
-                                  'email':"keshav.kalia@yahoo.com",
-                                  'code':"1234"
-                                  /*'email':widget.email,
-                                  'code':otpChangeBy?_PhoneOTP:_EmailOTP*/
-
-                                };
-                                print(widget.email);
-                                // authViewModel.otpClient(formData, otpChangeBy?"sms":"email", context,);
-                              },
-                              child: Padding(
-                                padding: EdgeInsets.only(left: 8.w, right: 8.w),
-                                child: CommonButton(
-                                  buttonText: 'VERIFY NOW',
-                                  height: 6.h,
-                                ),
-                              ),
-                            ),
-
-                            SizedBox(
-                              height: 10.h,
-                            ),
-                            RichText(
-                                text: TextSpan(children: [
-                              TextSpan(
-                                text: "Don't received the OTP? ",
-                                style: GoogleFonts.quicksand(
-                                    fontSize: 16,
-                                    color: ColorX.blackX,
-                                    fontWeight: FontWeight.w700,),
-                              ),
-                              TextSpan(
-                                  text: "Resend  OTP",
-                                  style: TextStyle(
-                                      color: ColorX.textNew,
-                                      fontSize: 12.sp,
-                                      fontWeight: FontWeight.w700,
-                                      decoration: TextDecoration.underline))
-                            ])),
-                            SizedBox(
-                              height: 2.h,
-                            ),
-                            GestureDetector(
-                              onTap: () {
-                                setState(() {
-                                  otpChangeBy = true;
-                                });
-                              },
-                              child: Text(
-                                "By Mobile No.",
-                                style: GoogleFonts.quicksand(
-                                    fontSize: 16,
-                                    color: ColorX.textNew,
-                                    fontWeight: FontWeight.w700,
-                                    decoration: TextDecoration.underline),
-                              ),
-                            )
-                          ],
-                        ),
-                ],
-              ),
-            ),
     );
   }
 }
+
+
 
 class OtpInput extends StatelessWidget {
   final TextEditingController controller;
@@ -566,7 +319,7 @@ class OtpInput extends StatelessWidget {
         autofocus: autoFocus,
         textAlign: TextAlign.center,
         obscureText: true,
-        keyboardType: TextInputType.emailAddress,
+        keyboardType: TextInputType.phone,
         controller: controller,
         maxLength: 1,
         cursorColor: Theme.of(context).primaryColor,

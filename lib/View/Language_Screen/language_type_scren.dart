@@ -21,7 +21,6 @@ class LanguageTypeScreen extends StatelessWidget {
           backgroundColor: ColorX.scaffoldBackGroundX,
           body: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Stack(
                 children: [
@@ -51,6 +50,7 @@ class LanguageTypeScreen extends StatelessWidget {
                   )
                 ],
               ),
+              SizedBox(height: 10.h,),
               Text(
                 "Choose Your Language",
                 style: TextStyleX.textStyles,
